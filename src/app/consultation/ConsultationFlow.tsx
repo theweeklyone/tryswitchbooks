@@ -15,6 +15,8 @@ import {
   trackConsultationStepCompleted,
   trackConsultationCompleted,
   trackLeadSubmitted,
+  trackAdsConversion,
+  estimateLeadValueGBP,
 } from "@/lib/tracking";
 
 import { ConsultationLayout } from "@/components/consultation/ConsultationLayout";
@@ -192,13 +194,18 @@ export function ConsultationFlow() {
       estimatedPriceRange: submission.budget,
       sourcePage: window.location.pathname,
     });
+    const leadValue = estimateLeadValueGBP(submission.budget);
     trackLeadSubmitted({
       conversionType: "lead-submitted",
       serviceInterest: submission.primaryNeed,
       recommendedService: recommendation.primary.serviceName,
       budgetRange: submission.budget,
       sourcePage: window.location.pathname,
+      value: leadValue,
+      currency: "GBP",
     });
+    // Direct Google Ads conversion signal (no-op until the Ads env vars exist).
+    trackAdsConversion(leadValue);
 
     try {
       localStorage.removeItem(STORAGE_KEY);

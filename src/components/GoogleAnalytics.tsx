@@ -18,6 +18,7 @@ import { CONSENT_GRANTED_EVENT, hasAnalyticsConsent } from "@/lib/consent";
 // which is a no-op until gtag has loaded here.
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 
 export function GoogleAnalytics() {
   const [enabled, setEnabled] = useState(false);
@@ -47,12 +48,15 @@ export function GoogleAnalytics() {
     }
   }, [enabled, pathname]);
 
-  if (!GA_ID || !enabled) return null;
+  // Load gtag.js if EITHER analytics or the Google Ads tag is configured. The
+  // single library serves both; each id gets its own config() below.
+  const tagId = GA_ID || GADS_ID;
+  if (!tagId || !enabled) return null;
 
   return (
     <>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${tagId}`}
         strategy="afterInteractive"
       />
       <Script id="ga4-init" strategy="afterInteractive">
@@ -61,7 +65,8 @@ export function GoogleAnalytics() {
           function gtag(){dataLayer.push(arguments);}
           window.gtag = gtag;
           gtag('js', new Date());
-          gtag('config', '${GA_ID}');
+          ${GA_ID ? `gtag('config', '${GA_ID}');` : ""}
+          ${GADS_ID ? `gtag('config', '${GADS_ID}');` : ""}
         `}
       </Script>
     </>

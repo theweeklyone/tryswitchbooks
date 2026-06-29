@@ -34,6 +34,9 @@ export type ConversionEvent = {
   recommendedService?: string;
   budgetRange?: string;
   sourcePage?: string;
+  /** Estimated lead value (GBP) for GA4/Google Ads value-based bidding. */
+  value?: number;
+  currency?: string;
 };
 
 export type ConsultationEvent = {

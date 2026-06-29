@@ -109,3 +109,45 @@ export function trackLeadSubmitted(payload: ConversionEvent) {
 export function trackConversion(payload: ConversionEvent) {
   trackEvent(`conversion_${payload.conversionType.replace(/-/g, "_")}`, payload);
 }
+
+// ── Google Ads conversion ────────────────────────────────────────────────
+//
+// Separate from GA4 so Google Ads gets a clean, direct conversion signal for
+// bidding. No-op unless BOTH env vars are set (and gtag has loaded after cookie
+// consent), so it stays dormant until an ad account exists:
+//   NEXT_PUBLIC_GOOGLE_ADS_ID         e.g. AW-1234567890
+//   NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL the conversion action's label
+const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+const GOOGLE_ADS_LEAD_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_LABEL;
+
+// Rough monthly-fee midpoint per budget band. Used as the conversion `value`
+// so Google can bid toward higher-value leads. Relative ordering matters more
+// than precision. Unknown/"guidance" falls back to a sensible default.
+const BUDGET_MONTHLY_GBP: Record<string, number> = {
+  "under-100": 75,
+  "100-250": 175,
+  "250-500": 375,
+  "500-1000": 750,
+  "1000-2000": 1500,
+  "2000-plus": 2500,
+};
+
+/** Annualised estimate of the client's spend, as a lead-quality proxy (GBP). */
+export function estimateLeadValueGBP(budget?: string): number {
+  const monthly = (budget && BUDGET_MONTHLY_GBP[budget]) || 150;
+  return monthly * 12;
+}
+
+/** Fire a Google Ads conversion. No-op until the Ads env vars are configured. */
+export function trackAdsConversion(value?: number, currency = "GBP"): void {
+  try {
+    if (!GOOGLE_ADS_ID || !GOOGLE_ADS_LEAD_LABEL) return;
+    if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+    window.gtag("event", "conversion", {
+      send_to: `${GOOGLE_ADS_ID}/${GOOGLE_ADS_LEAD_LABEL}`,
+      ...(value ? { value, currency } : {}),
+    });
+  } catch {
+    // Tracking must never throw.
+  }
+}
