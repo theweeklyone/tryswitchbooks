@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-wordmark: "Italiana", "Cormorant Garamond", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-50 text-ink font-sans antialiased;
+    font-feature-settings: "ss01", "ss02";
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-serif text-cocoa-300;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  ::selection {
+    background-color: theme("colors.champagne.DEFAULT");
+    color: theme("colors.cream.50");
+  }
+}
+
+@layer components {
+  .container-luxe {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply uppercase tracking-widest text-xs font-medium text-champagne-dark;
+  }
+
+  /* Primary CTA, black with cream text, mirrors the shop fascia.
+     Hover treatment echoes the logo: a 2px lift, a soft shadow and one slow
+     champagne sheen pass. No colour change, no bounce. */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-cocoa-300 px-7 py-3.5 text-sm uppercase tracking-wider text-cream-50;
+  }
+  /* The sheen. Champagne band, transparent at rest, clipped to the pill. */
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      110deg,
+      transparent 42%,
+      rgba(194, 160, 100, 0.35) 47%,
+      rgba(230, 210, 166, 0.7) 50%,
+      rgba(194, 160, 100, 0.35) 53%,
+      transparent 58%
+    );
+    mix-blend-mode: screen;
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn-primary {
+      transition:
+        transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px -12px rgba(21, 17, 15, 0.4);
+    }
+    .btn-primary:hover::after {
+      animation: btnSheen 1.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-cocoa-300/30 bg-transparent px-7 py-3.5 text-sm uppercase tracking-wider text-cocoa-300 transition-all duration-300 hover:bg-cocoa-300 hover:text-cream-50 hover:-translate-y-0.5;
+  }
+
+  /* Soft rose CTA — for moments where black would feel too heavy. */
+  .btn-rose {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-champagne px-7 py-3.5 text-sm uppercase tracking-wider text-cream-50 transition-all duration-300 hover:bg-champagne-dark hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .link-underline {
+    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100;
+  }
+
+  .card-luxe {
+    @apply rounded-3xl border border-blush-100/70 bg-cream-50 shadow-[0_2px_24px_-12px_rgba(21,17,15,0.10)] transition-all duration-500 hover:border-champagne/50 hover:shadow-[0_12px_40px_-16px_rgba(184,112,103,0.20)] hover:-translate-y-1;
+  }
+
+  /* Image placeholders — soft, quiet-luxury gradients used until real photography lands. */
+  .image-placeholder {
+    background:
+      radial-gradient(circle at 30% 20%, rgba(245, 220, 213, 0.55), transparent 55%),
+      radial-gradient(circle at 75% 75%, rgba(232, 196, 189, 0.45), transparent 55%),
+      linear-gradient(135deg, #F2EDE7 0%, #EBE3D9 50%, #E8DDD3 100%);
+  }
+
+  .image-placeholder-blush {
+    background:
+      radial-gradient(circle at 25% 25%, rgba(251, 239, 236, 0.85), transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(216, 154, 146, 0.45), transparent 55%),
+      linear-gradient(135deg, #FBEFEC 0%, #F5DCD5 50%, #EFC4BD 100%);
+  }
+
+  /* Deep, dramatic — echoes the black shop fascia + interior contrast. */
+  .image-placeholder-mocha {
+    background:
+      radial-gradient(circle at 30% 30%, rgba(232, 185, 178, 0.35), transparent 55%),
+      radial-gradient(circle at 75% 75%, rgba(21, 17, 15, 0.55), transparent 55%),
+      linear-gradient(135deg, #5C544F 0%, #15110F 100%);
+  }
+
+  .divider-soft {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-champagne/40 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+}
+
+/* ─── Print styles ─────────────────────────────────────────────────────
+   Hides nav, CTA buttons and editorial imagery so pages print cleanly.
+*/
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+  html, body {
+    background: #ffffff !important;
+    color: #15110F !important;
+  }
+  /* Suppress chrome that has no place on paper */
+  header,
+  .no-print,
+  button,
+  a[target="_blank"] {
+    display: none !important;
+  }
+  /* Flatten the soft cards so they print cheaply */
+  .card-luxe,
+  [class*="bg-cream"],
+  [class*="bg-blush"],
+  [class*="bg-cocoa"] {
+    background: #ffffff !important;
+    color: #15110F !important;
+    box-shadow: none !important;
+    border: 1px solid #d9d2c7 !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  /* Drop large editorial images entirely on paper */
+  [role="img"] {
+    display: none !important;
+  }
+}
+
+/* Logo gloss sweep. A soft champagne band travels diagonally across the
+   wordmark once on load and again on hover. The resting state is the solid
+   dark wordmark, and the sweep only runs when motion is allowed. */
+.logo-gloss {
+  background-image: linear-gradient(
+    110deg,
+    var(--gloss-base, #15110f) 0%,
+    var(--gloss-base, #15110f) 45%,
+    #c2a064 49%,
+    #e6d2a6 50%,
+    #c2a064 51%,
+    var(--gloss-base, #15110f) 55%,
+    var(--gloss-base, #15110f) 100%
+  );
+  background-size: 300% 100%;
+  background-position: 0% 0;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes logoGloss {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo-gloss-root.is-sweeping .logo-gloss {
+    animation: logoGloss 2.4s cubic-bezier(0.33, 0, 0.2, 1) forwards;
+  }
+}
+
+@keyframes btnSheen {
+  0% {
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(130%);
+    opacity: 0;
+  }
+}
+
+/* Scroll reveal. Content blocks fade from 0 to 1 and rise 16px into place as
+   they enter the viewport (revealed once, by RevealController). Siblings
+   stagger via --reveal-delay. Hero content is excluded and animates on load
+   instead. Reduced-motion users see everything immediately. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.is-revealed {
+    animation: revealIn 0.85s cubic-bezier(0.4, 0, 0.2, 1) var(--reveal-delay, 0ms) both;
+  }
+}
+
+@keyframes revealIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Page cross-fade. The incoming page fades in on navigation, so there is no
+   white flash. Opacity only, no slide or scale. Reduced-motion users navigate
+   instantly. */
+@media (prefers-reduced-motion: no-preference) {
+  .page-fade {
+    animation: pageFadeIn 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Gallery and feature images. The photo sits in a fixed, overflow-hidden frame
+   and scales gently within it on hover, so it feels contained and intentional.
+   It also blurs up as it loads, sharpening from the soft brand placeholder
+   behind it. Hover scale is off on touch devices, and all motion is gated
+   behind prefers-reduced-motion so reduced-motion users get a still image. */
+@media (prefers-reduced-motion: no-preference) {
+  .media-img {
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      filter 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .media-img.is-loading {
+    opacity: 0;
+    filter: blur(12px);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .media-frame:hover .media-img,
+  .group:hover .media-img {
+    transform: scale(1.04);
+  }
+}

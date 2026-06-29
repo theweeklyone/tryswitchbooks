@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Switch Books favicon: a gold calculator on a deep-navy tile.
+       Navy #14213D, gold #C9A24B. Bold, solid shapes so it stays legible
+       at favicon sizes. -->
+  <rect width="64" height="64" rx="12" fill="#14213D"/>
+  <!-- Calculator body -->
+  <rect x="20" y="12" width="24" height="40" rx="4" fill="#C9A24B"/>
+  <!-- Screen (cut out of the body) -->
+  <rect x="24" y="16.5" width="16" height="8" rx="1.5" fill="#14213D"/>
+  <!-- Buttons -->
+  <g fill="#14213D">
+    <circle cx="26.5" cy="31" r="1.7"/>
+    <circle cx="32" cy="31" r="1.7"/>
+    <circle cx="37.5" cy="31" r="1.7"/>
+    <circle cx="26.5" cy="37.5" r="1.7"/>
+    <circle cx="32" cy="37.5" r="1.7"/>
+    <circle cx="37.5" cy="37.5" r="1.7"/>
+    <circle cx="26.5" cy="44" r="1.7"/>
+    <circle cx="32" cy="44" r="1.7"/>
+    <circle cx="37.5" cy="44" r="1.7"/>
+  </g>
+</svg>
