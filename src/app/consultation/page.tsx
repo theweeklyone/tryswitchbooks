@@ -1,15 +1,38 @@
 import type { Metadata } from "next";
 import { ConsultationFlow } from "./ConsultationFlow";
+import { getService } from "@/data/services";
 
 export const metadata: Metadata = {
   title: "Free Business Review",
   description:
     "Tell us what's frustrating you about your current accountant and what you need. We'll match you with the right local firm. Under 2 minutes, free, no obligation.",
+  // All ?service= variants canonicalise to /consultation, so no duplicate content.
   alternates: { canonical: "/consultation" },
-  // Lead-capture page: discourage indexing of the variant pages, but keep the canonical visible.
   robots: { index: true, follow: true },
 };
 
-export default function ConsultationPage() {
-  return <ConsultationFlow />;
+// Service pillar slugs that also exist as a `servicesWanted` quiz value, so a
+// deep link from a service page can pre-select the visitor's need.
+const PRESEED_SERVICES = new Set([
+  "bookkeeping",
+  "year-end-accounts",
+  "tax-and-vat",
+  "payroll",
+  "advisory",
+]);
+
+export default function ConsultationPage({
+  searchParams,
+}: {
+  searchParams: { service?: string };
+}) {
+  const slug = typeof searchParams.service === "string" ? searchParams.service : "";
+  const service = PRESEED_SERVICES.has(slug) ? getService(slug) : undefined;
+
+  return (
+    <ConsultationFlow
+      preselectService={service ? slug : undefined}
+      preselectServiceLabel={service?.name}
+    />
+  );
 }

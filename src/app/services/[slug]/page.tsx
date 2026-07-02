@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Check, ArrowRight } from "lucide-react";
 import { services, getService } from "@/data/services";
 import { subServicesFor } from "@/data/sub-services";
-import { site } from "@/data/site";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { ServiceCard } from "@/components/ServiceCard";
 import { PageFAQ } from "@/components/PageFAQ";
@@ -56,8 +55,8 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             {service.hero.subheading}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href={site.consultationUrl} className="btn-primary">
-              Take the free review
+            <Link href={`/consultation?service=${service.slug}`} className="btn-primary">
+              Find your {service.name} firm
             </Link>
             <Link href="/contact" className="btn-secondary">
               Talk to us
@@ -185,8 +184,8 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         eyebrow="One small step"
         title="See where you stand. Free, no obligation."
         description="The 2-minute review tells us what's not working and what you're hoping for. We'll come back with honest, practical next steps."
-        primaryLabel="Take the free review"
-        primaryHref={site.consultationUrl}
+        primaryLabel={`Find your ${service.name} firm`}
+        primaryHref={`/consultation?service=${service.slug}`}
         secondaryLabel="Talk to us"
         secondaryHref="/contact"
       />

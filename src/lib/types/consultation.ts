@@ -83,7 +83,9 @@ export type ConsultationSubmission = {
   // Metadata
   submissionId: string;
   submittedAt: string; // ISO
-  source: "review-quiz";
+  // "review-quiz", optionally suffixed with entry context so leads can be
+  // attributed to where they came from, e.g. "review-quiz:service-bookkeeping".
+  source: string;
 };
 
 export type ConsultationStatus = "required" | "recommended" | "not-required";

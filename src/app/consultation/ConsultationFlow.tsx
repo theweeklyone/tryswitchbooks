@@ -70,7 +70,14 @@ function newId() {
 const asArray = (v: QuizAnswer): string[] =>
   Array.isArray(v) ? v : v ? [String(v)] : [];
 
-export function ConsultationFlow() {
+export function ConsultationFlow({
+  preselectService,
+  preselectServiceLabel,
+}: {
+  /** A `servicesWanted` value to pre-select (from a service-page deep link). */
+  preselectService?: string;
+  preselectServiceLabel?: string;
+} = {}) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswers>({});
   const [error, setError] = useState<string | null>(null);
@@ -87,19 +94,34 @@ export function ConsultationFlow() {
   const total = visibleQuestions.length;
   const current = visibleQuestions[Math.min(step, total - 1)];
 
-  // Restore draft on mount + emit review_started.
+  // Restore draft on mount, pre-seed the service from a deep link, emit started.
   useEffect(() => {
+    let restored: QuizAnswers = {};
+    let restoredStep = 0;
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw);
-        if (parsed?.answers) setAnswers(parsed.answers);
-        if (typeof parsed?.step === "number") setStep(parsed.step);
+        if (parsed?.answers) restored = parsed.answers;
+        if (typeof parsed?.step === "number") restoredStep = parsed.step;
       }
     } catch {
       // ignore
     }
+
+    // If they arrived from a service page, make sure that need is ticked.
+    if (preselectService) {
+      const existing = asArray(restored.servicesWanted);
+      if (!existing.includes(preselectService)) {
+        restored = { ...restored, servicesWanted: [...existing, preselectService] };
+      }
+    }
+
+    if (Object.keys(restored).length) setAnswers(restored);
+    if (restoredStep) setStep(restoredStep);
+
     trackConsultationStarted({ sourcePage: window.location.pathname });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -176,7 +198,7 @@ export function ConsultationFlow() {
       notes: String(answers.notes ?? "").trim(),
       submissionId: newId(),
       submittedAt: new Date().toISOString(),
-      source: "review-quiz",
+      source: preselectService ? `review-quiz:service-${preselectService}` : "review-quiz",
     };
 
     const recommendation = recommend(submission);
@@ -246,6 +268,16 @@ export function ConsultationFlow() {
 
   return (
     <ConsultationLayout step={step + 1} total={total}>
+      {step === 0 && preselectServiceLabel ? (
+        <div className="mb-8 rounded-2xl border border-sand-100 bg-blush-50/60 p-5 text-center sm:p-6">
+          <p className="text-sm leading-relaxed text-cocoa-100 sm:text-base">
+            Great — you&apos;re after help with{" "}
+            <span className="font-medium text-cocoa-300">{preselectServiceLabel}</span>. We&apos;ve
+            noted that. A few quick questions and we&apos;ll match you with a local firm that&apos;s
+            strong on it.
+          </p>
+        </div>
+      ) : null}
       <div key={current.id}>
         <QuestionStep
           question={current}
