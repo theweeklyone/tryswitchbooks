@@ -1,6 +1,15 @@
 // Insight articles for business owners. Each item powers /advice and
 // /advice/[slug]. Content is matching-service friendly: we help owners choose
 // and switch accountants, we don't provide the accounting ourselves.
+//
+// ADDING AN ARTICLE — required for the build to pass (enforced by
+// lib/content-checks.ts, run from app/sitemap.ts):
+//   1. Add ONE image entry for the slug in lib/blog-images.ts (src + alt).
+//      A post with no image FAILS the build.
+//   2. Include at least one { type: "h2" } heading.
+//   3. Keep the title ≤ ~60 chars and the excerpt ~110–160 chars (the excerpt
+//      is the meta description). Outside these you'll get a build warning.
+//   4. Add `related` links to build the topical cluster and pass link equity.
 
 export const blogCategories = [
   "Choosing an accountant",

@@ -3,6 +3,7 @@ import { services } from "@/data/services";
 import { subServices } from "@/data/sub-services";
 import { locations } from "@/data/locations";
 import { blogPosts } from "@/data/blog";
+import { assertContentValid } from "@/lib/content-checks";
 
 const SITE = "https://www.tryswitchbooks.co.uk";
 
@@ -10,6 +11,11 @@ const SITE = "https://www.tryswitchbooks.co.uk";
 // deliberately excluded (auth-gated or noindex).
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Build-time guardrail: fails the build if any article is missing an image
+  // or breaks core SEO structure. Runs here because the sitemap is always
+  // generated during `next build`.
+  assertContentValid();
+
   const staticRoutes = [
     { url: `${SITE}/`, priority: 1.0, changeFrequency: "weekly" as const },
     { url: `${SITE}/services`, priority: 0.9 },

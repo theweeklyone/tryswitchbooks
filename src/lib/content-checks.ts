@@ -1,0 +1,69 @@
+// Build-time content guardrails for insight articles.
+//
+// WHY: articles are authored in data/blog.ts while their imagery lives in
+// lib/blog-images.ts, keyed by slug. That decoupling made it possible to add a
+// post with NO matching image — which shipped once. assertContentValid() closes
+// that gap: it runs during `next build` (called from app/sitemap.ts, which is
+// always generated) and THROWS on a missing image, so an imageless or
+// un-optimised article can never reach production. SEO-hygiene issues are logged
+// as warnings so they surface in the build log without breaking deploys.
+//
+// To add a new article: add the post in data/blog.ts AND an image entry in
+// lib/blog-images.ts. If you forget the image, the build will fail here.
+
+import { blogPosts } from "@/data/blog";
+import { blogImages } from "@/lib/blog-images";
+
+// SEO soft limits (warn, don't fail). Titles read best under ~60 chars in SERPs;
+// excerpts double as the meta description, ideal ~110–160 chars.
+const TITLE_MAX = 60;
+const EXCERPT_MIN = 110;
+const EXCERPT_MAX = 160;
+
+let checked = false;
+
+export function assertContentValid(): void {
+  // Run once per process; cheap and idempotent.
+  if (checked) return;
+  checked = true;
+
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const post of blogPosts) {
+    const img = blogImages[post.slug];
+
+    // HARD REQUIREMENTS — a violation fails the build.
+    if (!img?.src) {
+      errors.push(`"${post.slug}" has no image (add an entry in lib/blog-images.ts).`);
+    }
+    if (img?.src && !img.alt) {
+      errors.push(`"${post.slug}" image is missing alt text (needed for a11y + SEO).`);
+    }
+    if (!post.title.trim()) errors.push(`"${post.slug}" has an empty title.`);
+    if (!post.excerpt.trim()) errors.push(`"${post.slug}" has an empty excerpt.`);
+    if (!post.body.some((b) => b.type === "h2")) {
+      errors.push(`"${post.slug}" has no h2 headings (needed for structure + rich results).`);
+    }
+
+    // SOFT SEO GUIDANCE — warn only.
+    if (post.title.length > TITLE_MAX) {
+      warnings.push(`"${post.slug}" title is ${post.title.length} chars (aim ≤ ${TITLE_MAX}).`);
+    }
+    if (post.excerpt.length < EXCERPT_MIN || post.excerpt.length > EXCERPT_MAX) {
+      warnings.push(
+        `"${post.slug}" excerpt is ${post.excerpt.length} chars (aim ${EXCERPT_MIN}–${EXCERPT_MAX} for the meta description).`,
+      );
+    }
+  }
+
+  if (warnings.length) {
+    console.warn("\n[content-checks] SEO warnings:\n  - " + warnings.join("\n  - ") + "\n");
+  }
+  if (errors.length) {
+    throw new Error(
+      "[content-checks] Article content is invalid — build blocked:\n  - " +
+        errors.join("\n  - "),
+    );
+  }
+}
