@@ -31,9 +31,7 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
   },
 
   // --- Switching cluster ---
-  // NOTE: the three marked INTERIM reuse an existing photo as a stop-gap so no
-  // article is imageless. Replace with the unique uploads listed for the author
-  // (see the checklist in data/blog.ts) so nothing repeats across the site.
+  // Each photo is unique to its article and not used as a hero elsewhere.
   "how-to-switch-accountants-step-by-step": {
     src: "/images/advisory-meeting-4.jpg",
     alt: "A business owner meeting their new accountant to begin the switch",
@@ -47,15 +45,15 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
     alt: "Mid-year business figures being reviewed by a newly appointed accountant",
   },
   "cost-of-switching-accountants": {
-    src: "/images/meeting-report.jpg", // INTERIM (reused)
-    alt: "An accountant explaining fees and switching costs to a business owner",
+    src: "/images/switch-cost.jpg",
+    alt: "An accountant talking a business owner through fees and switching costs",
   },
   "best-time-to-switch-accountants": {
-    src: "/images/advisory-meeting.jpg", // INTERIM (reused)
-    alt: "A business owner and accountant planning the right time of year to switch",
+    src: "/images/switch-timing.jpg",
+    alt: "A desk diary and laptop used to plan the right time to switch accountants",
   },
   "switching-accountants-limited-company": {
-    src: "/images/office-2.jpg", // INTERIM (reused)
-    alt: "A limited company director reviewing accounts with a new firm",
+    src: "/images/switch-limited-company.jpg",
+    alt: "A limited company director reviewing their accounts with a new firm",
   },
 };
