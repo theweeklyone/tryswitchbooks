@@ -13,11 +13,10 @@ import { BusinessJsonLd } from "@/components/BusinessJsonLd";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "Find the Right Local Accountant for Your Business | Switch Books",
+    absolute: "The Right Local Accountant for Your Business | Switch Books",
   },
   description:
-    "Switch Books is a free service that matches UK and Sussex business owners with the right local accounting firm: proactive support at a fair price, explained in plain English. Take the free 2-minute review.",
+    "A free service matching UK and Sussex business owners with the right local accountant — proactive support at a fair price. Take the free 2-minute review.",
   alternates: { canonical: "/" },
 };
 

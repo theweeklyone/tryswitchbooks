@@ -16,6 +16,14 @@ const quickLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+// Trusted external resources for business owners. Genuinely useful, and they give
+// every page outbound links to authoritative domains. Open in a new tab.
+const usefulLinks = [
+  { href: "https://www.gov.uk/browse/business/business-tax", label: "GOV.UK — Business tax" },
+  { href: "https://www.gov.uk/government/organisations/hm-revenue-customs", label: "HMRC" },
+  { href: "https://www.gov.uk/government/organisations/companies-house", label: "Companies House" },
+];
+
 export function Footer() {
   const pathname = usePathname();
   // Hide on focused experiences (review/quiz flow, internal dashboard).
@@ -115,6 +123,27 @@ export function Footer() {
             </Link>
           </div>
         </div>
+
+        <div className="mt-10 border-t border-cream-100/15 pt-8">
+          <p className="eyebrow flex items-center gap-2 text-champagne-light">
+            <Compass className="h-4 w-4" strokeWidth={1.5} aria-hidden /> Useful links
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm text-cream-100/70">
+            {usefulLinks.map((u) => (
+              <li key={u.href}>
+                <a
+                  href={u.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cream-50"
+                >
+                  {u.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <p className="mt-10 flex flex-wrap items-center justify-between gap-4 text-xs text-cream-100/40">
           <span>
             © {new Date().getFullYear()} {site.name}. {site.location.short}. All rights reserved.
