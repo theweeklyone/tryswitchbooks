@@ -1,42 +1,15 @@
 // The free Business Review, expressed as data so the flow component is generic.
 // Order matters; the flow renders top to bottom. A question with `showIf` only
 // appears when an earlier answer matches.
+//
+// Ordering note: the engaging, qualifying questions come FIRST to build a bit of
+// investment, and we ask for contact details LAST. Cold visitors (e.g. someone
+// searching for a specific service) are far more likely to finish when the
+// name/email/phone ask comes after they've told us what they need, not before.
 
 import type { QuizQuestion } from "@/lib/types/consultation";
 
 export const questions: QuizQuestion[] = [
-  {
-    id: "firstName",
-    type: "text",
-    title: "First, what should we call you?",
-    subtitle: "Just so we can keep this personal.",
-    placeholder: "Your first name",
-    required: true,
-  },
-  {
-    id: "businessName",
-    type: "text",
-    title: "And the name of your business?",
-    subtitle: "It helps us understand your situation before we speak.",
-    placeholder: "Your business name",
-    required: true,
-  },
-  {
-    id: "email",
-    type: "email",
-    title: "Where shall we send your review?",
-    subtitle: "Your email. We'll use it to send your result and follow up. Never shared.",
-    placeholder: "you@yourbusiness.co.uk",
-    required: true,
-  },
-  {
-    id: "phone",
-    type: "tel",
-    title: "Best number to reach you on?",
-    subtitle: "Only used to arrange a quick, no-pressure chat.",
-    placeholder: "07000 000000",
-    required: true,
-  },
   {
     id: "businessType",
     type: "single",
@@ -201,5 +174,38 @@ export const questions: QuizQuestion[] = [
     placeholder: "What's prompting the change, what 'good' would look like for you…",
     maxLength: 600,
     required: false,
+  },
+  // --- Contact details, asked last, once they've told us what they need ---
+  {
+    id: "firstName",
+    type: "text",
+    title: "Almost done. What should we call you?",
+    subtitle: "Just so we can keep it personal when we're in touch.",
+    placeholder: "Your first name",
+    required: true,
+  },
+  {
+    id: "businessName",
+    type: "text",
+    title: "And the name of your business?",
+    subtitle: "So we know who we're matching.",
+    placeholder: "Your business name",
+    required: true,
+  },
+  {
+    id: "email",
+    type: "email",
+    title: "Where shall we send your match?",
+    subtitle: "Your email. We'll use it to send your result and follow up. Never shared.",
+    placeholder: "you@yourbusiness.co.uk",
+    required: true,
+  },
+  {
+    id: "phone",
+    type: "tel",
+    title: "And the best number to reach you on?",
+    subtitle: "Only used to arrange a quick, no-pressure chat.",
+    placeholder: "07000 000000",
+    required: true,
   },
 ];

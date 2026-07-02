@@ -59,7 +59,7 @@ export const services: Service[] = [
     short:
       "Clean, up-to-date books you can trust, so you always know where the business stands.",
     metaDescription:
-      "Behind on your bookkeeping or never sure your numbers are right? Switch Books matches you with a local firm that keeps your books clean and real-time. Take the free review.",
+      "Looking for reliable bookkeeping for your business? Switch Books matches you, free, with a local firm that keeps your books clean, accurate and up to date. Take the 2-minute review.",
     hero: {
       eyebrow: "Bookkeeping",
       headline: "Books that are always up to date, and always right.",
@@ -121,7 +121,7 @@ export const services: Service[] = [
     short:
       "Accounts and filings prepared early and explained clearly. No last-minute panic, no jargon.",
     metaDescription:
-      "Dreading another year-end? Switch Books matches you with a local firm that prepares your accounts early and explains what they mean. UK & Sussex. Take the free review.",
+      "Need your year-end accounts and company tax return sorted? Switch Books matches you, free, with a local firm that files early and explains what the numbers mean. Take the free review.",
     hero: {
       eyebrow: "Year-End Accounts",
       headline: "Year-end done early, explained properly.",
@@ -183,7 +183,7 @@ export const services: Service[] = [
     short:
       "Tax planned ahead, not just reported after the fact, so you keep more of what you earn.",
     metaDescription:
-      "Paying more tax than you expected and getting no advice? Switch Books matches you with a firm that plans tax and VAT ahead for UK & Sussex businesses. Take the free review.",
+      "Want your business tax and VAT handled properly? Switch Books matches you, free, with a local firm that plans ahead to keep you compliant and tax-efficient. Take the free review.",
     hero: {
       eyebrow: "Tax & VAT",
       headline: "Tax planned in advance, not explained in hindsight.",
@@ -246,7 +246,7 @@ export const services: Service[] = [
     short:
       "Your team paid correctly and on time, with pensions and RTI handled quietly in the background.",
     metaDescription:
-      "Payroll a monthly headache? Switch Books matches you with a firm that runs payroll, RTI and auto-enrolment for UK & Sussex businesses. Take the free review.",
+      "Need payroll sorted for your team? Switch Books matches you, free, with a local firm that runs payroll, RTI and pension auto-enrolment accurately and on time. Take the free review.",
     hero: {
       eyebrow: "Payroll & Auto-Enrolment",
       headline: "Your team paid right, every time.",
@@ -308,7 +308,7 @@ export const services: Service[] = [
     short:
       "Regular, forward-looking conversations about your numbers: the proactive advice most owners never get.",
     metaDescription:
-      "Wish your accountant advised you, not just filed for you? Switch Books matches you with a firm offering proactive advisory and planning for UK & Sussex owners. Take the free review.",
+      "Want real advice to help grow your business, not just compliance? Switch Books matches you, free, with a local firm offering proactive planning and advisory support. Take the free review.",
     hero: {
       eyebrow: "Advisory & Planning",
       headline: "The proactive advice you were promised but never got.",
