@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
 import { ServiceCard } from "@/components/ServiceCard";
+import { PageFAQ } from "@/components/PageFAQ";
 import { CTASection } from "@/components/CTASection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
@@ -24,6 +25,35 @@ const trustPoints = [
   { icon: MapPin, label: "Sussex-based, UK-wide" },
   { icon: Gift, label: "Free for business owners" },
   { icon: ShieldCheck, label: "Trusted local firms" },
+];
+
+// Homepage FAQ. Rendered with FAQPage JSON-LD (via PageFAQ) so common
+// brand/service questions are eligible for rich results on the most-linked page.
+const homeFaq = [
+  {
+    q: "Is Switch Books really free?",
+    a: "Yes. Finding your match costs you nothing. We're paid by the accounting firms we work with, and only when we've made a good introduction, so there's never a charge to you.",
+  },
+  {
+    q: "How does the matching work?",
+    a: "You take a free 2-minute review telling us about your business and what's not working. We shortlist local firms that genuinely fit your sector, size and budget, then introduce you. You choose whether to go ahead.",
+  },
+  {
+    q: "Do I have to switch accountants?",
+    a: "No. There's no obligation at any point. We'll show you who we'd recommend and why; the decision is entirely yours, in your own time.",
+  },
+  {
+    q: "Are the firms local?",
+    a: "Yes. We match you with established firms in your area so you can meet real people face to face. If you'd rather work remotely, we'll factor that in too.",
+  },
+  {
+    q: "What if the match isn't right?",
+    a: "We check in after the introduction to make sure it's working. If it isn't the right fit, we'll find you a better one. No awkwardness.",
+  },
+  {
+    q: "Is switching accountants a hassle?",
+    a: "Far less than most people expect. Your new firm handles the changeover, including requesting your records from your old accountant. It usually takes an hour or two of your time, spread over a couple of weeks.",
+  },
 ];
 
 const valueProps = [
@@ -366,6 +396,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PageFAQ
+        items={homeFaq}
+        title="Questions owners ask us."
+        background="blush"
+      />
 
       <CTASection
         eyebrow="Your time back, the right firm found"

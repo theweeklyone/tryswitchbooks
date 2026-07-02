@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { blogPosts, findPost } from "@/data/blog";
+import { blogPosts, findPost, relatedPosts } from "@/data/blog";
 import { CTASection } from "@/components/CTASection";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { blogImages } from "@/lib/blog-images";
@@ -32,7 +32,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const post = findPost(params.slug);
   if (!post) notFound();
 
-  const more = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const more = relatedPosts(post.slug, 2);
 
   return (
     <>
@@ -105,6 +105,28 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               return <p key={i}>{block.text}</p>;
             })}
           </div>
+
+          {post.related && post.related.length > 0 ? (
+            <aside className="mt-14 rounded-2xl border border-sand-100 bg-blush-50/60 p-7 sm:p-8">
+              <p className="eyebrow">Related reading</p>
+              <ul className="mt-4 space-y-3">
+                {post.related.map((r) => (
+                  <li key={r.href}>
+                    <Link
+                      href={r.href}
+                      className="group inline-flex items-center gap-2 text-base text-cocoa-300 hover:text-champagne-dark"
+                    >
+                      <span
+                        aria-hidden
+                        className="inline-block h-px w-5 shrink-0 bg-champagne transition-all group-hover:w-7"
+                      />
+                      {r.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          ) : null}
         </div>
       </article>
 

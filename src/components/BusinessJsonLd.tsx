@@ -36,6 +36,7 @@ export function BusinessJsonLd() {
         name: site.name,
         description: site.description,
         url: SITE_URL,
+        logo: `${SITE_URL}/icon.svg`,
         email: site.contact.emailDisplay,
         areaServed,
         ...(sameAs.length ? { sameAs } : {}),

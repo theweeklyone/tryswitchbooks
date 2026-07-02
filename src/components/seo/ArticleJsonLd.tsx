@@ -58,7 +58,7 @@ export function ArticleJsonLd({ post }: { post: BlogPost }) {
       name: site.name,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/apple-icon.png`,
+        url: `${SITE_URL}/icon.svg`,
       },
     },
     ...(datePublished ? { datePublished, dateModified: datePublished } : {}),
