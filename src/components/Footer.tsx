@@ -6,7 +6,7 @@ import { site } from "@/data/site";
 import { services } from "@/data/services";
 import { locations } from "@/data/locations";
 import { Logo } from "./Logo";
-import { MapPin, Clock, Phone, Mail, Compass, ClipboardCheck } from "lucide-react";
+import { MapPin, Clock, Mail, Compass, ClipboardCheck } from "lucide-react";
 
 const quickLinks = [
   { href: "/services", label: "All Services" },
@@ -101,10 +101,6 @@ export function Footer() {
 
         <div className="mt-16 grid gap-6 border-t border-cream-100/15 pt-8 md:grid-cols-2 md:items-center">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-cream-100/70">
-            <a href={site.contact.phoneHref} className="flex items-center gap-2 hover:text-cream-50">
-              <Phone className="h-4 w-4 text-champagne-light" strokeWidth={1.5} aria-hidden />
-              {site.contact.phoneDisplay}
-            </a>
             <a href={site.contact.emailHref} className="flex items-center gap-2 hover:text-cream-50">
               <Mail className="h-4 w-4 text-champagne-light" strokeWidth={1.5} aria-hidden />
               {site.contact.emailDisplay}

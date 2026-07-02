@@ -248,8 +248,8 @@ export function Header() {
             <Link href={site.consultationUrl} className="btn-primary w-full">
               Free Business Review
             </Link>
-            <a href={site.contact.phoneHref} className="btn-secondary w-full">
-              Call {site.contact.phoneDisplay}
+            <a href={site.contact.emailHref} className="btn-secondary w-full">
+              Email us
             </a>
           </div>
         </nav>

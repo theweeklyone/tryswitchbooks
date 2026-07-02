@@ -132,10 +132,6 @@ export default function TermsPage() {
               If you have any questions about these terms, please contact us at{" "}
               <a href={site.contact.emailHref} className="link-underline text-cocoa-300">
                 {site.contact.emailDisplay}
-              </a>{" "}
-              or by phone on{" "}
-              <a href={site.contact.phoneHref} className="link-underline text-cocoa-300">
-                {site.contact.phoneDisplay}
               </a>
               .
             </p>

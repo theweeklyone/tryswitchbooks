@@ -4,7 +4,7 @@ import { CTASection } from "@/components/CTASection";
 import { PageHero } from "@/components/PageHero";
 import { ContactForm } from "./ContactForm";
 import { site } from "@/data/site";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Mail, MapPin, Clock } from "lucide-react";
 import { getContentMap, cval } from "@/lib/content";
 
 export const revalidate = 60;
@@ -30,8 +30,8 @@ export default async function ContactPage() {
         <Link href={site.consultationUrl} className="btn-primary">
           Take the free review
         </Link>
-        <a href={site.contact.phoneHref} className="btn-secondary">
-          Call {site.contact.phoneDisplay}
+        <a href={site.contact.emailHref} className="btn-secondary">
+          Email us
         </a>
       </PageHero>
 
@@ -69,14 +69,8 @@ export default async function ContactPage() {
           <div className="card-luxe flex flex-col p-8 sm:p-10">
             <p className="eyebrow">Get in touch</p>
             <a
-              href={site.contact.phoneHref}
-              className="mt-3 font-serif text-2xl text-cocoa-300 hover:text-champagne-dark"
-            >
-              {site.contact.phoneDisplay}
-            </a>
-            <a
               href={site.contact.emailHref}
-              className="mt-2 text-base text-cocoa-50 hover:text-cocoa-300"
+              className="mt-3 font-serif text-2xl text-cocoa-300 hover:text-champagne-dark"
             >
               {site.contact.emailDisplay}
             </a>
@@ -101,10 +95,6 @@ export default async function ContactPage() {
               from you. No call centres, no sales scripts, just a straight conversation.
             </p>
             <ul className="mt-8 space-y-3 text-sm text-cocoa-50">
-              <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-champagne-dark" strokeWidth={1.5} aria-hidden />
-                {site.contact.phoneDisplay}
-              </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-champagne-dark" strokeWidth={1.5} aria-hidden />
                 {site.contact.emailDisplay}

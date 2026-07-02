@@ -106,8 +106,8 @@ export function RecommendationView({
 
           {/* Next steps */}
           <div className="mt-10 flex flex-col items-center gap-4">
-            <a href={site.contact.phoneHref} className="btn-primary">
-              Prefer to talk now? Call us
+            <a href={site.contact.emailHref} className="btn-primary">
+              Prefer to email? Get in touch
             </a>
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
               <Link href="/" className="link-underline text-cocoa-300">

@@ -21,9 +21,9 @@ export const site = {
     directionsLink: "https://maps.google.com/?q=Sussex+England",
   },
   contact: {
-    // PLACEHOLDER — swap for a forwarding / Google Voice number to stay anonymous.
-    phoneDisplay: "01000 000000",
-    phoneHref: "tel:01000000000",
+    // No public phone number — contact is email-only to keep the owner anonymous.
+    // If a forwarding / VoIP number is added later, reintroduce phoneDisplay/phoneHref
+    // here and it will flow back to the footer, contact page and JSON-LD.
     emailDisplay: "enquiries@tryswitchbooks.co.uk",
     emailHref: "mailto:enquiries@tryswitchbooks.co.uk",
   },

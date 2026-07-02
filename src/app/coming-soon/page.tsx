@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
 import { LogoGloss } from "@/components/LogoGloss";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: `${site.name} · coming soon`,
@@ -29,19 +29,12 @@ export default function ComingSoonPage() {
       </p>
 
       <div className="mt-[clamp(1.25rem,4.5vh,3rem)] flex flex-wrap items-center justify-center gap-3">
-        <a href={site.contact.phoneHref} className="btn-primary">
-          Call {site.contact.phoneDisplay}
-        </a>
-        <a href={site.contact.emailHref} className="btn-secondary">
+        <a href={site.contact.emailHref} className="btn-primary">
           Email us
         </a>
       </div>
 
       <div className="mt-[clamp(2rem,6vh,4rem)] flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-cocoa-50">
-        <span className="flex items-center gap-2">
-          <Phone className="h-4 w-4 text-champagne-dark" strokeWidth={1.5} aria-hidden />
-          {site.contact.phoneDisplay}
-        </span>
         <a href={site.contact.emailHref} className="flex items-center gap-2 hover:text-cocoa-300">
           <Mail className="h-4 w-4 text-champagne-dark" strokeWidth={1.5} aria-hidden />
           {site.contact.emailDisplay}
