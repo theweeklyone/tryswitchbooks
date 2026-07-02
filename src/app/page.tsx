@@ -170,9 +170,9 @@ export default function Home() {
               <PlaceholderImage
                 variant="blush"
                 className="aspect-[4/5] w-full"
-                label="A business owner talking through their numbers with an adviser"
+                label="Business owners and accountants reviewing financial reports around a table"
                 priority
-                src="/images/advisory-meeting.jpg"
+                src="/images/front-page-hero.jpg"
               />
               <div className="absolute -bottom-6 -left-4 rounded-2xl bg-cream-50 p-4 shadow-xl shadow-cocoa-300/10 sm:-left-6 sm:p-5">
                 <p className="text-[10px] uppercase tracking-widest text-champagne-dark">The review</p>
