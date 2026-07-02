@@ -6,6 +6,7 @@ import { site } from "@/data/site";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CTASection } from "@/components/CTASection";
+import { LocationFinder } from "@/components/LocationFinder";
 
 export const metadata: Metadata = {
   title: { absolute: "Find a Local Accountant in Sussex | Switch Books" },
@@ -19,6 +20,14 @@ export default function AccountantsIndexPage() {
     (acc[l.county] ||= []).push(l);
     return acc;
   }, {});
+
+  // Slim list for the client-side finder — no heavy per-town copy shipped.
+  const finderItems = locations.map(({ name, slug, county, nearbyAreas }) => ({
+    name,
+    slug,
+    county,
+    nearbyAreas,
+  }));
 
   return (
     <>
@@ -37,6 +46,24 @@ export default function AccountantsIndexPage() {
           How it works
         </Link>
       </PageHero>
+
+      <section className="pt-16 sm:pt-20">
+        <div className="container-luxe">
+          <div className="mx-auto max-w-xl text-center">
+            <p className="eyebrow">Find your area</p>
+            <h2 className="mt-3 font-serif text-2xl text-cocoa-300 sm:text-3xl">
+              Where&apos;s your business based?
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-cocoa-50">
+              Start typing your town or a nearby area and we&apos;ll take you straight to your
+              local page.
+            </p>
+          </div>
+          <div className="mt-8">
+            <LocationFinder items={finderItems} />
+          </div>
+        </div>
+      </section>
 
       <section className="py-20 sm:py-24">
         <div className="container-luxe space-y-14">
