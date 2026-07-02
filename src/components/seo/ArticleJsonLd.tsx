@@ -22,12 +22,15 @@ const MONTHS: Record<string, string> = {
   december: "12",
 };
 
-// "March 2026" -> "2026-03-01". Returns undefined for unrecognised formats.
+// "March 2026" -> "2026-03-01T09:00:00+00:00". Google's rich-results test rejects
+// a bare date, so we emit a full ISO 8601 datetime with an explicit timezone.
+// The time is nominal — articles are dated by month. Returns undefined for
+// unrecognised formats.
 function toIsoDate(publishedOn: string): string | undefined {
   const m = publishedOn.trim().toLowerCase().match(/^([a-z]+)\s+(\d{4})$/);
   if (!m) return undefined;
   const month = MONTHS[m[1]];
-  return month ? `${m[2]}-${month}-01` : undefined;
+  return month ? `${m[2]}-${month}-01T09:00:00+00:00` : undefined;
 }
 
 export function ArticleJsonLd({ post }: { post: BlogPost }) {
@@ -52,10 +55,12 @@ export function ArticleJsonLd({ post }: { post: BlogPost }) {
     author: {
       "@type": "Organization",
       name: site.name,
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
       name: site.name,
+      url: SITE_URL,
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/icon.svg`,
