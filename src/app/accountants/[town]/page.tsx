@@ -13,6 +13,29 @@ import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 
 const SITE_URL = "https://www.tryswitchbooks.co.uk";
 
+// Contextual advice links shown on every town page. Deepens the page for users
+// weighing a switch and passes internal-link equity to the switching cluster.
+const switchingGuides = [
+  {
+    href: "/advice/how-to-switch-accountants-step-by-step",
+    title: "How to switch, step by step",
+    blurb:
+      "The whole process, from choosing a firm to authorising them with HMRC, and how long each stage really takes.",
+  },
+  {
+    href: "/advice/changing-accountants-mid-year",
+    title: "Can you switch mid-year?",
+    blurb:
+      "You don't have to wait for your year-end. Here's why mid-year is often the smarter time to move.",
+  },
+  {
+    href: "/advice/cost-of-switching-accountants",
+    title: "What does switching cost?",
+    blurb:
+      "The switch itself is usually free. Here's what you should, and shouldn't, be charged.",
+  },
+];
+
 export function generateStaticParams() {
   return locations.map((l) => ({ town: l.slug }));
 }
@@ -163,6 +186,33 @@ export default function LocationPage({ params }: { params: { town: string } }) {
                 <p className="flex-1 text-sm leading-relaxed text-cocoa-50">{s.short}</p>
                 <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-champagne-dark">
                   Explore
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Thinking of switching — advice cluster links */}
+      <section className="py-20 sm:py-24">
+        <div className="container-luxe">
+          <SectionHeading
+            eyebrow="Thinking of switching?"
+            title={`Switching accountants in ${loc.name}, made simple.`}
+            description="It's easier than most owners expect, and your new firm handles the changeover for you. These guides walk you through it."
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {switchingGuides.map((g) => (
+              <Link
+                key={g.href}
+                href={g.href}
+                className="card-luxe group flex flex-col gap-3 p-7 transition-colors hover:border-champagne"
+              >
+                <h3 className="font-serif text-xl text-cocoa-300">{g.title}</h3>
+                <p className="flex-1 text-sm leading-relaxed text-cocoa-50">{g.blurb}</p>
+                <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-champagne-dark">
+                  Read the guide
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden />
                 </span>
               </Link>

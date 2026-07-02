@@ -1258,6 +1258,258 @@ export const locations: Location[] = [
       },
     ],
   },
+  {
+    slug: "tunbridge-wells",
+    name: "Tunbridge Wells",
+    county: "Kent",
+    metaTitle: "Accountants in Tunbridge Wells | Free Local Match | Switch Books",
+    metaDescription:
+      "Looking for a better accountant in Royal Tunbridge Wells? Switch Books matches you with the right local firm for free. Start your free review today.",
+    headline: "Find the right accountant in Tunbridge Wells",
+    intro:
+      "Switch Books is a free service that matches Tunbridge Wells business owners with a local accountant who genuinely fits how they work. Tell us about your business and we'll connect you with a firm that suits your needs and your budget.",
+    localContext:
+      "Royal Tunbridge Wells has one of the strongest professional-services economies in the South East, with law firms, consultancies, financial advisers and media businesses clustered around Mount Pleasant Road, Chapel Place and the Pantiles. It's also full of independent retailers, restaurants and the kind of London commuters who run a consultancy or contract from home. Many owners here are higher earners with more complex affairs, dividends, multiple income streams, property, and want an accountant who does proper tax planning rather than just filing a return. Others are small studios and independents who've outgrown a firm that never picks up the phone. The common thread is people who could be getting a great deal more from their accountant and quietly suspect it.",
+    whyLocal:
+      "An accountant who knows Tunbridge Wells understands its professional and commuter base, the prevalence of consultancies and higher-rate taxpayers, and the practicalities of advising owners who value proactive planning. A nearby firm is easy to meet on the Pantiles for a coffee and a review. That said, many excellent firms now work seamlessly over video and cloud software, so we focus on the right fit first and let you decide how much face-to-face contact you want.",
+    nearbyAreas: ["Southborough", "Tonbridge", "Pembury", "Rusthall", "Crowborough", "Wadhurst"],
+    sectors: [
+      "Professional and financial services",
+      "Legal and consultancy",
+      "Media and creative",
+      "Independent retail and hospitality",
+      "Contractors and freelancers",
+      "Property and construction",
+    ],
+    faq: [
+      {
+        q: "Do you only match businesses in Tunbridge Wells itself?",
+        a: "No. We match owners across Royal Tunbridge Wells and the surrounding area, including Southborough, Tonbridge, Pembury and out towards Crowborough and Wadhurst on the Kent–Sussex border. If you're based or trading near Tunbridge Wells, we can find you a suitable local firm.",
+      },
+      {
+        q: "Can you match me with an accountant who's strong on personal tax planning?",
+        a: "Yes, and it's a common request here. Tunbridge Wells has a lot of higher earners, company directors and people with property or investment income, so we regularly match owners with firms that do genuine tax planning, not just compliance.",
+      },
+      {
+        q: "Can the new firm take over from my current accountant?",
+        a: "Yes. Switching is routine and the new firm handles the professional handover with your old accountant, including requesting your records. Many owners come to us simply because their current accountant has gone quiet between deadlines.",
+      },
+      {
+        q: "What does it cost to use Switch Books?",
+        a: "Nothing. Our matching service is completely free to you. You only ever pay the accountant you choose to work with, at the fee you agree directly with them. We're not an accountancy firm and we don't do your accounts ourselves.",
+      },
+    ],
+  },
+  {
+    slug: "maidstone",
+    name: "Maidstone",
+    county: "Kent",
+    metaTitle: "Accountants in Maidstone | Free Local Match | Switch Books",
+    metaDescription:
+      "Want a better accountant in Maidstone? Switch Books matches you with the right local firm, free of charge. Book your free review and get matched today.",
+    headline: "Find the right accountant in Maidstone",
+    intro:
+      "Switch Books is a free service that matches Maidstone business owners with a local accountant who's genuinely the right fit. Tell us what you need and we'll connect you with a firm that suits your business and your budget.",
+    localContext:
+      "As the county town of Kent, Maidstone has a broad, busy business economy, from logistics and distribution firms strung along the M20 corridor to professional services in the town centre, construction and trades across the borough, and the food and agricultural businesses that give the Garden of England its name. It's a town of practical, growing SMEs: builders and contractors, distributors, care providers, retailers and manufacturers. Many of these owners need more than a year-end filer, someone who can help with payroll as they take on staff, VAT as they scale, and cashflow when a big contract lands. A frequent story we hear is an owner who has stuck with the same accountant for years while the business has grown well beyond what that firm offers.",
+    whyLocal:
+      "A Maidstone accountant who knows the local economy understands its mix of logistics, trades, agriculture and professional firms, and can be easy to drop in on when you'd rather talk something through in person. Local knowledge helps with practical things like typical rates and the realities of running a business across the borough. Many capable firms now also work fully online, so we put the right match first and leave the choice of how you meet to you.",
+    nearbyAreas: ["Aylesford", "Bearsted", "Larkfield", "Coxheath", "Snodland", "West Malling"],
+    sectors: [
+      "Logistics and distribution",
+      "Construction and trades",
+      "Professional services",
+      "Agriculture and food",
+      "Care and healthcare",
+      "Manufacturing",
+    ],
+    faq: [
+      {
+        q: "Do you have an office in Maidstone?",
+        a: "No. Switch Books is a free matching service, not a firm with premises in the town. We connect you with an established accountant who covers Maidstone, and you deal directly with the firm we introduce.",
+      },
+      {
+        q: "Can you match a logistics or distribution business near the M20?",
+        a: "Yes. Distribution, transport and logistics are a big part of the Maidstone economy, and we work with firms that understand fleet costs, VAT, driver payroll and the margins in the sector. Tell us about your setup and we'll find a good fit.",
+      },
+      {
+        q: "I'm taking on my first employees. Can you find a firm that handles payroll?",
+        a: "Absolutely. A lot of growing Maidstone businesses come to us at exactly that point. We'll match you with a firm that sets up payroll and auto-enrolment properly and keeps you compliant as you add staff.",
+      },
+      {
+        q: "What does the matching service cost?",
+        a: "It's free. Switch Books gets you talking to the right Maidstone accountant, and you agree fees directly with the firm you choose.",
+      },
+    ],
+  },
+  {
+    slug: "reigate",
+    name: "Reigate",
+    county: "Surrey",
+    metaTitle: "Accountants in Reigate & Redhill | Free Local Match | Switch Books",
+    metaDescription:
+      "Looking for a better accountant in Reigate or Redhill? Switch Books matches you with the right local firm for free. Start your free review today.",
+    headline: "Find the right accountant in Reigate & Redhill",
+    intro:
+      "Switch Books is a free service that matches Reigate and Redhill business owners with a local accountant who actually fits how they work. Tell us about your business and we'll connect you with a firm that suits your needs and your budget.",
+    localContext:
+      "Reigate and neighbouring Redhill sit in the M25 and Gatwick corridor, which gives the area an unusually high concentration of professional and financial services, technology firms, consultancies and head-office functions for their size. Reigate's affluent, commuter-heavy base runs consultancies and small companies alongside the trip to London, while Redhill brings more retail, offices and commercial activity around the station. Plenty of owners here are contractors and directors who need sharp advice on dividends, IR35 and tax planning, and growing tech and service firms that want a proactive adviser rather than a silent one. Many have outgrown an accountant who only surfaces at year-end, and don't realise how much better it could be.",
+    whyLocal:
+      "An accountant familiar with Reigate and Redhill understands the commuter and professional-services base, the Gatwick-linked businesses, and the needs of contractors and directors who make up much of the local economy. A nearby firm is handy when you want a face-to-face review, though many strong firms now work brilliantly over video and cloud software. We focus on the right fit first and let you decide how you'd rather work.",
+    nearbyAreas: ["Redhill", "Horley", "Merstham", "Banstead", "Dorking", "Leatherhead"],
+    sectors: [
+      "Professional and financial services",
+      "Technology and digital",
+      "Consultancy and contracting",
+      "Aviation and Gatwick-linked business",
+      "Retail and hospitality",
+      "Property and construction",
+    ],
+    faq: [
+      {
+        q: "Do you cover both Reigate and Redhill?",
+        a: "Yes. We match owners across Reigate, Redhill and the surrounding area, including Horley, Merstham and out towards Banstead and Dorking. If you're based or trading nearby, we can find you a suitable local firm.",
+      },
+      {
+        q: "I contract through my own limited company. Can you match me with the right accountant?",
+        a: "That's a big part of what we do here. The Reigate and Gatwick area is full of contractors and directors, so we match owners with firms that are comfortable with dividends, IR35 questions and director's tax planning.",
+      },
+      {
+        q: "Can the firm take over from my current accountant?",
+        a: "Yes. Switching is routine and the new firm handles the professional handover with your old accountant, including requesting your records. Many owners come to us because their current firm has stopped being proactive.",
+      },
+      {
+        q: "What does it cost to use Switch Books?",
+        a: "Nothing. Our matching service is completely free to you. You only ever pay the accountant you choose to work with, at the fee you agree directly with them.",
+      },
+    ],
+  },
+  {
+    slug: "billingshurst",
+    name: "Billingshurst",
+    county: "West Sussex",
+    metaTitle: "Accountants in Billingshurst | Free Local Match | Switch Books",
+    metaDescription:
+      "Want a better accountant in Billingshurst? Switch Books matches you with the right local firm, free of charge. Book your free review and get matched today.",
+    headline: "Find the right accountant in Billingshurst",
+    intro:
+      "Switch Books is a free service that matches Billingshurst business owners with a local accountant who's genuinely the right fit. Tell us what you need and we'll connect you with a firm that suits your business and your budget.",
+    localContext:
+      "Billingshurst has grown from a village into a busy commuter town on the A29 and the London line, and its business base has grown with it. Alongside long-established trades, builders and rural and agricultural businesses in the surrounding countryside, there's a rising number of consultants, contractors and small limited companies run by owners who commute or work from home. Light-industrial and service businesses cluster around Station Road and Natts Lane. Many of these owners want an accountant who is responsive and proactive rather than silent until the deadline, and who understands both a hands-on trade and a home-based company. A common story we hear is someone who has stayed with the same firm out of habit while quietly feeling they could do better.",
+    whyLocal:
+      "A local accountant who knows Billingshurst and the wider Horsham district understands its mix of trades, rural businesses and commuter-run companies, and is easy to see in person when you want to talk something over. Local knowledge helps with practical things like the typical client base in the area. Many good firms now also work effectively online, so we put the right match first and leave the choice of how you meet to you.",
+    nearbyAreas: ["Pulborough", "Horsham", "Wisborough Green", "Slinfold", "Adversane", "Coolham"],
+    sectors: [
+      "Construction and trades",
+      "Agriculture and rural business",
+      "Professional services and consultancy",
+      "Retail and local services",
+      "Freelancers and commuters",
+      "Property and lettings",
+    ],
+    faq: [
+      {
+        q: "Do you have an office in Billingshurst?",
+        a: "No. Switch Books is a free matching service, not a firm with premises in the village. We connect you with an established accountant who covers Billingshurst, and you deal directly with the firm we introduce.",
+      },
+      {
+        q: "Can you help a trade or construction business?",
+        a: "Yes. Builders, contractors and trades are a big part of the local economy, and we match them with accountants who understand CIS, subcontractors, tools and vehicles and cashflow through a project. Tell us about your setup and we'll find a good fit.",
+      },
+      {
+        q: "I run a small limited company from home while commuting. Can you match me?",
+        a: "Yes. Plenty of Billingshurst owners run consultancies and small companies alongside a commute, and we match them with firms that handle directors' tax, dividends and home-based working.",
+      },
+      {
+        q: "What does the matching service cost?",
+        a: "It's free. Switch Books gets you talking to the right Billingshurst accountant, and you agree fees directly with the firm you choose.",
+      },
+    ],
+  },
+  {
+    slug: "polegate",
+    name: "Polegate",
+    county: "East Sussex",
+    metaTitle: "Accountants in Polegate | Free Local Match | Switch Books",
+    metaDescription:
+      "Looking for a better accountant in Polegate? Switch Books matches you with the right local firm for free. Start your free review today.",
+    headline: "Find the right accountant in Polegate",
+    intro:
+      "Switch Books is a free service that matches Polegate business owners with a local accountant who actually fits how they work. Tell us about your business and we'll connect you with a firm that suits your needs and your budget.",
+    localContext:
+      "Polegate sits just north of Eastbourne at a busy road and rail junction, and it has a practical, growing small-business economy to match. Trades and construction firms, local retailers and services along the High Street, care and healthcare providers, and transport and distribution businesses all operate here, alongside a steady stream of new home-based companies as the town's housing has expanded. Many of these owners are hands-on and time-poor, and want an accountant who is responsive and keeps things simple rather than one who disappears until the year-end. A frequent story we hear is an owner who has grown a solid local business but feels their accountant has never really got to know it.",
+    whyLocal:
+      "An accountant who knows Polegate and the Eastbourne area understands its mix of trades, care businesses and local services, and is easy to reach when you'd rather talk face to face. Local knowledge helps with the practical side of running a business in the area. Many capable firms now also work fully online and support Polegate clients remotely, so we concentrate on the right fit and let you decide how much in-person contact you want.",
+    nearbyAreas: ["Willingdon", "Hailsham", "Eastbourne", "Stone Cross", "Wannock", "Hankham"],
+    sectors: [
+      "Construction and trades",
+      "Retail and local services",
+      "Care and healthcare",
+      "Transport and distribution",
+      "Professional services",
+      "Property and lettings",
+    ],
+    faq: [
+      {
+        q: "Do you only match businesses in Polegate itself?",
+        a: "No. We match owners across Polegate and the surrounding area, including Willingdon, Hailsham, Stone Cross and into Eastbourne. If you're based or trading nearby, we can find you a suitable local firm.",
+      },
+      {
+        q: "Can you match a care or healthcare business with the right accountant?",
+        a: "Yes. Care is an important part of the local economy, and we work with firms that understand its payroll, staffing and regulatory pressures. Tell us about your business and we'll match you with a firm that fits.",
+      },
+      {
+        q: "Can the new firm take over from my current accountant?",
+        a: "Yes. Switching is routine and the new firm handles the professional handover with your old accountant, including requesting your records. Many owners come to us because their current accountant has become hard to reach.",
+      },
+      {
+        q: "What does it cost to use Switch Books?",
+        a: "Nothing. Our matching service is completely free to you. You only ever pay the accountant you choose to work with, at the fee you agree directly with them.",
+      },
+    ],
+  },
+  {
+    slug: "hassocks",
+    name: "Hassocks",
+    county: "West Sussex",
+    metaTitle: "Accountants in Hassocks | Free Local Match | Switch Books",
+    metaDescription:
+      "Want a better accountant in Hassocks? Switch Books matches you with the right local firm, free of charge. Book your free review and get matched today.",
+    headline: "Find the right accountant in Hassocks",
+    intro:
+      "Switch Books is a free service that matches Hassocks business owners with a local accountant who's genuinely the right fit. Tell us what you need and we'll connect you with a firm that suits your business and your budget.",
+    localContext:
+      "Hassocks sits at the foot of the South Downs on the main Brighton-to-London line, which makes it a classic commuter town with a business base to match. Many owners here are professionals and consultants who run a limited company or contract alongside the commute, working from home offices around the village and neighbouring Hurstpierpoint and Ditchling. Around them sit local trades and builders, independent shops and services, and health and wellbeing businesses that serve the affluent villages of mid-Sussex. What these owners tend to have in common is that they're busy and want an accountant who is proactive and easy to deal with, not one they have to chase. A common story we hear is a director who suspects they're paying more tax than they need to and never gets a straight answer from their current firm.",
+    whyLocal:
+      "An accountant who knows Hassocks and mid-Sussex understands its commuter and professional base, the number of home-run companies and contractors, and the practicalities of advising directors who value proactive planning. A nearby firm is easy to meet when you want a face-to-face review, though many strong firms now work seamlessly over video and cloud software. We focus on the right fit first and let you decide how you'd rather work.",
+    nearbyAreas: ["Hurstpierpoint", "Ditchling", "Keymer", "Burgess Hill", "Clayton", "Albourne"],
+    sectors: [
+      "Professional and business services",
+      "Consultancy and contracting",
+      "Construction and trades",
+      "Retail and local services",
+      "Health and wellbeing",
+      "Property and lettings",
+    ],
+    faq: [
+      {
+        q: "Do you cover the villages around Hassocks too?",
+        a: "Yes. We match owners across Hassocks and neighbouring mid-Sussex, including Hurstpierpoint, Ditchling, Keymer and out towards Burgess Hill. If you're based or trading nearby, we can find you a suitable local firm.",
+      },
+      {
+        q: "I run a limited company from home while commuting to London. Can you match me?",
+        a: "Yes, and it's one of the most common requests here. We match Hassocks directors and contractors with firms that are strong on dividends, IR35 questions and director's tax planning, so you keep more of what you earn.",
+      },
+      {
+        q: "Can the firm take over from my current accountant?",
+        a: "Yes. Switching is routine and the new firm handles the professional handover with your old accountant, including requesting your records. Many owners come to us simply because their current firm has stopped being proactive.",
+      },
+      {
+        q: "What does the matching service cost?",
+        a: "It's free. Switch Books gets you talking to the right Hassocks accountant, and you agree fees directly with the firm you choose.",
+      },
+    ],
+  },
 ];
 
 export function getLocation(slug: string): Location | undefined {
