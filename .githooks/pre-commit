@@ -1,0 +1,22 @@
+#!/bin/sh
+# Auto-optimise images before they are committed, so an oversized source file
+# can never enter the repo again. next/image already optimises what visitors
+# download; this just keeps the committed sources sane (small deploys, no
+# raw-image-size flags from site graders).
+#
+# Enabled via: git config core.hooksPath .githooks   (run once per clone; the
+# repo's setup already did this on the main machine).
+
+staged=$(git diff --cached --name-only --diff-filter=ACM | grep -iE '^public/images/.*\.(jpe?g|png)$')
+
+if [ -n "$staged" ]; then
+  echo "[pre-commit] optimising images in public/images ..."
+  if ! node scripts/optimize-images.mjs; then
+    echo "[pre-commit] image optimisation failed — commit aborted."
+    exit 1
+  fi
+  # Re-stage anything the optimiser rewrote.
+  git add public/images
+fi
+
+exit 0

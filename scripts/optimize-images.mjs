@@ -20,7 +20,7 @@ const DIR = "public/images";
 const MAX_WIDTH = 2400; // ample for 2x retina at our largest display size
 const QUALITY = 80;
 
-const files = (await readdir(DIR)).filter((f) => /\.(jpe?g)$/i.test(f));
+const files = (await readdir(DIR)).filter((f) => /\.(jpe?g|png)$/i.test(f));
 let before = 0;
 let after = 0;
 
@@ -31,11 +31,14 @@ for (const file of files) {
 
   // Read to a buffer first so we can safely overwrite the same path.
   const input = await readFile(p);
-  const output = await sharp(input)
+  const pipeline = sharp(input)
     .rotate() // bake in EXIF orientation, then strip metadata
-    .resize({ width: MAX_WIDTH, withoutEnlargement: true })
-    .jpeg({ quality: QUALITY, mozjpeg: true })
-    .toBuffer();
+    .resize({ width: MAX_WIDTH, withoutEnlargement: true });
+  // JPEGs re-encode as mozjpeg; PNGs stay lossless (max compression) so logos
+  // and graphics with transparency keep their edges.
+  const output = /\.png$/i.test(file)
+    ? await pipeline.png({ compressionLevel: 9 }).toBuffer()
+    : await pipeline.jpeg({ quality: QUALITY, mozjpeg: true }).toBuffer();
 
   if (output.length < orig.size) {
     await writeFile(p, output);
