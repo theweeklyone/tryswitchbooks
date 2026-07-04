@@ -31,16 +31,27 @@ export function LeadTable({
   leads,
   selectedId,
   onSelect,
+  totalCount,
 }: {
   leads: ConsultationLead[];
   selectedId?: string | null;
   onSelect: (lead: ConsultationLead) => void;
+  /** Total leads before filtering — lets us tell "none yet" from "none match". */
+  totalCount?: number;
 }) {
   if (leads.length === 0) {
+    // No leads at all (fresh dashboard) vs a filter that excludes everything.
+    const noneYet = totalCount === 0;
     return (
       <div className="rounded-2xl border border-dashed border-sand-200 bg-cream-50 p-14 text-center">
-        <p className="font-serif text-2xl text-cocoa-300">No leads match these filters</p>
-        <p className="mt-2 text-sm text-cocoa-50">Try clearing the filters above.</p>
+        <p className="font-serif text-2xl text-cocoa-300">
+          {noneYet ? "No leads yet" : "No leads match these filters"}
+        </p>
+        <p className="mt-2 text-sm text-cocoa-50">
+          {noneYet
+            ? "New enquiries from your review quiz will appear here the moment they come in."
+            : "Try clearing the filters above."}
+        </p>
       </div>
     );
   }

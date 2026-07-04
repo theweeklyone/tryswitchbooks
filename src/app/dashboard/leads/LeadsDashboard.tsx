@@ -218,6 +218,7 @@ export function LeadsDashboard({
         leads={visible}
         selectedId={selectedId}
         onSelect={(l) => setSelectedId(l.id)}
+        totalCount={leads.length}
       />
 
       <LeadDetailDrawer

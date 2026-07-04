@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import type { ConsultationLead } from "@/lib/types/lead";
 import { LeadsDashboard } from "./LeadsDashboard";
 import { fetchLeads } from "@/lib/leads/queries";
-import { mockLeads } from "@/data/mock-leads";
 
 export const metadata: Metadata = {
   title: "Leads",
@@ -12,14 +12,13 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function LeadsPage() {
-  // Read from Supabase when configured; fall back to demo data otherwise so the
-  // dashboard is always previewable.
-  let leads = mockLeads;
+  // Live data only — no demo fallback. The dashboard reflects reality, and a new
+  // lead appears the instant it comes in.
+  let leads: ConsultationLead[] = [];
   try {
-    const fetched = await fetchLeads();
-    if (fetched.length) leads = fetched;
-  } catch {
-    // Supabase not configured yet — use the demo leads.
+    leads = await fetchLeads();
+  } catch (err) {
+    console.error("[LeadsPage] Failed to load leads:", err);
   }
   return <LeadsDashboard initialLeads={leads} />;
 }
