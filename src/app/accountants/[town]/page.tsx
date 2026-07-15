@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { og } from "@/lib/og";
 import { ArrowRight, Check, MapPin } from "lucide-react";
-import { locations, getLocation } from "@/data/locations";
+import { locations, getLocation, getLocationByName } from "@/data/locations";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 import { ServiceIcon } from "@/components/ServiceIcon";
@@ -232,15 +232,29 @@ export default function LocationPage({ params }: { params: { town: string } }) {
             {loc.nearbyAreas.slice(0, -1).join(", ")} and {loc.nearbyAreas[loc.nearbyAreas.length - 1]}.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            {loc.nearbyAreas.map((a) => (
-              <span
-                key={a}
-                className="inline-flex items-center gap-1.5 text-sm text-cocoa-100"
-              >
-                <Check className="h-4 w-4 text-champagne-dark" strokeWidth={2} aria-hidden />
-                {a}
-              </span>
-            ))}
+            {loc.nearbyAreas.map((a) => {
+              const covered = getLocationByName(a);
+              const inner = (
+                <>
+                  <Check className="h-4 w-4 text-champagne-dark" strokeWidth={2} aria-hidden />
+                  {a}
+                </>
+              );
+              // Link to areas we also have a page for; plain text otherwise.
+              return covered && covered.slug !== loc.slug ? (
+                <Link
+                  key={a}
+                  href={`/accountants/${covered.slug}`}
+                  className="inline-flex items-center gap-1.5 text-sm text-cocoa-100 underline-offset-4 hover:text-cocoa-300 hover:underline"
+                >
+                  {inner}
+                </Link>
+              ) : (
+                <span key={a} className="inline-flex items-center gap-1.5 text-sm text-cocoa-100">
+                  {inner}
+                </span>
+              );
+            })}
           </div>
         </div>
       </section>

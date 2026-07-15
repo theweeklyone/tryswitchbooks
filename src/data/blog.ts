@@ -609,14 +609,18 @@ export function findPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }
 
-// "More reading" suggestions. Prefers posts in the same category so topical
-// clusters (e.g. the switching guides) interlink strongly, then fills with the
-// most recent others. Keeps the current post out.
+// "More reading" suggestions, as a ring: the next `limit` posts after this one
+// (wrapping around the end). A ring guarantees every post is linked from exactly
+// `limit` other posts, so none get orphaned with a single internal link — which
+// a category-preference approach did to posts in singleton categories. Posts are
+// ordered with topical clusters (e.g. the switching guides) adjacent, so the
+// neighbours stay relevant.
 export function relatedPosts(slug: string, limit = 2): BlogPost[] {
-  const current = findPost(slug);
-  const rest = blogPosts.filter((p) => p.slug !== slug);
-  if (!current) return rest.slice(0, limit);
-  const sameCategory = rest.filter((p) => p.category === current.category);
-  const others = rest.filter((p) => p.category !== current.category);
-  return [...sameCategory, ...others].slice(0, limit);
+  const i = blogPosts.findIndex((p) => p.slug === slug);
+  if (i === -1) return blogPosts.slice(0, limit);
+  const out: BlogPost[] = [];
+  for (let k = 1; k <= limit && k < blogPosts.length; k++) {
+    out.push(blogPosts[(i + k) % blogPosts.length]);
+  }
+  return out;
 }

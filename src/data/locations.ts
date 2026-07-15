@@ -608,7 +608,7 @@ export const locations: Location[] = [
       "East Grinstead has a deep professional services base, a healthcare cluster around the Queen Victoria Hospital, a busy High Street retail trade and a good number of commuter-owned companies and light industry. Many owners here are skilled professionals, consultants or directors running tidy but ambitious businesses that need proper advice rather than just year-end filing. The common frustration is an accountant who never picks up the phone first and only does the minimum, leaving owners unsure whether they are paying too much tax or missing opportunities. When your accountant only appears at the deadline, a better match is overdue. We connect you with an East Grinstead accountant who works with you through the year.",
     whyLocal:
       "An accountant who knows East Grinstead understands its professional and healthcare-linked businesses, commuter-run companies and High Street retailers, so the advice fits the local reality. Being nearby helps when you want a proper conversation rather than another email. Many good firms also work remotely, so we match on expertise and fit first and location second.",
-    nearbyAreas: ["Forest Row", "Lingfield", "Felbridge", "Crawley Down", "Ashurst Wood", "Dormansland"],
+    nearbyAreas: ["Forest Row", "Lingfield", "Felbridge", "Crawley Down", "Ashurst Wood", "Reigate"],
     sectors: [
       "Professional services",
       "Healthcare and clinics",
@@ -1020,7 +1020,7 @@ export const locations: Location[] = [
       "Crowborough is the largest inland town in East Sussex, sitting on the edge of Ashdown Forest with a strong commuter base towards London and the coast. It supports a healthy mix of professional services, healthcare practices and retail, along with many people who run their own consultancies or small firms from home. That spread means very different accounting needs across the town. We match you with a firm that understands your sector and can advise on more than just the basics of filing.",
     whyLocal:
       "A local accountant who knows Crowborough can be reassuring, especially when you want to meet in person and talk through bigger decisions. Even so, a great many firms now operate entirely online and look after Crowborough clients without ever needing you to come in. We match you on what suits you, whether that is a nearby office for face-to-face meetings or a remote team that handles everything digitally.",
-    nearbyAreas: ["Jarvis Brook", "Rotherfield", "Uckfield", "Mayfield", "Forest Row", "Hartfield"],
+    nearbyAreas: ["Jarvis Brook", "Rotherfield", "Uckfield", "Mayfield", "Forest Row", "Tunbridge Wells"],
     sectors: [
       "Professional and consultancy services",
       "Healthcare and medical practices",
@@ -1272,7 +1272,7 @@ export const locations: Location[] = [
       "Royal Tunbridge Wells has one of the strongest professional-services economies in the South East, with law firms, consultancies, financial advisers and media businesses clustered around Mount Pleasant Road, Chapel Place and the Pantiles. It's also full of independent retailers, restaurants and the kind of London commuters who run a consultancy or contract from home. Many owners here are higher earners with more complex affairs, dividends, multiple income streams, property, and want an accountant who does proper tax planning rather than just filing a return. Others are small studios and independents who've outgrown a firm that never picks up the phone. The common thread is people who could be getting a great deal more from their accountant and quietly suspect it.",
     whyLocal:
       "An accountant who knows Tunbridge Wells understands its professional and commuter base, the prevalence of consultancies and higher-rate taxpayers, and the practicalities of advising owners who value proactive planning. A nearby firm is easy to meet on the Pantiles for a coffee and a review. That said, many excellent firms now work seamlessly over video and cloud software, so we focus on the right fit first and let you decide how much face-to-face contact you want.",
-    nearbyAreas: ["Southborough", "Tonbridge", "Pembury", "Rusthall", "Crowborough", "Wadhurst"],
+    nearbyAreas: ["Southborough", "Tonbridge", "Pembury", "Rusthall", "Crowborough", "Maidstone"],
     sectors: [
       "Professional and financial services",
       "Legal and consultancy",
@@ -1514,4 +1514,11 @@ export const locations: Location[] = [
 
 export function getLocation(slug: string): Location | undefined {
   return locations.find((l) => l.slug === slug);
+}
+
+// Name→location lookup so a town's "nearby areas" can link to the ones we also
+// cover, building internal links between town pages.
+const byName = new Map(locations.map((l) => [l.name.toLowerCase(), l]));
+export function getLocationByName(name: string): Location | undefined {
+  return byName.get(name.trim().toLowerCase());
 }
