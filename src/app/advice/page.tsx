@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import Link from "next/link";
 import { AdviceHub } from "./AdviceHub";
 import { CTASection } from "@/components/CTASection";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "Straight-talking guides for UK business owners: choosing an accountant, switching, tax planning, bookkeeping and getting real value from your numbers.",
   alternates: { canonical: "/advice" },
+  openGraph: og("/advice"),
 };
 
 export default function AdvicePage() {

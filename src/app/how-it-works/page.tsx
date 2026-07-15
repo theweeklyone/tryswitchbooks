@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import { ClipboardCheck, Search, Handshake, HeartHandshake } from "lucide-react";
 import { site } from "@/data/site";
 import { PageHero } from "@/components/PageHero";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "Finding the right accountant is simpler than you think. Take the free review, we match you with a trusted local firm, and they handle the switch. Sussex & UK-wide.",
   alternates: { canonical: "/how-it-works" },
+  openGraph: og("/how-it-works"),
 };
 
 const steps = [

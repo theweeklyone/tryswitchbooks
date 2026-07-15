@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import { blogPosts, findPost, relatedPosts } from "@/data/blog";
 import { CTASection } from "@/components/CTASection";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
@@ -20,11 +21,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `/advice/${post.slug}` },
-    openGraph: {
-      title: `${post.title} | ${site.name}`,
-      description: post.excerpt,
-      type: "article",
-    },
+    openGraph: og(`/advice/${post.slug}`, "article"),
   };
 }
 

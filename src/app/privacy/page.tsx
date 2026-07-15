@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { PageHero } from "@/components/PageHero";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `How ${site.name} collects, uses and protects your personal information, and your rights under UK data protection law.`,
   alternates: { canonical: "/privacy" },
+  openGraph: og("/privacy"),
 };
 
 // Plain-English UK GDPR privacy policy. Content is data-driven from site.ts so

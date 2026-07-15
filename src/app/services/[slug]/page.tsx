@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import { Check, ArrowRight } from "lucide-react";
 import { services, getService } from "@/data/services";
 import { subServicesFor } from "@/data/sub-services";
@@ -22,6 +23,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     title: service.name,
     description: service.metaDescription,
     alternates: { canonical: `/services/${service.slug}` },
+    openGraph: og(`/services/${service.slug}`),
   };
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { PageHero } from "@/components/PageHero";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: `The terms on which ${site.name} provides its free accountant-matching service and this website.`,
   alternates: { canonical: "/terms" },
+  openGraph: og("/terms"),
 };
 
 // Plain-English terms for a free introduction/matching service. Data-driven

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { ArrowRight, ArrowDown, Check, X, MapPin, Gift, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
   description:
     "A free service matching UK and Sussex business owners with the right local accountant — proactive support at a fair price. Take the free 2-minute review.",
   alternates: { canonical: "/" },
+  openGraph: og("/"),
 };
 
 const trustPoints = [

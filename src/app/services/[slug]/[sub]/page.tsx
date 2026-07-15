@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import { Check, ArrowRight, ArrowLeft } from "lucide-react";
 import { getService } from "@/data/services";
 import { subServices, getSubService, subServicesFor } from "@/data/sub-services";
@@ -26,6 +27,7 @@ export function generateMetadata({
     title: sub.metaTitle,
     description: sub.metaDescription,
     alternates: { canonical: `/services/${sub.parentSlug}/${sub.slug}` },
+    openGraph: og(`/services/${sub.parentSlug}/${sub.slug}`),
   };
 }
 

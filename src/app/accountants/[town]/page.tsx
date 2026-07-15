@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import { ArrowRight, Check, MapPin } from "lucide-react";
 import { locations, getLocation } from "@/data/locations";
 import { services } from "@/data/services";
@@ -47,6 +48,7 @@ export function generateMetadata({ params }: { params: { town: string } }): Meta
     title: { absolute: loc.metaTitle },
     description: loc.metaDescription,
     alternates: { canonical: `/accountants/${loc.slug}` },
+    openGraph: og(`/accountants/${loc.slug}`),
   };
 }
 

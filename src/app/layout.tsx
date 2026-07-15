@@ -10,6 +10,7 @@ import { PreviewBanner } from "@/components/PreviewBanner";
 import { RevealController } from "@/components/RevealController";
 import { PageTransition } from "@/components/PageTransition";
 import { site } from "@/data/site";
+import { og } from "@/lib/og";
 
 // Headings — a trustworthy, established-firm serif.
 const display = Lora({
@@ -41,13 +42,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.description,
-  openGraph: {
-    title: `${site.name} · ${site.tagline}`,
-    description: site.description,
-    siteName: site.name,
-    locale: "en_GB",
-    type: "website",
-  },
+  openGraph: og("/"),
   twitter: {
     card: "summary_large_image",
     title: `${site.name} · ${site.tagline}`,

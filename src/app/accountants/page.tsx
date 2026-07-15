@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import { ArrowRight, MapPin } from "lucide-react";
 import { locations } from "@/data/locations";
 import { site } from "@/data/site";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   description:
     "Switch Books matches business owners across Sussex with the right local accounting firm, for free. Choose your town and take the free 2-minute review.",
   alternates: { canonical: "/accountants" },
+  openGraph: og("/accountants"),
 };
 
 export default function AccountantsIndexPage() {

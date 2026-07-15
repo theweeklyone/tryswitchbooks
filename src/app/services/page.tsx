@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
 import { subServicesFor } from "@/data/sub-services";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   description:
     "Bookkeeping, year-end accounts, tax & VAT, payroll and proactive advisory support for UK and Sussex business owners. Take the free 2-minute review.",
   alternates: { canonical: "/services" },
+  openGraph: og("/services"),
 };
 
 const faqs = [

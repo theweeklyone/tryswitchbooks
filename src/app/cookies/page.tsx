@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import Link from "next/link";
 import { site } from "@/data/site";
 import { PageHero } from "@/components/PageHero";
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: "Cookie Policy",
   description: `How ${site.name} uses cookies on this website, the cookies we set, and how to control them.`,
   alternates: { canonical: "/cookies" },
+  openGraph: og("/cookies"),
 };
 
 // Plain-English UK cookie policy. Describes the actual cookie behaviour: a few

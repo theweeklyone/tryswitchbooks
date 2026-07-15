@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/og";
 import Link from "next/link";
 import { CTASection } from "@/components/CTASection";
 import { PageHero } from "@/components/PageHero";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description: `Talk to ${site.name} about your accounting and advisory needs. Sussex-based, supporting business owners across the UK. Or take the free 2-minute review.`,
   alternates: { canonical: "/contact" },
+  openGraph: og("/contact"),
 };
 
 export default async function ContactPage() {
