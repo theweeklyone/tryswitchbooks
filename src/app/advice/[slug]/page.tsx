@@ -19,7 +19,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!post) return {};
   const img = blogImages[post.slug];
   return {
-    title: post.title,
+    // Absolute (no " | Switch Books" suffix) so long article titles aren't
+    // pushed past the ~60-char SERP limit. Google re-appends the site name itself.
+    title: { absolute: post.title },
     description: post.excerpt,
     alternates: { canonical: `/advice/${post.slug}` },
     openGraph: og(

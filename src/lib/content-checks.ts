@@ -55,9 +55,6 @@ export function assertContentValid(): void {
     }
 
     // SOFT SEO GUIDANCE — warn only.
-    if (post.title.length > TITLE_MAX) {
-      warnings.push(`"${post.slug}" title is ${post.title.length} chars (aim ≤ ${TITLE_MAX}).`);
-    }
     if (post.excerpt.length < EXCERPT_MIN || post.excerpt.length > EXCERPT_MAX) {
       warnings.push(
         `"${post.slug}" excerpt is ${post.excerpt.length} chars (aim ${EXCERPT_MIN}–${EXCERPT_MAX} for the meta description).`,
@@ -75,6 +72,19 @@ export function assertContentValid(): void {
   for (const { what, desc } of metaSources) {
     if (desc.length > DESC_MAX) {
       errors.push(`${what} meta description is ${desc.length} chars (max ${DESC_MAX}).`);
+    }
+  }
+
+  // <title> length. Article titles render without the brand suffix; town
+  // metaTitles already include the brand — both are the literal <title>, so keep
+  // them within the SERP truncation limit. A violation fails the build.
+  const titleSources = [
+    ...blogPosts.map((p) => ({ what: `article "${p.slug}"`, title: p.title })),
+    ...locations.map((l) => ({ what: `town "${l.slug}"`, title: l.metaTitle })),
+  ];
+  for (const { what, title } of titleSources) {
+    if (title.length > TITLE_MAX) {
+      errors.push(`${what} <title> is ${title.length} chars (max ${TITLE_MAX}).`);
     }
   }
 

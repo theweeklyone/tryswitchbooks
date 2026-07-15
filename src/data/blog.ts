@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "professional-clearance-explained",
-    title: "Professional clearance: what it is and why it makes switching easy",
+    title: "Professional clearance: what it is and how it works",
     category: "Switching",
     excerpt:
       "The bit of the switch that sounds formal but takes you almost no effort. Here's what professional clearance is, who does it, and what to expect.",

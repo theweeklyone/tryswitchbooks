@@ -320,7 +320,7 @@ export const locations: Location[] = [
     slug: "bognor-regis",
     name: "Bognor Regis",
     county: "West Sussex",
-    metaTitle: "Accountants in Bognor Regis | Free Local Match | Switch Books",
+    metaTitle: "Accountants in Bognor Regis | Free Match | Switch Books",
     metaDescription:
       "Searching for a better accountant in Bognor Regis? Switch Books matches you with the right local firm for free. Book your no-obligation review today.",
     headline: "Find the right accountant in Bognor Regis",
@@ -404,7 +404,7 @@ export const locations: Location[] = [
     slug: "burgess-hill",
     name: "Burgess Hill",
     county: "West Sussex",
-    metaTitle: "Accountants in Burgess Hill | Free Local Match | Switch Books",
+    metaTitle: "Accountants in Burgess Hill | Free Match | Switch Books",
     metaDescription:
       "Want a better accountant in Burgess Hill? Switch Books matches you with the right local firm for free. Book your no-obligation review today.",
     headline: "Find the right accountant in Burgess Hill",
@@ -1262,7 +1262,7 @@ export const locations: Location[] = [
     slug: "tunbridge-wells",
     name: "Tunbridge Wells",
     county: "Kent",
-    metaTitle: "Accountants in Tunbridge Wells | Free Local Match | Switch Books",
+    metaTitle: "Accountants in Tunbridge Wells | Free Match | Switch Books",
     metaDescription:
       "Looking for a better accountant in Royal Tunbridge Wells? Switch Books matches you with the right local firm for free. Start your free review today.",
     headline: "Find the right accountant in Tunbridge Wells",
@@ -1346,7 +1346,7 @@ export const locations: Location[] = [
     slug: "reigate",
     name: "Reigate",
     county: "Surrey",
-    metaTitle: "Accountants in Reigate & Redhill | Free Local Match | Switch Books",
+    metaTitle: "Accountants in Reigate & Redhill | Free Match | Switch Books",
     metaDescription:
       "Looking for a better accountant in Reigate or Redhill? Switch Books matches you with the right local firm for free. Start your free review today.",
     headline: "Find the right accountant in Reigate & Redhill",
@@ -1388,7 +1388,7 @@ export const locations: Location[] = [
     slug: "billingshurst",
     name: "Billingshurst",
     county: "West Sussex",
-    metaTitle: "Accountants in Billingshurst | Free Local Match | Switch Books",
+    metaTitle: "Accountants in Billingshurst | Free Match | Switch Books",
     metaDescription:
       "Want a better accountant in Billingshurst? Switch Books matches you with the right local firm, free of charge. Book your free review and get matched today.",
     headline: "Find the right accountant in Billingshurst",
