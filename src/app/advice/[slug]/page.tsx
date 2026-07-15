@@ -17,11 +17,16 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const post = findPost(params.slug);
   if (!post) return {};
+  const img = blogImages[post.slug];
   return {
     title: post.title,
     description: post.excerpt,
     alternates: { canonical: `/advice/${post.slug}` },
-    openGraph: og(`/advice/${post.slug}`, "article"),
+    openGraph: og(
+      `/advice/${post.slug}`,
+      "article",
+      img?.src ? { src: img.src, alt: img.alt ?? post.title } : undefined,
+    ),
   };
 }
 

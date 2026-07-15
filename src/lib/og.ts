@@ -21,12 +21,21 @@ const OG_IMAGE = {
 export function og(
   path: string,
   type: "website" | "article" = "website",
+  // Optional per-page share image (e.g. an article's own photo). `src` may be
+  // root-relative or absolute. Falls back to the default OG_IMAGE when omitted.
+  image?: { src: string; alt: string },
 ): NonNullable<Metadata["openGraph"]> {
+  const shareImage = image?.src
+    ? {
+        url: image.src.startsWith("http") ? image.src : `${SITE_URL}${image.src}`,
+        alt: image.alt,
+      }
+    : OG_IMAGE;
   return {
     type,
     url: `${SITE_URL}${path === "/" ? "" : path}`,
     siteName: "Switch Books",
     locale: "en_GB",
-    images: [OG_IMAGE],
+    images: [shareImage],
   } as NonNullable<Metadata["openGraph"]>;
 }
