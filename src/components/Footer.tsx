@@ -19,7 +19,7 @@ const quickLinks = [
 // Trusted external resources for business owners. Genuinely useful, and they give
 // every page outbound links to authoritative domains. Open in a new tab.
 const usefulLinks = [
-  { href: "https://www.gov.uk/browse/business/business-tax", label: "GOV.UK — Business tax" },
+  { href: "https://www.gov.uk/browse/business/business-tax-returns", label: "GOV.UK — Business tax" },
   { href: "https://www.gov.uk/government/organisations/hm-revenue-customs", label: "HMRC" },
   { href: "https://www.gov.uk/government/organisations/companies-house", label: "Companies House" },
 ];
