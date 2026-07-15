@@ -8,7 +8,10 @@ import { site } from "@/data/site";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { getContentMap, cval } from "@/lib/content";
 
-export const revalidate = 60;
+// Regenerate at most hourly. The only non-static bit here is the editable hero
+// content (getContentMap → Supabase), which rarely changes, so a long interval
+// keeps the page effectively static and avoids frequent slow regenerations.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Contact",
