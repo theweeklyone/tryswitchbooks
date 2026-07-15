@@ -1,0 +1,30 @@
+name: Submit URLs to IndexNow
+
+# After each push to main, wait for the Vercel production deploy to publish, then
+# submit the site's current URLs (from the live sitemap) to IndexNow so Bing,
+# Yandex and other participating engines re-crawl promptly. No secrets needed —
+# the IndexNow key is public (hosted at /<key>.txt).
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Wait for the Vercel production deploy to publish
+        run: sleep 120
+
+      - name: Submit URLs to IndexNow
+        run: node scripts/indexnow-submit.mjs
