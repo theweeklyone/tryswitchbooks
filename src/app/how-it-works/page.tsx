@@ -12,7 +12,7 @@ import { Reveal } from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "Finding the right accountant is simpler than you think. Take the free review, we match you with a trusted local firm, and they handle the switch. Sussex & UK-wide.",
+    "Finding the right accountant is simpler than you think. Take the free review, we match you with a trusted local firm, and they handle the switch.",
   alternates: { canonical: "/how-it-works" },
   openGraph: og("/how-it-works"),
 };

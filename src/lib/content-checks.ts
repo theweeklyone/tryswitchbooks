@@ -10,15 +10,23 @@
 //
 // To add a new article: add the post in data/blog.ts AND an image entry in
 // lib/blog-images.ts. If you forget the image, the build will fail here.
+//
+// It also enforces meta-description length on service, sub-service and town
+// pages (Google truncates long descriptions), so an over-long one fails the build.
 
 import { blogPosts } from "@/data/blog";
 import { blogImages } from "@/lib/blog-images";
+import { services } from "@/data/services";
+import { subServices } from "@/data/sub-services";
+import { locations } from "@/data/locations";
 
 // SEO soft limits (warn, don't fail). Titles read best under ~60 chars in SERPs;
 // excerpts double as the meta description, ideal ~110–160 chars.
 const TITLE_MAX = 60;
 const EXCERPT_MIN = 110;
 const EXCERPT_MAX = 160;
+// Hard limit: Google truncates meta descriptions around here, so block the build.
+const DESC_MAX = 160;
 
 let checked = false;
 
@@ -54,6 +62,19 @@ export function assertContentValid(): void {
       warnings.push(
         `"${post.slug}" excerpt is ${post.excerpt.length} chars (aim ${EXCERPT_MIN}–${EXCERPT_MAX} for the meta description).`,
       );
+    }
+  }
+
+  // Meta descriptions on service, sub-service and town pages must not exceed the
+  // length Google truncates at. A violation fails the build.
+  const metaSources = [
+    ...services.map((s) => ({ what: `service "${s.slug}"`, desc: s.metaDescription })),
+    ...subServices.map((s) => ({ what: `sub-service "${s.slug}"`, desc: s.metaDescription })),
+    ...locations.map((l) => ({ what: `town "${l.slug}"`, desc: l.metaDescription })),
+  ];
+  for (const { what, desc } of metaSources) {
+    if (desc.length > DESC_MAX) {
+      errors.push(`${what} meta description is ${desc.length} chars (max ${DESC_MAX}).`);
     }
   }
 

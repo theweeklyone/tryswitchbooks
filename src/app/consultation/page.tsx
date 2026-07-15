@@ -6,7 +6,7 @@ import { getService } from "@/data/services";
 export const metadata: Metadata = {
   title: "Free Business Review",
   description:
-    "Tell us what's frustrating you about your current accountant and what you need. We'll match you with the right local firm. Under 2 minutes, free, no obligation.",
+    "Tell us what you need and what's not working. We'll match you with the right local firm. Under 2 minutes, free, no obligation.",
   // All ?service= variants canonicalise to /consultation, so no duplicate content.
   alternates: { canonical: "/consultation" },
   openGraph: og("/consultation"),

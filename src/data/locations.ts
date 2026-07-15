@@ -448,7 +448,7 @@ export const locations: Location[] = [
     county: "West Sussex",
     metaTitle: "Accountants in Littlehampton | Free Match | Switch Books",
     metaDescription:
-      "Find the right accountant in Littlehampton. Switch Books matches you with a trusted local firm that fits your needs and budget, for free. Get your free review today.",
+      "Find the right accountant in Littlehampton. Switch Books matches you, free, with a trusted local firm that fits your needs and budget. Free review.",
     headline: "Find the right accountant in Littlehampton",
     intro:
       "Switch Books is a free service that matches Littlehampton business owners with a local accountant who actually fits how they trade. Tell us about your business and we will connect you with the right firm.",
@@ -486,7 +486,7 @@ export const locations: Location[] = [
     county: "West Sussex",
     metaTitle: "Accountants in Haywards Heath | Free Match | Switch Books",
     metaDescription:
-      "Find the right accountant in Haywards Heath. Switch Books matches you with a trusted local firm that fits your needs and budget, for free. Book your free review now.",
+      "Find the right accountant in Haywards Heath. Switch Books matches you, free, with a local firm that fits your needs and budget. Free review.",
     headline: "Find the right accountant in Haywards Heath",
     intro:
       "Switch Books is a free service that matches Haywards Heath business owners with a local accountant who suits how they work. Tell us what you need and we will connect you with the right firm.",
@@ -524,7 +524,7 @@ export const locations: Location[] = [
     county: "West Sussex",
     metaTitle: "Accountants in Shoreham-by-Sea | Free Match | Switch Books",
     metaDescription:
-      "Find the right accountant in Shoreham-by-Sea. Switch Books matches you with a trusted local firm that fits your needs and budget, for free. Get your free review.",
+      "Find the right accountant in Shoreham-by-Sea. Switch Books matches you, free, with a local firm that fits your needs and budget. Free review.",
     headline: "Find the right accountant in Shoreham-by-Sea",
     intro:
       "Switch Books is a free service that matches Shoreham-by-Sea business owners with a local accountant who understands the area's trades. Tell us about your business and we will connect you with the right firm.",
@@ -562,7 +562,7 @@ export const locations: Location[] = [
     county: "East Sussex",
     metaTitle: "Accountants in Newhaven | Free Match | Switch Books",
     metaDescription:
-      "Find the right accountant in Newhaven. Switch Books matches you with a trusted local firm that fits your needs and budget, for free. Book your free review today.",
+      "Find the right accountant in Newhaven. Switch Books matches you, free, with a local firm that fits your needs and budget. Free review.",
     headline: "Find the right accountant in Newhaven",
     intro:
       "Switch Books is a free service that matches Newhaven business owners with a local accountant who understands a working port town. Tell us what you need and we will connect you with the right firm.",
@@ -600,7 +600,7 @@ export const locations: Location[] = [
     county: "West Sussex",
     metaTitle: "Accountants in East Grinstead | Free Match | Switch Books",
     metaDescription:
-      "Find the right accountant in East Grinstead. Switch Books matches you with a trusted local firm that fits your needs and budget, for free. Get your free review.",
+      "Find the right accountant in East Grinstead. Switch Books matches you, free, with a local firm that fits your needs and budget. Free review.",
     headline: "Find the right accountant in East Grinstead",
     intro:
       "Switch Books is a free service that matches East Grinstead business owners with a local accountant who fits how they run things. Tell us about your business and we will connect you with the right firm.",
@@ -848,7 +848,7 @@ export const locations: Location[] = [
     county: "West Sussex",
     metaTitle: "Accountants in Petworth | Free Match | Switch Books",
     metaDescription:
-      "Looking for a Petworth accountant who actually understands your business? Switch Books matches you with the right local firm for free. Start your free review today.",
+      "Looking for a Petworth accountant who understands your business? Switch Books matches you with the right local firm, free. Start your free review.",
     headline: "Find the right accountant in Petworth",
     intro:
       "If your current accountant only gets in touch once a year, we can help. Switch Books matches you with a Petworth accountant who fits how you trade and what you can afford, and the matching service is free.",
@@ -890,7 +890,7 @@ export const locations: Location[] = [
     county: "West Sussex",
     metaTitle: "Accountants in Storrington | Free Match | Switch Books",
     metaDescription:
-      "Need a Storrington accountant who gives you proper attention? Switch Books matches you with the right local firm for free. Get your free accountant review now.",
+      "Need a Storrington accountant who gives you proper attention? Switch Books matches you with the right local firm, free. Free review.",
     headline: "Find the right accountant in Storrington",
     intro:
       "If you feel like just another name on your accountant's list, you are not alone. Switch Books matches you with a Storrington accountant who has time for your business, and using us costs you nothing.",
@@ -970,7 +970,7 @@ export const locations: Location[] = [
     county: "East Sussex",
     metaTitle: "Accountants in Peacehaven | Free Match | Switch Books",
     metaDescription:
-      "Looking for a Peacehaven accountant who returns your calls? Switch Books matches you with the right local firm for free. Get your free accountant review today.",
+      "Looking for a Peacehaven accountant who returns your calls? Switch Books matches you with the right local firm, free. Free review today.",
     headline: "Find the right accountant in Peacehaven",
     intro:
       "If chasing your accountant for a reply has become normal, you deserve better. Switch Books matches you with a Peacehaven accountant who actually stays in touch, and the matching is free.",
@@ -1012,7 +1012,7 @@ export const locations: Location[] = [
     county: "East Sussex",
     metaTitle: "Accountants in Crowborough | Free Match | Switch Books",
     metaDescription:
-      "Want a Crowborough accountant who understands your business? Switch Books matches you with the right local firm for free. Start your free accountant review now.",
+      "Want a Crowborough accountant who understands your business? Switch Books matches you with the right local firm, free. Start your free review.",
     headline: "Find the right accountant in Crowborough",
     intro:
       "If your accountant feels like a stranger you only hear from at tax time, we can change that. Switch Books matches you with a Crowborough accountant who fits your business, and using us is free.",
@@ -1054,7 +1054,7 @@ export const locations: Location[] = [
     county: "East Sussex",
     metaTitle: "Accountants in Heathfield | Free Match | Switch Books",
     metaDescription:
-      "Looking for a Heathfield accountant who actually gets your business? Switch Books matches you with the right local firm for free. Start your free review today.",
+      "Looking for a Heathfield accountant who gets your business? Switch Books matches you with the right local firm, free. Start your free review.",
     headline: "Find the right accountant in Heathfield",
     intro:
       "Switch Books is a free service that matches Heathfield business owners with a trusted local accountant who fits the way they work. We are not an accountancy firm, we connect you with one that suits your needs and budget.",
@@ -1138,7 +1138,7 @@ export const locations: Location[] = [
     county: "East Sussex",
     metaTitle: "Accountants in Rye | Free Match | Switch Books",
     metaDescription:
-      "Find a Rye accountant who understands tourism, the arts and independent retail. Switch Books matches you with the right local firm, free. Start your free review.",
+      "Find a Rye accountant who understands tourism, the arts and independent retail. Switch Books matches you with the right local firm, free.",
     headline: "Find the right accountant in Rye",
     intro:
       "Switch Books is a free service that matches Rye business owners with a trusted local accountant who fits the work they do. We are not an accountancy firm, we connect you with one that suits your needs and budget.",
