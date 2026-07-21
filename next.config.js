@@ -42,6 +42,13 @@ const nextConfig = {
   // Don't advertise the framework in response headers (minor info-leak hygiene).
   poweredByHeader: false,
   images: {
+    // Serve images as-is instead of through Vercel's image optimiser. That
+    // optimiser has a per-plan transformation quota, and once it's exhausted it
+    // returns 402 (OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED) — which silently
+    // blanked every photo on the site. A crawl of 100+ pages burns through the
+    // allowance quickly. Everything in public/images is pre-compressed (longest
+    // edge 1600px, ~100–250KB), so serving directly is fast and has no quota.
+    unoptimized: true,
     // Hosts allowed through the next/image optimiser:
     //  - Supabase Storage serves dashboard-managed images
     //  - picsum.photos backs the deterministic stock placeholders
