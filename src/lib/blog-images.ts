@@ -30,6 +30,13 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
     alt: "A proactive advisory conversation about a growing business",
   },
 
+  "payroll-services-small-business": {
+    // INTERIM: no unused payroll-specific photo exists yet. Not used by any other
+    // article (it appears as a page hero elsewhere). Swap for a dedicated upload.
+    src: "/images/business-reports.jpg",
+    alt: "A small business owner reviewing payroll figures and payslips",
+  },
+
   // --- Switching cluster ---
   // Each photo is unique to its article and not used as a hero elsewhere.
   "how-to-switch-accountants-step-by-step": {

@@ -39,6 +39,95 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "payroll-services-small-business",
+    title: "Payroll services for small business: what to look for",
+    category: "Choosing an accountant",
+    excerpt:
+      "Looking at payroll services for your small business? Here's what's included, what it should cost, and how to choose a provider that fits.",
+    readingTime: "5 min read",
+    publishedOn: "July 2026",
+    author: "The Switch Books team",
+    imageStyle: "blush",
+    body: [
+      {
+        type: "p",
+        text: "Payroll looks simple until you run it. The moment you take on staff, getting people paid becomes a monthly deadline with HMRC filings, pension duties and statutory payments attached, and the penalties for getting it wrong land on you, not your employees. Here's what payroll services for a small business actually cover, roughly what they cost, and how to pick a provider that fits.",
+      },
+      { type: "h2", text: "What payroll services actually cover" },
+      {
+        type: "p",
+        text: "A good payroll service does far more than produce payslips. For most small businesses it should include all of the following as standard:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Running each pay run and issuing compliant payslips",
+          "Real Time Information (RTI) submissions to HMRC on or before each payday",
+          "Workplace pension auto-enrolment: assessing staff, deductions and uploads to your provider",
+          "Statutory payments, including sick, maternity, paternity and adoption pay",
+          "Starters and leavers, tax codes and P45s",
+          "Year-end filing and P60s for your team",
+          "Directors' payroll and a sensible salary and dividend split",
+          "CIS returns if you work in construction",
+        ],
+      },
+      { type: "h2", text: "Signs you've outgrown doing it yourself" },
+      {
+        type: "ul",
+        items: [
+          "You've taken on your first employees and the rules suddenly matter",
+          "It's quietly eating an evening every month",
+          "You've had a late filing, or an HMRC penalty letter",
+          "Pension re-enrolment is due and you're not sure what's required",
+          "Staff questions about tax codes or statutory pay leave you guessing",
+        ],
+      },
+      { type: "h2", text: "What payroll services cost for a small business" },
+      {
+        type: "p",
+        text: "Most providers charge a small monthly base fee plus a per-payslip amount, so cost scales with headcount rather than landing as one big bill. For a handful of employees paid monthly, it's usually a modest monthly figure. What pushes it up is frequency (weekly payroll costs more than monthly), pension administration, CIS, and anything treated as an extra rather than included.",
+      },
+      {
+        type: "p",
+        text: "The number that matters isn't the headline price, it's what's inside it. A slightly higher fee that covers auto-enrolment, statutory pay and year-end is usually better value than a cheap quote with three add-ons bolted on later.",
+      },
+      { type: "h2", text: "Questions to ask a payroll provider" },
+      {
+        type: "ul",
+        items: [
+          "Is pension auto-enrolment included, or billed separately?",
+          "Who deals with HMRC if there's a query, a penalty or a coding error?",
+          "What's your deadline for me to send hours and changes each period?",
+          "Are statutory sick and family pay calculations part of the service?",
+          "What happens at year end, and is that included in the fee?",
+          "Can my staff access their own payslips and P60s?",
+        ],
+      },
+      { type: "h2", text: "Software you run, or a firm that runs it for you" },
+      {
+        type: "p",
+        text: "There are two routes. Payroll software you operate yourself is cheaper, but the compliance stays your problem: your deadlines, your filings, your penalties. A firm running payroll for you costs more, but the deadlines and pension duties become their job, and you get someone to ask when something unusual comes up. Once you're past a couple of employees, most owners find the second option pays for itself in time and avoided mistakes.",
+      },
+      { type: "h2", text: "Choosing the right firm" },
+      {
+        type: "p",
+        text: "Payroll is a monthly relationship, not a once-a-year filing, so responsiveness matters more here than almost anywhere else. Look for a firm that answers quickly, tells you its cut-off dates clearly, and handles pensions without being chased.",
+      },
+      {
+        type: "p",
+        text: "Switch Books isn't a payroll bureau. We're a free service that matches you with a local accounting firm that runs payroll properly. Tell us your team size and how often you pay them, and we'll find a firm that fits.",
+      },
+    ],
+    related: [
+      { label: "Payroll & auto-enrolment services", href: "/services/payroll" },
+      {
+        label: "Questions to ask before you hire an accountant",
+        href: "/advice/questions-to-ask-before-hiring-an-accountant",
+      },
+      { label: "Get matched with a local firm", href: "/consultation" },
+    ],
+  },
+  {
     slug: "how-to-switch-accountants-step-by-step",
     title: "How to switch accountants: a simple step-by-step guide",
     category: "Switching",
