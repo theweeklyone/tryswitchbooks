@@ -34,6 +34,8 @@ export const sectors: Sector[] = [
     slug: "small-business-accountants",
     name: "Small Business",
     isHub: true,
+    image: "/images/small-business-accountants.jpg",
+    imageAlt: "A small business owner packing customer orders at their workbench",
     metaTitle: "Small Business Accountants in Sussex | Switch Books",
     metaDescription:
       "Looking for a small business accountant near you? Switch Books matches you, free, with the right local firm for your size, sector and budget. Free review.",
@@ -90,6 +92,8 @@ export const sectors: Sector[] = [
   {
     slug: "hospitality-accountants",
     name: "Hospitality",
+    image: "/images/hospitality-accountants.jpg",
+    imageAlt: "The counter and menu boards of a café hospitality business",
     metaTitle: "Hospitality Accountants in Sussex | Switch Books",
     metaDescription:
       "Pubs, hotels, cafés and events businesses need an accountant who gets hospitality. Switch Books matches you, free, with the right local firm. Free review.",
@@ -144,6 +148,8 @@ export const sectors: Sector[] = [
   {
     slug: "restaurant-accountants",
     name: "Restaurant",
+    image: "/images/restaurant-accountants.jpg",
+    imageAlt: "Diners at the outdoor pavement tables of a restaurant",
     metaTitle: "Restaurant Accountants in Sussex | Switch Books",
     metaDescription:
       "Running a restaurant or café? Switch Books matches you, free, with a local accountant who understands margins, tips and hospitality VAT. Free review.",
@@ -198,6 +204,8 @@ export const sectors: Sector[] = [
   {
     slug: "retail-accountants",
     name: "Retail",
+    image: "/images/retail-accountants.jpg",
+    imageAlt: "Products displayed on the shelves of a retail shop",
     metaTitle: "Retail Accountants in Sussex | Switch Books",
     metaDescription:
       "Independent shop or online retailer? Switch Books matches you, free, with a local accountant who knows stock, EPOS and multi-channel VAT. Free review.",
