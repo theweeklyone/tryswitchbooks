@@ -3,6 +3,7 @@ import { services } from "@/data/services";
 import { subServices } from "@/data/sub-services";
 import { locations } from "@/data/locations";
 import { blogPosts } from "@/data/blog";
+import { sectors } from "@/data/sectors";
 import { assertContentValid } from "@/lib/content-checks";
 
 const SITE = "https://www.tryswitchbooks.co.uk";
@@ -28,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/terms`, priority: 0.3 },
     { url: `${SITE}/cookies`, priority: 0.3 },
   ];
+
+  const sectorRoutes = sectors.map((s) => ({
+    url: `${SITE}/${s.slug}`,
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  }));
 
   const serviceRoutes = services.map((s) => ({
     url: `${SITE}/services/${s.slug}`,
@@ -55,6 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
+    ...sectorRoutes,
     ...serviceRoutes,
     ...subServiceRoutes,
     ...locationRoutes,

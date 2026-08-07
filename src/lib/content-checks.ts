@@ -19,6 +19,7 @@ import { blogImages } from "@/lib/blog-images";
 import { services } from "@/data/services";
 import { subServices } from "@/data/sub-services";
 import { locations } from "@/data/locations";
+import { sectors } from "@/data/sectors";
 
 // SEO soft limits (warn, don't fail). Titles read best under ~60 chars in SERPs;
 // excerpts double as the meta description, ideal ~110–160 chars.
@@ -68,6 +69,7 @@ export function assertContentValid(): void {
     ...services.map((s) => ({ what: `service "${s.slug}"`, desc: s.metaDescription })),
     ...subServices.map((s) => ({ what: `sub-service "${s.slug}"`, desc: s.metaDescription })),
     ...locations.map((l) => ({ what: `town "${l.slug}"`, desc: l.metaDescription })),
+    ...sectors.map((s) => ({ what: `sector "${s.slug}"`, desc: s.metaDescription })),
   ];
   for (const { what, desc } of metaSources) {
     if (desc.length > DESC_MAX) {
@@ -81,6 +83,7 @@ export function assertContentValid(): void {
   const titleSources = [
     ...blogPosts.map((p) => ({ what: `article "${p.slug}"`, title: p.title })),
     ...locations.map((l) => ({ what: `town "${l.slug}"`, title: l.metaTitle })),
+    ...sectors.map((s) => ({ what: `sector "${s.slug}"`, title: s.metaTitle })),
   ];
   for (const { what, title } of titleSources) {
     if (title.length > TITLE_MAX) {

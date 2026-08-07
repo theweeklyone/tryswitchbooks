@@ -4,6 +4,7 @@ import { og } from "@/lib/og";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
 import { subServicesFor } from "@/data/sub-services";
+import { sectors } from "@/data/sectors";
 import { ServiceCard } from "@/components/ServiceCard";
 import { CTASection } from "@/components/CTASection";
 import { PageFAQ } from "@/components/PageFAQ";
@@ -152,6 +153,34 @@ export default function ServicesPage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* Accountants by industry — links the sector pages into the site */}
+      <section className="py-20 sm:py-24">
+        <div className="container-luxe">
+          <SectionHeading
+            eyebrow="By industry"
+            title="Accountants who understand your line of work."
+            description="Some businesses need a firm that really gets their sector. Tell us yours and we'll factor it into the match."
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {sectors.map((s) => (
+              <Link
+                key={s.slug}
+                href={`/${s.slug}`}
+                className="card-luxe group flex flex-col gap-2 p-7 transition-colors hover:border-champagne"
+              >
+                <h3 className="font-serif text-xl text-cocoa-300">
+                  {s.isHub ? "Small business accountants" : `${s.name} accountants`}
+                </h3>
+                <span className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-champagne-dark">
+                  Explore
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
