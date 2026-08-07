@@ -5,12 +5,30 @@ import { og } from "@/lib/og";
 import { Check, ArrowRight } from "lucide-react";
 import { services, getService } from "@/data/services";
 import { subServicesFor } from "@/data/sub-services";
+import { getLocation } from "@/data/locations";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { ServiceCard } from "@/components/ServiceCard";
 import { PageFAQ } from "@/components/PageFAQ";
 import { CTASection } from "@/components/CTASection";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+
+// Key towns linked from every service page (service → location internal links).
+const COVERAGE_TOWNS = [
+  "brighton-and-hove",
+  "worthing",
+  "eastbourne",
+  "hastings",
+  "crawley",
+  "chichester",
+  "horsham",
+  "tunbridge-wells",
+  "lewes",
+  "bexhill-on-sea",
+  "hailsham",
+  "seaford",
+];
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -20,7 +38,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const service = getService(params.slug);
   if (!service) return {};
   return {
-    title: service.name,
+    title: service.metaTitle ?? service.name,
     description: service.metaDescription,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: og(`/services/${service.slug}`),
@@ -37,8 +55,20 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
   const subs = subServicesFor(service.slug);
 
+  const coverage = COVERAGE_TOWNS.map((slug) => getLocation(slug)).filter(Boolean) as NonNullable<
+    ReturnType<typeof getLocation>
+  >[];
+
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.name, path: `/services/${service.slug}` },
+        ]}
+      />
+
       {/* Hero */}
       <section className="relative overflow-hidden pt-28 lg:pt-36">
         <div
@@ -167,6 +197,38 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
       </section>
 
       <PageFAQ items={service.faq} title="Good to know." />
+
+      {/* Where we cover — service → location internal links */}
+      <section className="py-20 sm:py-24">
+        <div className="container-luxe">
+          <SectionHeading
+            eyebrow="Wherever you are"
+            title={`${service.name} firms across Sussex & the South East.`}
+            description="We match business owners with local firms right across the region. Find your area, or take the free review and we'll do the rest."
+          />
+          <ul className="mt-10 flex flex-wrap gap-3">
+            {coverage.map((t) => (
+              <li key={t.slug}>
+                <Link
+                  href={`/accountants/${t.slug}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-sand-100 bg-cream-50 px-5 py-2.5 text-sm text-cocoa-100 transition-colors hover:border-champagne hover:text-cocoa-300"
+                >
+                  {t.name}
+                  <ArrowRight className="h-3.5 w-3.5 text-champagne-dark" strokeWidth={2} aria-hidden />
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link
+                href="/accountants"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-champagne-dark hover:text-cocoa-300"
+              >
+                All areas →
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       {/* Related services */}
       {related.length ? (

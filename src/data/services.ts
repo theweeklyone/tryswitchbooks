@@ -23,6 +23,9 @@ export type Service = {
   icon: string;
   short: string;
   metaDescription: string;
+  /** Optional SEO title (brand suffix added by the layout template). Falls back
+   *  to `name` when unset. Used to lead with the target search term. */
+  metaTitle?: string;
 
   hero: {
     eyebrow: string;
@@ -58,11 +61,12 @@ export const services: Service[] = [
     icon: "Receipt",
     short:
       "Clean, up-to-date books you can trust, so you always know where the business stands.",
+    metaTitle: "Bookkeeping Services in Sussex",
     metaDescription:
-      "Looking for reliable bookkeeping? Switch Books matches you, free, with a local firm that keeps your books clean, accurate and up to date. Free 2-min review.",
+      "Looking for bookkeeping services for your business? Switch Books matches you, free, with a local firm that keeps your books clean and up to date. Free review.",
     hero: {
       eyebrow: "Bookkeeping",
-      headline: "Books that are always up to date, and always right.",
+      headline: "Bookkeeping Services That Keep Your Books Always Up to Date",
       subheading:
         "If your books are weeks behind, or you only really know how you're doing once a year, you've probably outgrown your setup. We'll match you with a local firm that keeps everything current, reconciled and ready, so the numbers are there the moment you need them.",
     },
@@ -245,11 +249,12 @@ export const services: Service[] = [
     icon: "Users",
     short:
       "Your team paid correctly and on time, with pensions and RTI handled quietly in the background.",
+    metaTitle: "Payroll Services in Sussex",
     metaDescription:
-      "Need payroll sorted for your team? Switch Books matches you, free, with a local firm that runs payroll, RTI and pension auto-enrolment on time. Free review.",
+      "Need payroll services for your small business? Switch Books matches you, free, with a local firm that runs payroll, RTI and auto-enrolment. Free review.",
     hero: {
       eyebrow: "Payroll & Auto-Enrolment",
-      headline: "Your team paid right, every time.",
+      headline: "Payroll Services That Get Your Team Paid Right, Every Time",
       subheading:
         "Payroll going wrong erodes trust fast. We'll match you with a firm that runs it accurately and on time: payslips, RTI submissions, pensions and auto-enrolment, all handled so you never have to think about it.",
     },

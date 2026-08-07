@@ -678,12 +678,12 @@ export const locations: Location[] = [
     slug: "seaford",
     name: "Seaford",
     county: "East Sussex",
-    metaTitle: "Accountants in Seaford | Free Local Match | Switch Books",
+    metaTitle: "Small Business Accountant in Seaford | Switch Books",
     metaDescription:
-      "Switch Books matches Seaford business owners with the right local accountant, for free. Book a free review and find a firm that genuinely fits your business.",
-    headline: "Find the right accountant in Seaford",
+      "Looking for a small business accountant in Seaford? Switch Books matches you, free, with the right local firm for your business and budget. Free review.",
+    headline: "Find a small business accountant in Seaford",
     intro:
-      "Switch Books is a free service that matches Seaford business owners with a local accountant who fits how they work and what they can afford. We are not accountants ourselves, we connect you with the right firm.",
+      "Switch Books is a free service that matches Seaford small business owners with a local accountant who fits how they work and what they can afford. We are not accountants ourselves, we connect you with the right firm.",
     localContext:
       "Seaford is a coastal town with a strong residential and retirement base, which shapes the kind of businesses that do well here. Independent retailers, small service firms and trades make up a lot of the local economy, alongside tourism drawn to Seaford Head and the seafront. There is also a sizeable commuter population running businesses on the side or stepping out on their own, who need an accountant that fits around a busy schedule. Many owners here feel their current accountant is fine for filing a return but not much help beyond that, and that gap is usually what prompts them to look for a better match.",
     whyLocal:
