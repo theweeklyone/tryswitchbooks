@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { og } from "@/lib/og";
 import { ArrowRight, Check, MapPin } from "lucide-react";
 import { locations, getLocation, getLocationByName } from "@/data/locations";
-import { services } from "@/data/services";
+import { services, getService } from "@/data/services";
+import { localServices } from "@/data/local-services";
 import { site } from "@/data/site";
 import { ServiceIcon } from "@/components/ServiceIcon";
 import { PageFAQ } from "@/components/PageFAQ";
@@ -55,6 +56,9 @@ export function generateMetadata({ params }: { params: { town: string } }): Meta
 export default function LocationPage({ params }: { params: { town: string } }) {
   const loc = getLocation(params.town);
   if (!loc) notFound();
+
+  // Service×town landing pages that exist for this town (e.g. Payroll in Worthing).
+  const townCombos = localServices.filter((l) => l.town === loc.slug);
 
   // Service area schema. Switch Books is a free matching service with no
   // premises, so this advertises the service and its areaServed only, never a
@@ -195,6 +199,31 @@ export default function LocationPage({ params }: { params: { town: string } }) {
           </div>
         </div>
       </section>
+
+      {/* Popular local services for this town (service×town pages) */}
+      {townCombos.length ? (
+        <section className="bg-blush-50 py-16">
+          <div className="container-luxe">
+            <p className="eyebrow">Popular in {loc.name}</p>
+            <ul className="mt-6 flex flex-wrap gap-3">
+              {townCombos.map((c) => {
+                const svc = getService(c.service);
+                return (
+                  <li key={`${c.town}-${c.service}`}>
+                    <Link
+                      href={`/accountants/${c.town}/${c.service}`}
+                      className="inline-flex items-center gap-2 rounded-full border border-sand-100 bg-cream-50 px-5 py-2.5 text-sm text-cocoa-100 transition-colors hover:border-champagne hover:text-cocoa-300"
+                    >
+                      {svc?.name ?? c.service} in {loc.name}
+                      <ArrowRight className="h-3.5 w-3.5 text-champagne-dark" strokeWidth={2} aria-hidden />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       {/* Thinking of switching — advice cluster links */}
       <section className="py-20 sm:py-24">

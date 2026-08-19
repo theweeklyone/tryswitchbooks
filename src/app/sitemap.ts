@@ -4,6 +4,7 @@ import { subServices } from "@/data/sub-services";
 import { locations } from "@/data/locations";
 import { blogPosts } from "@/data/blog";
 import { sectors } from "@/data/sectors";
+import { localServices } from "@/data/local-services";
 import { assertContentValid } from "@/lib/content-checks";
 
 const SITE = "https://www.tryswitchbooks.co.uk";
@@ -54,6 +55,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
   }));
 
+  const localServiceRoutes = localServices.map((l) => ({
+    url: `${SITE}/accountants/${l.town}/${l.service}`,
+    priority: 0.7,
+    changeFrequency: "monthly" as const,
+  }));
+
   const blogRoutes = blogPosts.map((p) => ({
     url: `${SITE}/advice/${p.slug}`,
     priority: 0.5,
@@ -66,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...serviceRoutes,
     ...subServiceRoutes,
     ...locationRoutes,
+    ...localServiceRoutes,
     ...blogRoutes,
   ];
 }

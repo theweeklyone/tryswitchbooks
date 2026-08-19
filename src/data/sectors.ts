@@ -257,6 +257,114 @@ export const sectors: Sector[] = [
       { slug: "advisory", label: "Advisory & Planning" },
     ],
   },
+  {
+    slug: "property-accountants",
+    name: "Property",
+    metaTitle: "Property Accountants in Sussex | Switch Books",
+    metaDescription:
+      "Landlord, developer or property investor? Switch Books matches you, free, with a local accountant who knows property tax and portfolios. Free review.",
+    h1: "Accountants for Landlords & Property Businesses, Matched Locally",
+    intro:
+      "Property is one of the most tax-heavy things you can invest in, and the rules keep changing. A property accountant who lives and breathes it can save you far more than they cost. Switch Books matches you, free, with a local firm that knows property. We're the matching service, not the accountants.",
+    challengesTitle: "What a property-savvy accountant handles",
+    challenges: [
+      {
+        title: "Property tax and reliefs",
+        body: "Income tax on rents, the mortgage-interest rules, capital gains when you sell, and the reliefs in between — property tax is a minefield a specialist navigates far better than a generalist.",
+      },
+      {
+        title: "The right ownership structure",
+        body: "Personal name, partnership or a limited company? The best structure for a property portfolio depends on your plans and can make a real difference to your tax. A good firm advises on it properly.",
+      },
+      {
+        title: "Stamp duty and transactions",
+        body: "Buying, selling and transferring property brings stamp duty and reporting deadlines that are easy to get wrong. A property-aware firm keeps you compliant and on time.",
+      },
+      {
+        title: "Portfolios and growth",
+        body: "As a portfolio grows, so does the admin and the planning. The right accountant helps you scale without the paperwork taking over.",
+      },
+    ],
+    lookFor: [
+      "Real landlord and property-investor clients on their books",
+      "Confidence with property tax, capital gains and stamp duty",
+      "Advice on ownership structure, not just filing",
+      "Comfortable with portfolios of any size",
+    ],
+    faq: [
+      {
+        q: "Do I need a specialist property accountant?",
+        a: "If you own more than one property or you're planning to grow, usually yes — property tax is complex enough that a specialist tends to save you more than they charge. We match you with firms that genuinely know the sector.",
+      },
+      {
+        q: "Can you help landlords and developers?",
+        a: "Yes, both. Whether you're a buy-to-let landlord or a developer, we match you with a firm that fits your kind of property business.",
+      },
+      {
+        q: "What does it cost?",
+        a: "Nothing to use Switch Books. You agree fees directly with the accountant you choose.",
+      },
+    ],
+    serviceLinks: [
+      { slug: "tax-and-vat", label: "Tax & VAT" },
+      { slug: "advisory", label: "Advisory & Planning" },
+      { slug: "year-end-accounts", label: "Year-End Accounts" },
+    ],
+  },
+  {
+    slug: "management-accountants",
+    name: "Management",
+    metaTitle: "Management Accountants in Sussex | Switch Books",
+    metaDescription:
+      "Want management accounts, KPIs and forecasts to run your business by the numbers? Switch Books matches you, free, with a firm that delivers them. Free review.",
+    h1: "Management Accountants Who Help You Run by the Numbers",
+    intro:
+      "Statutory accounts tell you what happened last year. Management accounts tell you what's happening now — and what to do about it. If you want to run your business on real numbers, a firm that does proper management accounting is worth having. Switch Books matches you, free, with a local firm that delivers it. We're the matchmaker, not the accountants.",
+    challengesTitle: "What good management accounting gives you",
+    challenges: [
+      {
+        title: "Regular management accounts",
+        body: "Monthly or quarterly figures you actually understand, so you know where you stand without waiting for the year-end.",
+      },
+      {
+        title: "The KPIs that matter",
+        body: "The handful of numbers that really drive your business, tracked and reported so you can act on them early.",
+      },
+      {
+        title: "Forecasting and cashflow",
+        body: "Cashflow forecasts and scenario planning so big decisions are made with the numbers in front of you, not on a hunch.",
+      },
+      {
+        title: "A genuine sounding board",
+        body: "The best firms don't just produce reports — they talk you through what the numbers mean and what to do next.",
+      },
+    ],
+    lookFor: [
+      "Genuine management-accounting experience, not just compliance",
+      "Reporting you can actually understand",
+      "Forecasting and scenario planning",
+      "Proactive — talks you through the numbers",
+    ],
+    faq: [
+      {
+        q: "What's the difference between management and statutory accounts?",
+        a: "Statutory accounts are the once-a-year filing for HMRC and Companies House. Management accounts are regular, forward-looking figures to run the business by. A good firm does both; we match you with one that takes the management side seriously.",
+      },
+      {
+        q: "Do small businesses need management accounts?",
+        a: "Any business making decisions worth getting right benefits from them. Even simple monthly figures beat flying blind. We match you with a firm that scales it to your size.",
+      },
+      {
+        q: "Is Switch Books free?",
+        a: "Yes, completely free to you. You agree fees directly with the firm you choose.",
+      },
+    ],
+    serviceLinks: [
+      { slug: "advisory", label: "Advisory & Planning" },
+      { slug: "year-end-accounts", label: "Year-End Accounts" },
+      { slug: "bookkeeping", label: "Bookkeeping" },
+    ],
+  },
 ];
 
 export function getSector(slug: string): Sector | undefined {
