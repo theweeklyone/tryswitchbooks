@@ -41,12 +41,11 @@ export const site = {
   // Kept as one value so it can be repointed in a single place.
   bookingUrl: "/consultation",
   consultationUrl: "/consultation",
-  // No live social profiles yet for the anonymous brand. Add a key here and it
-  // flows to the footer and JSON-LD `sameAs` automatically. LinkedIn is the
-  // natural first profile for a B2B advisory brand.
+  // Social profiles for the anonymous brand. Flows to the footer link and the
+  // Organization JSON-LD `sameAs` automatically. Add more keys as profiles go live.
   social: {
-    linkedin: "",
-    linkedinHandle: "",
+    linkedin: "https://www.linkedin.com/company/try-switch-books",
+    linkedinHandle: "try-switch-books",
   },
 } as const;
 
