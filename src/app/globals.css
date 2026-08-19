@@ -313,14 +313,20 @@
    page, and keep the brand colours (print-color-adjust) so the champagne and
    cocoa accents survive.
    ------------------------------------------------------------------------- */
-.checklist-sheet {
+.checklist-sheet,
+.checklist-sheet * {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
+/* Print overrides for the checklist. These deliberately come AFTER (and are more
+   specific than) the generic print block above, because that block hides every
+   <header> and <button> and whitewashes bg-* surfaces — which would delete this
+   sheet's header band and its branding. We re-assert what the sheet needs and
+   force it to fit one A4 page. */
 @media print {
   @page {
-    size: A4;
-    margin: 12mm;
+    size: A4 portrait;
+    margin: 10mm;
   }
   html,
   body {
@@ -329,17 +335,40 @@
   .print-hide {
     display: none !important;
   }
+  /* Neutralise the on-screen viewport framing so the sheet starts at the top. */
   .checklist-frame {
+    display: block !important;
     padding: 0 !important;
     min-height: 0 !important;
     background: #fff !important;
   }
   .checklist-sheet {
     box-shadow: none !important;
-    border: none !important;
-    margin: 0 !important;
+    border: 1px solid #e6decf !important;
+    border-radius: 0 !important;
+    margin: 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    border-radius: 0 !important;
+    background: #faf8f3 !important;
+    color: #14213d !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    overflow: visible !important;
+  }
+  /* The generic block hides <header> and <button>; keep THIS sheet's header. */
+  .checklist-sheet > header {
+    display: block !important;
+    background: transparent !important;
+    padding: 14px 22px !important;
+  }
+  .checklist-sheet > ol {
+    padding: 14px 22px !important;
+    column-gap: 26px !important;
+    row-gap: 10px !important;
+  }
+  .checklist-sheet > footer {
+    display: flex !important;
+    background: #fbf6e9 !important;
+    padding: 10px 22px !important;
   }
 }
