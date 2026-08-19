@@ -11,7 +11,7 @@ const OG_IMAGE = {
   width: 3800,
   height: 2138,
   type: "image/jpeg",
-  alt: "Switch Books — the right local accountant, matched to your business. A free service connecting UK and Sussex business owners with trusted local accounting firms.",
+  alt: "Switch Books: the right local accountant, matched to your business. A free service connecting UK and Sussex business owners with trusted local accounting firms.",
 };
 
 // Build a complete, valid Open Graph block for a page. Always includes og:url

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     absolute: "The Right Local Accountant for Your Business | Switch Books",
   },
   description:
-    "A free service matching UK and Sussex business owners with the right local accountant — proactive support at a fair price. Take the free 2-minute review.",
+    "A free service matching UK and Sussex business owners with the right local accountant for proactive support at a fair price. Take the free 2-minute review.",
   alternates: { canonical: "/" },
   openGraph: og("/"),
 };
@@ -191,7 +191,7 @@ export default function Home() {
         <div className="divider-soft" />
       </section>
 
-      {/* Sound familiar? — empathy hook */}
+      {/* Sound familiar? Empathy hook */}
       <section className="py-20 sm:py-28">
         <div className="container-luxe">
           <SectionHeading
@@ -250,7 +250,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The difference — comparison */}
+      {/* The difference: comparison */}
       <section className="py-20 sm:py-28">
         <div className="container-luxe">
           <SectionHeading

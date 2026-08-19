@@ -271,7 +271,7 @@ export function ConsultationFlow({
       {step === 0 && preselectServiceLabel ? (
         <div className="mb-8 rounded-2xl border border-sand-100 bg-blush-50/60 p-5 text-center sm:p-6">
           <p className="text-sm leading-relaxed text-cocoa-100 sm:text-base">
-            Great — you&apos;re after help with{" "}
+            Great, you&apos;re after help with{" "}
             <span className="font-medium text-cocoa-300">{preselectServiceLabel}</span>. We&apos;ve
             noted that. A few quick questions and we&apos;ll match you with a local firm that&apos;s
             strong on it.

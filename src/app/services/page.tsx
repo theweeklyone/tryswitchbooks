@@ -114,7 +114,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services by category — pillar card + the full breadth it covers */}
+      {/* Services by category: pillar card + the full breadth it covers */}
       <section className="bg-blush-50 py-20 sm:py-24">
         <div className="container-luxe space-y-12 lg:space-y-16">
           {Object.entries(grouped).map(([category, items]) => {
@@ -156,7 +156,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Accountants by industry — links the sector pages into the site */}
+      {/* Accountants by industry: links the sector pages into the site */}
       <section className="py-20 sm:py-24">
         <div className="container-luxe">
           <SectionHeading

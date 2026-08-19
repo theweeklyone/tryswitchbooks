@@ -28,7 +28,7 @@ const fmt = (iso?: string) =>
         hour: "2-digit",
         minute: "2-digit",
       })
-    : "—";
+    : "-";
 
 const fmtDateOnly = (iso?: string) =>
   iso ? new Date(iso).toISOString().slice(0, 10) : "";
@@ -206,7 +206,7 @@ function DrawerContent({
             <DefinitionGrid
               rows={[
                 ["Name", fullName],
-                ["Business", lead.businessName || "—"],
+                ["Business", lead.businessName || "-"],
                 ["Email", lead.email],
                 ["Mobile", lead.mobile],
                 ["Business type", capitalize(lead.businessType)],
@@ -222,13 +222,13 @@ function DrawerContent({
               rows={[
                 ["Accounts handled by", capitalize(lead.currentSituation)],
                 ["How they feel", capitalize(lead.satisfaction)],
-                ["Current provider", lead.currentProvider || "—"],
+                ["Current provider", lead.currentProvider || "-"],
                 ["Currently paying", spendLabel(lead.currentSpend)],
                 [
                   "Frustrations",
                   lead.frustrations.length
                     ? lead.frustrations.map(capitalize).join(", ")
-                    : "—",
+                    : "-",
                 ],
               ]}
             />
@@ -242,14 +242,14 @@ function DrawerContent({
                   "Help wanted",
                   lead.servicesWanted.length
                     ? lead.servicesWanted.map(capitalize).join(", ")
-                    : "—",
+                    : "-",
                 ],
                 ["Primary need", capitalize(lead.primaryNeed)],
                 ["Turnover", capitalize(lead.turnover)],
                 ["Budget", budgetLabel(lead.budgetRange)],
                 ["Timeline", capitalize(lead.timeline)],
                 ["Match on (primary)", lead.recommendedService],
-                ["Also consider", lead.secondaryRecommendation ?? "—"],
+                ["Also consider", lead.secondaryRecommendation ?? "-"],
               ]}
             />
             {lead.extraNotes ? (
@@ -456,7 +456,7 @@ function Field({
 }
 
 function capitalize(s: string) {
-  if (!s) return "—";
+  if (!s) return "-";
   return s.charAt(0).toUpperCase() + s.slice(1).replaceAll("-", " ");
 }
 
@@ -470,7 +470,7 @@ function budgetLabel(b: string) {
     "2000-plus": "£2,000+/mo",
     guidance: "Wants guidance",
   };
-  return map[b] ?? (b ? b : "—");
+  return map[b] ?? (b ? b : "-");
 }
 
 function spendLabel(s: string) {
@@ -482,7 +482,7 @@ function spendLabel(s: string) {
     annual: "One-off annual fee",
     unknown: "Not sure / none",
   };
-  return map[s] ?? (s ? s : "—");
+  return map[s] ?? (s ? s : "-");
 }
 
 function labelSource(s: string) {

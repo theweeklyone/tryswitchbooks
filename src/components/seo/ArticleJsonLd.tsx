@@ -24,7 +24,7 @@ const MONTHS: Record<string, string> = {
 
 // "March 2026" -> "2026-03-01T09:00:00+00:00". Google's rich-results test rejects
 // a bare date, so we emit a full ISO 8601 datetime with an explicit timezone.
-// The time is nominal — articles are dated by month. Returns undefined for
+// The time is nominal; articles are dated by month. Returns undefined for
 // unrecognised formats.
 function toIsoDate(publishedOn: string): string | undefined {
   const m = publishedOn.trim().toLowerCase().match(/^([a-z]+)\s+(\d{4})$/);

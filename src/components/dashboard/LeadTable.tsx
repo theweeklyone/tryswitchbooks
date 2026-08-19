@@ -16,7 +16,7 @@ const fmtMoney = (v: number) =>
   v >= 1000 ? `£${(v / 1000).toFixed(1)}k` : `£${v}`;
 
 function nextAction(lead: ConsultationLead): string {
-  if (lead.status === "won" || lead.status === "lost") return "—";
+  if (lead.status === "won" || lead.status === "lost") return "-";
   if (lead.nextFollowUpAt) {
     return `Follow up ${fmtDate(lead.nextFollowUpAt)}`;
   }
@@ -36,7 +36,7 @@ export function LeadTable({
   leads: ConsultationLead[];
   selectedId?: string | null;
   onSelect: (lead: ConsultationLead) => void;
-  /** Total leads before filtering — lets us tell "none yet" from "none match". */
+  /** Total leads before filtering, lets us tell "none yet" from "none match". */
   totalCount?: number;
 }) {
   if (leads.length === 0) {
@@ -175,5 +175,5 @@ function timelineLabel(t: string) {
     "year-end": "At year-end",
     exploring: "Exploring",
   };
-  return map[t] ?? "—";
+  return map[t] ?? "-";
 }

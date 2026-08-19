@@ -170,7 +170,7 @@ export default function LocationPage({ params }: { params: { town: string } }) {
         </div>
       </section>
 
-      {/* What we'll match you with — links to the service pillars */}
+      {/* What we'll match you with: links to the service pillars */}
       <section className="py-20 sm:py-24">
         <div className="container-luxe">
           <SectionHeading
@@ -225,7 +225,7 @@ export default function LocationPage({ params }: { params: { town: string } }) {
         </section>
       ) : null}
 
-      {/* Thinking of switching — advice cluster links */}
+      {/* Thinking of switching: advice cluster links */}
       <section className="py-20 sm:py-24">
         <div className="container-luxe">
           <SectionHeading

@@ -12,7 +12,7 @@ import { PageTransition } from "@/components/PageTransition";
 import { site } from "@/data/site";
 import { og } from "@/lib/og";
 
-// Headings — a trustworthy, established-firm serif.
+// Headings: a trustworthy, established-firm serif.
 const display = Lora({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 // Safeguard: shows a small badge whenever you're viewing the live site via the
-// preview bypass — so it's always obvious that the PUBLIC still sees the Coming
+// preview bypass, so it's always obvious that the PUBLIC still sees the Coming
 // Soon page, and you never mistake "I can see the full site" for "the holding
 // page is down". Reads the (non-httpOnly) sv-preview cookie. Renders nothing
 // for normal visitors.

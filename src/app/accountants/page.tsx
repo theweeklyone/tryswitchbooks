@@ -23,7 +23,7 @@ export default function AccountantsIndexPage() {
     return acc;
   }, {});
 
-  // Slim list for the client-side finder — no heavy per-town copy shipped.
+  // Slim list for the client-side finder, no heavy per-town copy shipped.
   const finderItems = locations.map(({ name, slug, county, nearbyAreas }) => ({
     name,
     slug,

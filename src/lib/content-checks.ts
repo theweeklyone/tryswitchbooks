@@ -2,7 +2,7 @@
 //
 // WHY: articles are authored in data/blog.ts while their imagery lives in
 // lib/blog-images.ts, keyed by slug. That decoupling made it possible to add a
-// post with NO matching image — which shipped once. assertContentValid() closes
+// post with NO matching image, which shipped once. assertContentValid() closes
 // that gap: it runs during `next build` (called from app/sitemap.ts, which is
 // always generated) and THROWS on a missing image, so an imageless or
 // un-optimised article can never reach production. SEO-hygiene issues are logged
@@ -43,7 +43,7 @@ export function assertContentValid(): void {
   for (const post of blogPosts) {
     const img = blogImages[post.slug];
 
-    // HARD REQUIREMENTS — a violation fails the build.
+    // HARD REQUIREMENTS: a violation fails the build.
     if (!img?.src) {
       errors.push(`"${post.slug}" has no image (add an entry in lib/blog-images.ts).`);
     }
@@ -56,7 +56,7 @@ export function assertContentValid(): void {
       errors.push(`"${post.slug}" has no h2 headings (needed for structure + rich results).`);
     }
 
-    // SOFT SEO GUIDANCE — warn only.
+    // SOFT SEO GUIDANCE: warn only.
     if (post.excerpt.length < EXCERPT_MIN || post.excerpt.length > EXCERPT_MAX) {
       warnings.push(
         `"${post.slug}" excerpt is ${post.excerpt.length} chars (aim ${EXCERPT_MIN}–${EXCERPT_MAX} for the meta description).`,
@@ -80,7 +80,7 @@ export function assertContentValid(): void {
   }
 
   // <title> length. Article titles render without the brand suffix; town
-  // metaTitles already include the brand — both are the literal <title>, so keep
+  // metaTitles already include the brand, and both are the literal <title>, so keep
   // them within the SERP truncation limit. A violation fails the build.
   const titleSources = [
     ...blogPosts.map((p) => ({ what: `article "${p.slug}"`, title: p.title })),
@@ -94,12 +94,30 @@ export function assertContentValid(): void {
     }
   }
 
+  // STYLE RULE: no em dashes anywhere in site content (owner preference). Scan
+  // every content object; an em dash (or a &mdash; entity) fails the build so it
+  // cannot regress. En dashes in numeric/time ranges are fine and not matched.
+  const EM_DASH = /—|&mdash;/;
+  const contentObjects: { what: string; data: unknown }[] = [
+    ...blogPosts.map((p) => ({ what: `article "${p.slug}"`, data: p })),
+    ...services.map((s) => ({ what: `service "${s.slug}"`, data: s })),
+    ...subServices.map((s) => ({ what: `sub-service "${s.slug}"`, data: s })),
+    ...locations.map((l) => ({ what: `town "${l.slug}"`, data: l })),
+    ...sectors.map((s) => ({ what: `sector "${s.slug}"`, data: s })),
+    ...localServices.map((l) => ({ what: `local "${l.town}/${l.service}"`, data: l })),
+  ];
+  for (const { what, data } of contentObjects) {
+    if (EM_DASH.test(JSON.stringify(data))) {
+      errors.push(`${what} contains an em dash (—). Rewrite the copy without it.`);
+    }
+  }
+
   if (warnings.length) {
     console.warn("\n[content-checks] SEO warnings:\n  - " + warnings.join("\n  - ") + "\n");
   }
   if (errors.length) {
     throw new Error(
-      "[content-checks] Article content is invalid — build blocked:\n  - " +
+      "[content-checks] Article content is invalid, build blocked:\n  - " +
         errors.join("\n  - "),
     );
   }

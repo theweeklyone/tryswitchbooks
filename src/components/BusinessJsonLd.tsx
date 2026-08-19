@@ -3,10 +3,10 @@ import { site } from "@/data/site";
 // Primary structured data, rendered on the homepage.
 //
 // Switch Books is a FREE MATCHING SERVICE that connects business owners with local
-// accounting firms — not an accountancy practice itself. So the schema is an
+// accounting firms, not an accountancy practice itself. So the schema is an
 // Organization that provides a "Service" of type "Accountant matching service",
 // serving Sussex and the wider UK. The owner is anonymous, so no street address
-// is published — only the service area. No self-declared rating.
+// is published, only the service area. No self-declared rating.
 
 const SITE_URL = "https://www.tryswitchbooks.co.uk";
 

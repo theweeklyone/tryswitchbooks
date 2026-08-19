@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const steps: { title: string; detail: string }[] = [
   {
     title: "Define what “better” looks like",
-    detail: "Write down what isn’t working now — the gaps you want your next firm to close.",
+    detail: "Write down what isn’t working now, the gaps you want your next firm to close.",
   },
   {
     title: "Shortlist firms that fit",
@@ -42,7 +42,7 @@ const steps: { title: string; detail: string }[] = [
   },
   {
     title: "Confirm records are handed over",
-    detail: "Accounts, tax returns, trial balance, payroll and VAT records — promptly and free.",
+    detail: "Accounts, tax returns, trial balance, payroll and VAT records, handed over promptly and free.",
   },
   {
     title: "Authorise with HMRC",
@@ -61,7 +61,7 @@ const steps: { title: string; detail: string }[] = [
 export default function SwitchingChecklistPage() {
   return (
     <main className="checklist-frame flex min-h-screen flex-col items-center bg-cream-100 px-4 py-10 sm:py-14">
-      {/* Toolbar — hidden when printing */}
+      {/* Toolbar, hidden when printing */}
       <div className="print-hide mb-8 flex w-full max-w-[820px] flex-wrap items-center justify-between gap-4">
         <Link
           href="/advice/complete-guide-to-switching-accountants"
@@ -86,14 +86,14 @@ export default function SwitchingChecklistPage() {
               </h1>
               <p className="mt-2 max-w-lg text-sm leading-relaxed text-cocoa-50">
                 Ten steps, in order. Work top to bottom, tick each one off, and you can&rsquo;t go
-                wrong &mdash; your new firm does most of the heavy lifting.
+                wrong, your new firm does most of the heavy lifting.
               </p>
             </div>
             <Logo tone="ink" size="md" className="shrink-0" />
           </div>
         </header>
 
-        {/* Steps — an empty gold tick-box to mark off, with the step number in the title */}
+        {/* Steps: an empty gold tick-box to mark off, with the step number in the title */}
         <ol className="grid gap-x-10 gap-y-6 px-8 py-9 sm:grid-cols-2 sm:px-12">
           {steps.map((step, i) => (
             <li key={i} className="flex gap-3.5">
@@ -112,11 +112,11 @@ export default function SwitchingChecklistPage() {
           ))}
         </ol>
 
-        {/* Reassurance strip — fills the sheet and reinforces the core message */}
+        {/* Reassurance strip: fills the sheet and reinforces the core message */}
         <div className="border-t border-sand-100 px-8 py-4 sm:px-12">
           <p className="text-[13px] leading-relaxed text-cocoa-50">
             <span className="font-semibold text-cocoa-300">Good to know:</span> you can switch at
-            any time of year &mdash; you don&rsquo;t need to wait for your year-end, and your old
+            any time of year, you don&rsquo;t need to wait for your year-end, and your old
             firm must release your records free of charge.
           </p>
         </div>
@@ -125,7 +125,7 @@ export default function SwitchingChecklistPage() {
         <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-sand-100 bg-blush-50/70 px-8 py-5 sm:px-12">
           <p className="text-[12px] leading-relaxed text-cocoa-50">
             <span className="font-semibold text-cocoa-300">Not sure who to switch to?</span>{" "}
-            Switch Books matches you with the right local firm &mdash; free, no obligation.
+            Switch Books matches you with the right local firm, it&rsquo;s free and there&rsquo;s no obligation.
           </p>
           <span className="text-[12px] font-semibold uppercase tracking-widest text-champagne-dark">
             tryswitchbooks.co.uk
@@ -133,7 +133,7 @@ export default function SwitchingChecklistPage() {
         </footer>
       </section>
 
-      {/* CTA under the sheet — hidden when printing */}
+      {/* CTA under the sheet, hidden when printing */}
       <div className="print-hide mt-10 text-center">
         <p className="text-sm text-cocoa-50">Ready to make the switch simple?</p>
         <Link

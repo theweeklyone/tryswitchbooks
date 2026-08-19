@@ -2,7 +2,7 @@
 // /advice/[slug]. Content is matching-service friendly: we help owners choose
 // and switch accountants, we don't provide the accounting ourselves.
 //
-// ADDING AN ARTICLE — required for the build to pass (enforced by
+// ADDING AN ARTICLE: required for the build to pass (enforced by
 // lib/content-checks.ts, run from app/sitemap.ts):
 //   1. Add ONE image entry for the slug in lib/blog-images.ts (src + alt).
 //      A post with no image FAILS the build.
@@ -62,10 +62,10 @@ export const blogPosts: BlogPost[] = [
         type: "ul",
         items: [
           "You only ever hear from them at the deadline, never before it",
-          "You're the one chasing — for answers, for figures, for a call back",
+          "You're the one chasing, for answers, for figures, for a call back",
           "They file what you send and nothing more: no advice, no planning, no \"have you thought about…\"",
           "You've had a late filing or a penalty that felt avoidable",
-          "Your business has changed — new staff, a limited company, VAT, property — and they haven't kept up",
+          "Your business has changed, with new staff, a limited company, VAT or property, and they haven't kept up",
           "You dread the annual bill because you're never sure what it's for",
         ],
       },
@@ -76,11 +76,11 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "The three myths that keep owners stuck" },
       {
         type: "p",
-        text: "Myth one: \"I have to wait until my year-end.\" You don't. You can switch at any point in the year, and your new firm picks up mid-cycle without anything falling through the cracks — here's [why you can switch mid-year](/advice/changing-accountants-mid-year).",
+        text: "Myth one: \"I have to wait until my year-end.\" You don't. You can switch at any point in the year, and your new firm picks up mid-cycle without anything falling through the cracks. Here's [why you can switch mid-year](/advice/changing-accountants-mid-year).",
       },
       {
         type: "p",
-        text: "Myth two: \"It'll cost me a fortune, or I'll pay twice.\" You don't pay two firms for the same work. In most cases the changeover itself costs you nothing — your new firm does the legwork and your old firm must release your records free of charge. Here's [what switching actually costs](/advice/cost-of-switching-accountants).",
+        text: "Myth two: \"It'll cost me a fortune, or I'll pay twice.\" You don't pay two firms for the same work. In most cases the changeover itself costs you nothing. Your new firm does the legwork and your old firm must release your records free of charge. Here's [what switching actually costs](/advice/cost-of-switching-accountants).",
       },
       {
         type: "p",
@@ -89,7 +89,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "When is the best time to switch?" },
       {
         type: "p",
-        text: "The short answer: sooner than you think, and you don't need a perfect moment. That said, a few windows are especially clean — after your year-end accounts are filed, before the busy run-up to the 31 January self-assessment deadline, or at the start of a new VAT quarter. The worst time to switch is never: staying another year with a firm that isn't serving you costs more than any timing quirk. Here's [the best time to switch, explained](/advice/best-time-to-switch-accountants).",
+        text: "The short answer: sooner than you think, and you don't need a perfect moment. That said, a few windows are especially clean: after your year-end accounts are filed, before the busy run-up to the 31 January self-assessment deadline, or at the start of a new VAT quarter. The worst time to switch is never: staying another year with a firm that isn't serving you costs more than any timing quirk. Here's [the best time to switch, explained](/advice/best-time-to-switch-accountants).",
       },
       { type: "h2", text: "How switching works, step by step" },
       {
@@ -99,11 +99,11 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Choose your new accountant first — never resign from your current firm until the next one is lined up. Get the fit right before anything else.",
-          "Sign up and give your details — your new firm runs standard anti-money-laundering identity checks and sends a letter of engagement setting out scope and price.",
-          "They request professional clearance — your new accountant writes to your old one, a routine letter asking whether there's any reason they shouldn't act and requesting your records. You don't make that call yourself.",
-          "Your records are handed over — previous accounts and tax returns, trial balance, payroll and VAT records, tax references. Reputable firms do this promptly and free.",
-          "You authorise them with HMRC — usually via a code HMRC posts to you, or their agent services account. From there, your new firm takes over.",
+          "Choose your new accountant first: never resign from your current firm until the next one is lined up. Get the fit right before anything else.",
+          "Sign up and give your details: your new firm runs standard anti-money-laundering identity checks and sends a letter of engagement setting out scope and price.",
+          "They request professional clearance: your new accountant writes to your old one, a routine letter asking whether there's any reason they shouldn't act and requesting your records. You don't make that call yourself.",
+          "Your records are handed over: previous accounts and tax returns, trial balance, payroll and VAT records, tax references. Reputable firms do this promptly and free.",
+          "You authorise them with HMRC: usually via a code HMRC posts to you, or their agent services account. From there, your new firm takes over.",
         ],
       },
       {
@@ -113,12 +113,12 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "What it costs" },
       {
         type: "p",
-        text: "In most cases the switch itself is free — your old firm can't charge you to release your records, and your new firm folds the handover into taking you on. Where cost comes in is the ongoing fee for the new relationship, and there a slightly higher fee that includes proactive advice and planning is usually far better value than the cheapest quote on the table. Here's [the real cost of switching](/advice/cost-of-switching-accountants).",
+        text: "In most cases the switch itself is free: your old firm can't charge you to release your records, and your new firm folds the handover into taking you on. Where cost comes in is the ongoing fee for the new relationship, and there a slightly higher fee that includes proactive advice and planning is usually far better value than the cheapest quote on the table. Here's [the real cost of switching](/advice/cost-of-switching-accountants).",
       },
       { type: "h2", text: "If you run a limited company" },
       {
         type: "p",
-        text: "There's a little more to hand over — Companies House filing authority, corporation tax, directors' payroll, confirmation statements — but the process is the same, and your new accountant manages the extra steps. Here's what's different when [switching accountants for a limited company](/advice/switching-accountants-limited-company).",
+        text: "There's a little more to hand over, like Companies House filing authority, corporation tax, directors' payroll and confirmation statements, but the process is the same, and your new accountant manages the extra steps. Here's what's different when [switching accountants for a limited company](/advice/switching-accountants-limited-company).",
       },
       { type: "h2", text: "How to choose the right new firm" },
       {
@@ -128,12 +128,12 @@ export const blogPosts: BlogPost[] = [
       {
         type: "ul",
         items: [
-          "Who, specifically, will look after my account — and how do I reach them?",
+          "Who, specifically, will look after my account, and how do I reach them?",
           "How quickly do you typically reply to a question?",
           "What's included in the fee, and what's billed as an extra?",
           "Will you contact me before deadlines with things to consider, or only at them?",
-          "Do you have experience with businesses like mine — my sector, my size?",
-          "How do you like to work — cloud software, meetings, email?",
+          "Do you have experience with businesses like mine: my sector, my size?",
+          "How do you like to work: cloud software, meetings, email?",
         ],
       },
       {
@@ -143,7 +143,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "The switching checklist" },
       {
         type: "p",
-        text: "Work through this in order and you can't go wrong. We've turned it into a free, branded one-page checklist you can print or save as a PDF — [download the switching checklist](/switching-checklist).",
+        text: "Work through this in order and you can't go wrong. We've turned it into a free, branded one-page checklist you can print or save as a PDF. [Download the switching checklist](/switching-checklist).",
       },
       {
         type: "ul",
@@ -151,7 +151,7 @@ export const blogPosts: BlogPost[] = [
           "Write down what's not working now, so you know what \"better\" looks like",
           "Shortlist firms that fit your sector, size and working style",
           "Ask each the questions above; compare scope, not just price",
-          "Choose your new firm — before resigning from the old one",
+          "Choose your new firm, before resigning from the old one",
           "Complete their ID checks and sign the letter of engagement",
           "Let them request professional clearance from your old firm",
           "Confirm your records have been handed over",
@@ -163,7 +163,7 @@ export const blogPosts: BlogPost[] = [
       { type: "h2", text: "The easiest way to switch" },
       {
         type: "p",
-        text: "The hardest part of switching is simply choosing who to switch to. That's the bit Switch Books removes. We're a free service that matches business owners with the right local accounting firm — tell us what's frustrating you and what you need, and we'll connect you with a firm that fits, who'll then handle the switch for you. There's no cost and no obligation.",
+        text: "The hardest part of switching is simply choosing who to switch to. That's the bit Switch Books removes. We're a free service that matches business owners with the right local accounting firm. Tell us what's frustrating you and what you need, and we'll connect you with a firm that fits, who'll then handle the switch for you. There's no cost and no obligation.",
       },
     ],
     related: [
@@ -854,7 +854,7 @@ export function findPost(slug: string): BlogPost | undefined {
 
 // "More reading" suggestions, as a ring: the next `limit` posts after this one
 // (wrapping around the end). A ring guarantees every post is linked from exactly
-// `limit` other posts, so none get orphaned with a single internal link — which
+// `limit` other posts, so none get orphaned with a single internal link, which
 // a category-preference approach did to posts in singleton categories. Posts are
 // ordered with topical clusters (e.g. the switching guides) adjacent, so the
 // neighbours stay relevant.

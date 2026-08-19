@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 // Plain-English terms for a free introduction/matching service. Data-driven
 // from site.ts so the business name and contact details stay in sync.
 //
-// NOTE FOR OWNER: please confirm these match how the service actually operates
-// — especially the sections on introductions, the relationship with the firms
+// NOTE FOR OWNER: please confirm these match how the service actually operates,
+// especially the sections on introductions, the relationship with the firms
 // we recommend, and that we may be paid by those firms. Written to be fair and
 // clear, but not a substitute for formal legal advice if you want it checked.
 

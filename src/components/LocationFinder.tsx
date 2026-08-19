@@ -14,7 +14,7 @@ export type LocationFinderItem = {
 
 const MAX_RESULTS = 6;
 
-// On-model "find your area" typeahead. Not a generic content search — it matches
+// On-model "find your area" typeahead. Not a generic content search. It matches
 // the searcher's town (or a nearby area) and routes them to that local page, or
 // to the free review if nothing matches. Data is passed in slim from the server
 // so the heavy location copy never ships to the client.

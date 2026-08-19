@@ -40,7 +40,7 @@ export function recommend(sub: ConsultationSubmission): ConsultationRecommendati
     ? sub.primaryNeed
     : wanted[0] ?? inferPrimary(sub);
 
-  // Personal tax has no standalone service page — present it as its own named
+  // Personal tax has no standalone service page, so present it as its own named
   // recommendation, linked to the closest page (Tax & VAT).
   const isPersonalTax = primaryNeed === "personal-tax";
 

@@ -153,7 +153,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         </div>
       </section>
 
-      {/* Everything this area covers — links to the sub-service pages */}
+      {/* Everything this area covers: links to the sub-service pages */}
       {subs.length ? (
         <section className="py-20 sm:py-24">
           <div className="container-luxe">
@@ -198,7 +198,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
 
       <PageFAQ items={service.faq} title="Good to know." />
 
-      {/* Where we cover — service → location internal links */}
+      {/* Where we cover: service → location internal links */}
       <section className="py-20 sm:py-24">
         <div className="container-luxe">
           <SectionHeading

@@ -1,6 +1,6 @@
 // Industry ("...accountants near me") landing pages. Each targets a sector term
 // the site already ranks 11–20 for with no dedicated page. Switch Books is a
-// FREE MATCHING SERVICE — copy always says "matched with a local firm", never
+// FREE MATCHING SERVICE: copy always says "matched with a local firm", never
 // that we do the accounting. Regulatory references are kept general on purpose
 // (no rates, dates or thresholds) so nothing goes stale; expand with current
 // specifics only if verified.
@@ -41,7 +41,7 @@ export const sectors: Sector[] = [
       "Looking for a small business accountant near you? Switch Books matches you, free, with the right local firm for your size, sector and budget. Free review.",
     h1: "Small Business Accountants, Matched to You Locally",
     intro:
-      "Every small business needs an accountant, but the right one depends on what you do, how big you are and where you're headed. Switch Books is a free service that matches you with a local firm that fits — your sector, your size, your budget. We're not accountants ourselves; we find you the ones worth talking to.",
+      "Every small business needs an accountant, but the right one depends on what you do, how big you are and where you're headed. Switch Books is a free service that matches you with a local firm that fits: your sector, your size, your budget. We're not accountants ourselves; we find you the ones worth talking to.",
     challengesTitle: "What a good small business accountant sorts out",
     challenges: [
       {
@@ -50,7 +50,7 @@ export const sectors: Sector[] = [
       },
       {
         title: "Staying compliant without the stress",
-        body: "Self-assessment, corporation tax, VAT, payroll, and Making Tax Digital as it rolls out — a proactive firm keeps you ahead of deadlines instead of chasing them.",
+        body: "Self-assessment, corporation tax, VAT, payroll, and Making Tax Digital as it rolls out. A proactive firm keeps you ahead of deadlines instead of chasing them.",
       },
       {
         title: "Advice, not just filing",
@@ -65,7 +65,7 @@ export const sectors: Sector[] = [
       "Experience with businesses your size and in your sector",
       "Proactive advice through the year, not just at deadline time",
       "Clear, fixed fees with no surprise bills",
-      "Responsive — actually answers the phone and email",
+      "Responsive: actually answers the phone and email",
     ],
     faq: [
       {
@@ -73,7 +73,7 @@ export const sectors: Sector[] = [
         a: "One that fits your size, sector and budget, and that gives you real advice rather than just filing. That's exactly what our free matching service is built to find.",
       },
       {
-        q: "Sole trader or limited company — which is right for me?",
+        q: "Sole trader or limited company: which is right for me?",
         a: "It depends on your income, your risk and your plans. A good accountant will advise on the best structure for you, and we match you with firms that take the time to do that.",
       },
       {
@@ -116,7 +116,7 @@ export const sectors: Sector[] = [
       },
       {
         title: "VAT on food and drink",
-        body: "VAT in hospitality is notoriously fiddly — what's standard-rated and what isn't, eat-in versus takeaway. A firm that knows the sector keeps you on the right side of it.",
+        body: "VAT in hospitality is notoriously fiddly: what's standard-rated and what isn't, eat-in versus takeaway. A firm that knows the sector keeps you on the right side of it.",
       },
     ],
     lookFor: [
@@ -128,7 +128,7 @@ export const sectors: Sector[] = [
     faq: [
       {
         q: "Do I need a specialist hospitality accountant?",
-        a: "Not necessarily a specialist, but a firm that genuinely understands the trade — tips, seasonal cashflow, hospitality VAT and shift payroll — will save you money and stress compared with a generalist. That's who we aim to match you with.",
+        a: "Not necessarily a specialist, but a firm that genuinely understands the trade (tips, seasonal cashflow, hospitality VAT and shift payroll) will save you money and stress compared with a generalist. That's who we aim to match you with.",
       },
       {
         q: "Can you help with tips and tronc?",
@@ -155,7 +155,7 @@ export const sectors: Sector[] = [
       "Running a restaurant or café? Switch Books matches you, free, with a local accountant who understands margins, tips and hospitality VAT. Free review.",
     h1: "Accountants for Restaurants & Cafés, Matched Locally",
     intro:
-      "In a restaurant, the difference between a good month and a bad one often hides in the numbers — food cost, wastage, covers, staff hours. A restaurant accountant who reads those numbers with you is worth having. Switch Books matches you, free, with a local firm that understands the trade. We're the matchmaker, not the accountant.",
+      "In a restaurant, the difference between a good month and a bad one often hides in the numbers: food cost, wastage, covers, staff hours. A restaurant accountant who reads those numbers with you is worth having. Switch Books matches you, free, with a local firm that understands the trade. We're the matchmaker, not the accountant.",
     challengesTitle: "What a restaurant-savvy firm gets right",
     challenges: [
       {
@@ -211,7 +211,7 @@ export const sectors: Sector[] = [
       "Independent shop or online retailer? Switch Books matches you, free, with a local accountant who knows stock, EPOS and multi-channel VAT. Free review.",
     h1: "Accountants for Retail & Shop Businesses, Matched Locally",
     intro:
-      "Retail lives and dies on stock and margin, and increasingly on selling in more than one place at once — the shop, the website, the marketplace. A retail accountant who understands that mix helps you actually know what's making money. Switch Books matches you, free, with a local firm that gets it. We're the matching service, not the accountants.",
+      "Retail lives and dies on stock and margin, and increasingly on selling in more than one place at once: the shop, the website, the marketplace. A retail accountant who understands that mix helps you actually know what's making money. Switch Books matches you, free, with a local firm that gets it. We're the matching service, not the accountants.",
     challengesTitle: "What a retail-aware firm helps you with",
     challenges: [
       {
@@ -224,7 +224,7 @@ export const sectors: Sector[] = [
       },
       {
         title: "Selling across channels",
-        body: "Shop, website, Etsy, Amazon, eBay — each channel has its own fees and reporting. A good firm pulls them together so you see the whole picture.",
+        body: "Shop, website, Etsy, Amazon, eBay: each channel has its own fees and reporting. A good firm pulls them together so you see the whole picture.",
       },
       {
         title: "Multi-channel VAT",
@@ -270,7 +270,7 @@ export const sectors: Sector[] = [
     challenges: [
       {
         title: "Property tax and reliefs",
-        body: "Income tax on rents, the mortgage-interest rules, capital gains when you sell, and the reliefs in between — property tax is a minefield a specialist navigates far better than a generalist.",
+        body: "Income tax on rents, the mortgage-interest rules, capital gains when you sell, and the reliefs in between: property tax is a minefield a specialist navigates far better than a generalist.",
       },
       {
         title: "The right ownership structure",
@@ -294,7 +294,7 @@ export const sectors: Sector[] = [
     faq: [
       {
         q: "Do I need a specialist property accountant?",
-        a: "If you own more than one property or you're planning to grow, usually yes — property tax is complex enough that a specialist tends to save you more than they charge. We match you with firms that genuinely know the sector.",
+        a: "If you own more than one property or you're planning to grow, usually yes. Property tax is complex enough that a specialist tends to save you more than they charge. We match you with firms that genuinely know the sector.",
       },
       {
         q: "Can you help landlords and developers?",
@@ -319,7 +319,7 @@ export const sectors: Sector[] = [
       "Want management accounts, KPIs and forecasts to run your business by the numbers? Switch Books matches you, free, with a firm that delivers them. Free review.",
     h1: "Management Accountants Who Help You Run by the Numbers",
     intro:
-      "Statutory accounts tell you what happened last year. Management accounts tell you what's happening now — and what to do about it. If you want to run your business on real numbers, a firm that does proper management accounting is worth having. Switch Books matches you, free, with a local firm that delivers it. We're the matchmaker, not the accountants.",
+      "Statutory accounts tell you what happened last year. Management accounts tell you what's happening now, and what to do about it. If you want to run your business on real numbers, a firm that does proper management accounting is worth having. Switch Books matches you, free, with a local firm that delivers it. We're the matchmaker, not the accountants.",
     challengesTitle: "What good management accounting gives you",
     challenges: [
       {
@@ -336,14 +336,14 @@ export const sectors: Sector[] = [
       },
       {
         title: "A genuine sounding board",
-        body: "The best firms don't just produce reports — they talk you through what the numbers mean and what to do next.",
+        body: "The best firms don't just produce reports: they talk you through what the numbers mean and what to do next.",
       },
     ],
     lookFor: [
       "Genuine management-accounting experience, not just compliance",
       "Reporting you can actually understand",
       "Forecasting and scenario planning",
-      "Proactive — talks you through the numbers",
+      "Proactive: talks you through the numbers",
     ],
     faq: [
       {

@@ -1,4 +1,4 @@
-// Switch Books — free Business Review quiz.
+// Switch Books: free Business Review quiz.
 // Shared types between the question data, the React flow and the rules engine.
 
 export type QuestionType =

@@ -148,7 +148,7 @@ export function SectorPage({ slug }: { slug: string }) {
 
       <PageFAQ items={sector.faq} title={`${sector.name} accountants: your questions.`} background="blush" />
 
-      {/* Other industries — full interlink between the four */}
+      {/* Other industries: full interlink between the four */}
       <section className="py-20 sm:py-24">
         <div className="container-luxe">
           <SectionHeading eyebrow="Also for" title="Other accountant specialisms." />

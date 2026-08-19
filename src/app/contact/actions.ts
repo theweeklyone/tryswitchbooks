@@ -24,7 +24,7 @@ export async function submitContactMessage(formData: FormData): Promise<SubmitCo
 
   const messageId = `msg_${Date.now().toString(36)}`;
 
-  // Best-effort persistence — never blocks the message or the email.
+  // Best-effort persistence that never blocks the message or the email.
   try {
     const supabase = createSupabaseAdminClient();
     await supabase.from("contact_messages").insert({

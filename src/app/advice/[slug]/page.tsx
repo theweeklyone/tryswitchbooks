@@ -16,7 +16,7 @@ export function generateStaticParams() {
 }
 
 // Article body is authored as plain text in data/blog.ts, but paragraphs and
-// list items may contain inline markdown links — [label](/href) — so a pillar
+// list items may contain inline markdown links, such as [label](/href), so a pillar
 // article can link contextually into its cluster. Parse those into real links
 // (Next <Link> for internal paths, <a target=_blank> for external URLs).
 const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 // the business name and contact details stay in sync everywhere.
 //
 // NOTE FOR OWNER: please read this through and confirm it matches how the
-// service actually handles data — in particular the section on sharing details
+// service actually handles data, in particular the section on sharing details
 // with the accounting firms we introduce you to, and retention periods. It is
 // written to be accurate and ICO-friendly, but is not a substitute for formal
 // legal advice if you want it checked.

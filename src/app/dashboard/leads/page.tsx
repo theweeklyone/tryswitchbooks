@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function LeadsPage() {
-  // Live data only — no demo fallback. The dashboard reflects reality, and a new
+  // Live data only, no demo fallback. The dashboard reflects reality, and a new
   // lead appears the instant it comes in.
   let leads: ConsultationLead[] = [];
   try {
