@@ -45,6 +45,8 @@ export const metadata: Metadata = {
   openGraph: og("/"),
   twitter: {
     card: "summary_large_image",
+    site: site.social.xHandle,
+    creator: site.social.xHandle,
     title: `${site.name} · ${site.tagline}`,
     description: site.description,
   },

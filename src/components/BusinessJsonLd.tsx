@@ -11,7 +11,7 @@ import { site } from "@/data/site";
 const SITE_URL = "https://www.tryswitchbooks.co.uk";
 
 export function BusinessJsonLd() {
-  const sameAs = [site.social.linkedin].filter(Boolean);
+  const sameAs = [site.social.linkedin, site.social.x].filter(Boolean);
 
   const areaServed = [
     "Sussex",

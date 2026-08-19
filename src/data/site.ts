@@ -46,6 +46,8 @@ export const site = {
   social: {
     linkedin: "https://www.linkedin.com/company/try-switch-books",
     linkedinHandle: "try-switch-books",
+    x: "https://x.com/TrySwitchBooks",
+    xHandle: "@TrySwitchBooks",
   },
 } as const;
 
