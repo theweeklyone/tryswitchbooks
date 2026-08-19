@@ -359,16 +359,24 @@
   .checklist-sheet > header {
     display: block !important;
     background: transparent !important;
-    padding: 14px 22px !important;
+    padding: 22px 26px !important;
   }
   .checklist-sheet > ol {
-    padding: 14px 22px !important;
-    column-gap: 26px !important;
-    row-gap: 10px !important;
+    padding: 22px 26px !important;
+    column-gap: 30px !important;
+    row-gap: 20px !important;
+  }
+  .checklist-sheet > div {
+    padding: 14px 26px !important;
   }
   .checklist-sheet > footer {
     display: flex !important;
     background: #fbf6e9 !important;
-    padding: 10px 22px !important;
+    padding: 14px 26px !important;
+  }
+  /* Keep the tick-boxes gold — the generic block would grey the bg-cream ones. */
+  .checklist-sheet ol li span[aria-hidden] {
+    border-color: #c9a24b !important;
+    background: #faf8f3 !important;
   }
 }

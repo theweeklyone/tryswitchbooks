@@ -84,32 +84,42 @@ export default function SwitchingChecklistPage() {
               <h1 className="mt-3 font-serif text-3xl leading-tight text-cocoa-300 sm:text-4xl">
                 Switching accountants
               </h1>
-              <p className="mt-2 max-w-md text-sm leading-relaxed text-cocoa-50">
-                Ten steps, in order. Tick them off and you can&rsquo;t go wrong &mdash; your new
-                firm does most of the work.
+              <p className="mt-2 max-w-lg text-sm leading-relaxed text-cocoa-50">
+                Ten steps, in order. Work top to bottom, tick each one off, and you can&rsquo;t go
+                wrong &mdash; your new firm does most of the heavy lifting.
               </p>
             </div>
             <Logo tone="ink" size="md" className="shrink-0" />
           </div>
         </header>
 
-        {/* Steps */}
-        <ol className="grid gap-x-10 gap-y-4 px-8 py-8 sm:grid-cols-2 sm:px-12">
+        {/* Steps — an empty gold tick-box to mark off, with the step number in the title */}
+        <ol className="grid gap-x-10 gap-y-6 px-8 py-9 sm:grid-cols-2 sm:px-12">
           {steps.map((step, i) => (
             <li key={i} className="flex gap-3.5">
               <span
                 aria-hidden
-                className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-[5px] border-2 border-champagne text-[10px] font-semibold text-champagne-dark"
-              >
-                {i + 1}
-              </span>
+                className="mt-0.5 h-[19px] w-[19px] shrink-0 rounded-[5px] border-2 border-champagne bg-cream-50"
+              />
               <div>
-                <p className="text-sm font-semibold leading-snug text-cocoa-300">{step.title}</p>
+                <p className="text-sm font-semibold leading-snug text-cocoa-300">
+                  <span className="mr-1.5 text-champagne-dark">{i + 1}.</span>
+                  {step.title}
+                </p>
                 <p className="mt-0.5 text-[13px] leading-snug text-cocoa-50">{step.detail}</p>
               </div>
             </li>
           ))}
         </ol>
+
+        {/* Reassurance strip — fills the sheet and reinforces the core message */}
+        <div className="border-t border-sand-100 px-8 py-4 sm:px-12">
+          <p className="text-[13px] leading-relaxed text-cocoa-50">
+            <span className="font-semibold text-cocoa-300">Good to know:</span> you can switch at
+            any time of year &mdash; you don&rsquo;t need to wait for your year-end, and your old
+            firm must release your records free of charge.
+          </p>
+        </div>
 
         {/* Footer band */}
         <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-sand-100 bg-blush-50/70 px-8 py-5 sm:px-12">
