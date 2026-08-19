@@ -175,6 +175,75 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
+    slug: "do-you-need-an-accountant-for-self-assessment",
+    title: "Do you need an accountant for self assessment?",
+    category: "Tax & planning",
+    excerpt:
+      "Can you file a self assessment tax return yourself, or is it worth paying an accountant? When to do it alone, when to get help, and what it costs.",
+    readingTime: "6 min read",
+    publishedOn: "August 2026",
+    author: "The Switch Books team",
+    imageStyle: "blush",
+    body: [
+      {
+        type: "p",
+        text: "Every year millions of people file a self assessment tax return. Plenty do it themselves; plenty pay an accountant. Neither is right or wrong, it depends on how complex your affairs are and how much time and risk you want to carry. Here's how to decide which camp you're in.",
+      },
+      { type: "h2", text: "What is a self assessment tax return?" },
+      {
+        type: "p",
+        text: "Self assessment is how HMRC collects tax from people whose income isn't taxed automatically through PAYE. You report your income and gains for the year, and the system works out what you owe. The key dates: register by 5 October if it's your first time, file a paper return by 31 October, or file online and pay by 31 January.",
+      },
+      { type: "h2", text: "Can you file it yourself?" },
+      {
+        type: "p",
+        text: "For a simple situation, yes, and HMRC's online service is free. Doing it yourself is usually fine if your tax affairs are straightforward: you're employed with a little untaxed side income, you have a single rental property with simple figures, or you're a sole trader with tidy records and few expenses. If that's you, an accountant may be more than you need.",
+      },
+      { type: "h2", text: "When it's worth getting an accountant" },
+      {
+        type: "p",
+        text: "The more moving parts your return has, the more an accountant earns their fee. It's usually worth getting help if any of these apply:",
+      },
+      {
+        type: "ul",
+        items: [
+          "You have several sources of income to pull together",
+          "You're self-employed with real expenses and want to claim everything you're entitled to",
+          "You're a limited company director taking salary and dividends",
+          "You're a landlord, especially with more than one property or the mortgage-interest rules to handle",
+          "You have capital gains to report, from selling a property, shares or crypto",
+          "Your income triggers the child benefit charge or personal-allowance tapering",
+          "It's your first return and you're not confident you'll get it right",
+          "You've had a penalty, or a letter from HMRC you don't fully understand",
+          "You simply don't have the time, or the stress isn't worth it",
+        ],
+      },
+      {
+        type: "p",
+        text: "The value isn't just filling in the boxes. A good accountant spots allowances and expenses you'd miss, keeps you the right side of the rules, and often saves you more than they charge, especially the first year they tidy things up.",
+      },
+      { type: "h2", text: "What does it cost?" },
+      {
+        type: "p",
+        text: "A straightforward self assessment handled by an accountant is usually a modest one-off fee, with more complex returns costing more. Weigh that against the hours it would take you and the cost of getting it wrong: the penalty for filing late starts at £100 and climbs from there, before you count any interest on unpaid tax.",
+      },
+      { type: "h2", text: "How to choose the right accountant" },
+      {
+        type: "p",
+        text: "If you decide to get help, look for a firm that regularly handles returns like yours, replies quickly, is clear about price, and tells you about things to consider before deadlines rather than at them. Our guide to [the questions to ask before you hire an accountant](/advice/questions-to-ask-before-hiring-an-accountant) covers exactly what to check, and [proactive tax planning](/advice/proactive-tax-planning-beats-year-end-surprises) explains the difference a forward-looking firm makes.",
+      },
+      {
+        type: "p",
+        text: "Switch Books isn't an accountancy firm. We're a free service that matches you with a local one that handles self assessment properly. Tell us about your situation and we'll connect you with a firm that fits, at no cost and no obligation.",
+      },
+    ],
+    related: [
+      { label: "Questions to ask before you hire an accountant", href: "/advice/questions-to-ask-before-hiring-an-accountant" },
+      { label: "Proactive tax planning beats year-end surprises", href: "/advice/proactive-tax-planning-beats-year-end-surprises" },
+      { label: "Get matched with a local firm", href: "/consultation" },
+    ],
+  },
+  {
     slug: "payroll-services-small-business",
     title: "Payroll services for small business: what to look for",
     category: "Choosing an accountant",

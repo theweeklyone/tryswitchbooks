@@ -30,6 +30,13 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
     alt: "A proactive advisory conversation about a growing business",
   },
 
+  "do-you-need-an-accountant-for-self-assessment": {
+    // INTERIM: a Sussex high-street/independent-shops scene (unused elsewhere),
+    // standing in for a dedicated tax/paperwork photo. Swap when one is available.
+    src: "/images/brighton-shops.jpg",
+    alt: "Independent shops on a Sussex high street, the small businesses that file self assessment tax returns",
+  },
+
   "payroll-services-small-business": {
     // INTERIM: no unused payroll-specific photo exists yet. Not used by any other
     // article (it appears as a page hero elsewhere). Swap for a dedicated upload.
