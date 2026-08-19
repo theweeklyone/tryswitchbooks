@@ -305,3 +305,41 @@
     transform: scale(1.04);
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Switching-accountants checklist — print / "Save as PDF" behaviour.
+   The on-screen page shows the branded A4 sheet inside a soft frame with a
+   toolbar; when printed we drop the chrome, force the sheet to fill one A4
+   page, and keep the brand colours (print-color-adjust) so the champagne and
+   cocoa accents survive.
+   ------------------------------------------------------------------------- */
+.checklist-sheet {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  .print-hide {
+    display: none !important;
+  }
+  .checklist-frame {
+    padding: 0 !important;
+    min-height: 0 !important;
+    background: #fff !important;
+  }
+  .checklist-sheet {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+  }
+}

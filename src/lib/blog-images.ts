@@ -39,6 +39,10 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
 
   // --- Switching cluster ---
   // Each photo is unique to its article and not used as a hero elsewhere.
+  "complete-guide-to-switching-accountants": {
+    src: "/images/switching-guide.jpg",
+    alt: "A business owner and their new accountant meeting to plan a switch",
+  },
   "how-to-switch-accountants-step-by-step": {
     src: "/images/advisory-meeting-4.jpg",
     alt: "A business owner meeting their new accountant to begin the switch",

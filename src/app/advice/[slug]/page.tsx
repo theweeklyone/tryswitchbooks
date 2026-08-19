@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { og } from "@/lib/og";
 import { blogPosts, findPost, relatedPosts } from "@/data/blog";
 import { CTASection } from "@/components/CTASection";
@@ -12,6 +13,45 @@ import { site } from "@/data/site";
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
+}
+
+// Article body is authored as plain text in data/blog.ts, but paragraphs and
+// list items may contain inline markdown links — [label](/href) — so a pillar
+// article can link contextually into its cluster. Parse those into real links
+// (Next <Link> for internal paths, <a target=_blank> for external URLs).
+const LINK_RE = /\[([^\]]+)\]\(([^)]+)\)/g;
+const linkClass =
+  "font-medium text-cocoa-300 underline decoration-champagne/70 underline-offset-4 transition hover:decoration-champagne";
+
+function renderInline(text: string): ReactNode {
+  const nodes: ReactNode[] = [];
+  let last = 0;
+  let key = 0;
+  for (const m of text.matchAll(LINK_RE)) {
+    const index = m.index ?? 0;
+    if (index > last) nodes.push(text.slice(last, index));
+    const [full, label, href] = m;
+    nodes.push(
+      href.startsWith("/") ? (
+        <Link key={key++} href={href} className={linkClass}>
+          {label}
+        </Link>
+      ) : (
+        <a
+          key={key++}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
+          {label}
+        </a>
+      ),
+    );
+    last = index + full.length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes.length ? nodes : text;
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
@@ -100,13 +140,13 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                     {block.items.map((it, j) => (
                       <li key={j} className="flex gap-3">
                         <span aria-hidden className="mt-3 inline-block h-px w-5 shrink-0 bg-champagne" />
-                        <span>{it}</span>
+                        <span>{renderInline(it)}</span>
                       </li>
                     ))}
                   </ul>
                 );
               }
-              return <p key={i}>{block.text}</p>;
+              return <p key={i}>{renderInline(block.text ?? "")}</p>;
             })}
           </div>
 

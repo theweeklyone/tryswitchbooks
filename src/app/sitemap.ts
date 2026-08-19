@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/accountants`, priority: 0.9 },
     { url: `${SITE}/how-it-works`, priority: 0.8 },
     { url: `${SITE}/advice`, priority: 0.7 },
+    { url: `${SITE}/switching-checklist`, priority: 0.6 },
     { url: `${SITE}/contact`, priority: 0.7 },
     { url: `${SITE}/consultation`, priority: 0.6 },
     { url: `${SITE}/privacy`, priority: 0.3 },

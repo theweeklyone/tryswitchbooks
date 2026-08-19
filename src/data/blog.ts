@@ -39,6 +39,142 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "complete-guide-to-switching-accountants",
+    title: "The complete guide to switching accountants",
+    category: "Switching",
+    excerpt:
+      "Everything you need to switch accountants with confidence: when to move, what it really costs, how the handover works, plus a free step-by-step checklist.",
+    readingTime: "9 min read",
+    publishedOn: "August 2026",
+    author: "The Switch Books team",
+    imageStyle: "mocha",
+    body: [
+      {
+        type: "p",
+        text: "Switching accountants is one of those jobs business owners put off for years, usually over a worry that turns out to be unfounded. It won't disrupt your accounts. You won't be landed with a bill from two firms. And you don't have to have an awkward conversation with your current accountant. This is the complete guide: the myths, the timing, the exact process, the real costs, and a checklist you can work through at your own pace.",
+      },
+      { type: "h2", text: "First, the honest question: should you switch?" },
+      {
+        type: "p",
+        text: "Not every gripe is a reason to move. But some are. You've probably outgrown your accountant if:",
+      },
+      {
+        type: "ul",
+        items: [
+          "You only ever hear from them at the deadline, never before it",
+          "You're the one chasing — for answers, for figures, for a call back",
+          "They file what you send and nothing more: no advice, no planning, no \"have you thought about…\"",
+          "You've had a late filing or a penalty that felt avoidable",
+          "Your business has changed — new staff, a limited company, VAT, property — and they haven't kept up",
+          "You dread the annual bill because you're never sure what it's for",
+        ],
+      },
+      {
+        type: "p",
+        text: "One of these on its own might just need a frank conversation. Several together is a pattern, and a pattern is a reason to move. For the full picture, read [the signs it's time to switch accountants](/advice/signs-its-time-to-switch-accountants).",
+      },
+      { type: "h2", text: "The three myths that keep owners stuck" },
+      {
+        type: "p",
+        text: "Myth one: \"I have to wait until my year-end.\" You don't. You can switch at any point in the year, and your new firm picks up mid-cycle without anything falling through the cracks — here's [why you can switch mid-year](/advice/changing-accountants-mid-year).",
+      },
+      {
+        type: "p",
+        text: "Myth two: \"It'll cost me a fortune, or I'll pay twice.\" You don't pay two firms for the same work. In most cases the changeover itself costs you nothing — your new firm does the legwork and your old firm must release your records free of charge. Here's [what switching actually costs](/advice/cost-of-switching-accountants).",
+      },
+      {
+        type: "p",
+        text: "Myth three: \"It's a huge hassle.\" The active work on your side is an hour or two, spread over a couple of weeks; your new accountant does almost everything else. It really is [easier than you think](/advice/switching-accountant-easier-than-you-think).",
+      },
+      { type: "h2", text: "When is the best time to switch?" },
+      {
+        type: "p",
+        text: "The short answer: sooner than you think, and you don't need a perfect moment. That said, a few windows are especially clean — after your year-end accounts are filed, before the busy run-up to the 31 January self-assessment deadline, or at the start of a new VAT quarter. The worst time to switch is never: staying another year with a firm that isn't serving you costs more than any timing quirk. Here's [the best time to switch, explained](/advice/best-time-to-switch-accountants).",
+      },
+      { type: "h2", text: "How switching works, step by step" },
+      {
+        type: "p",
+        text: "The whole process is more of a formality than a project. Here's the full sequence:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Choose your new accountant first — never resign from your current firm until the next one is lined up. Get the fit right before anything else.",
+          "Sign up and give your details — your new firm runs standard anti-money-laundering identity checks and sends a letter of engagement setting out scope and price.",
+          "They request professional clearance — your new accountant writes to your old one, a routine letter asking whether there's any reason they shouldn't act and requesting your records. You don't make that call yourself.",
+          "Your records are handed over — previous accounts and tax returns, trial balance, payroll and VAT records, tax references. Reputable firms do this promptly and free.",
+          "You authorise them with HMRC — usually via a code HMRC posts to you, or their agent services account. From there, your new firm takes over.",
+        ],
+      },
+      {
+        type: "p",
+        text: "For the full walkthrough with timings, see [how to switch accountants, step by step](/advice/how-to-switch-accountants-step-by-step), and for the clearance letter itself, [professional clearance explained](/advice/professional-clearance-explained).",
+      },
+      { type: "h2", text: "What it costs" },
+      {
+        type: "p",
+        text: "In most cases the switch itself is free — your old firm can't charge you to release your records, and your new firm folds the handover into taking you on. Where cost comes in is the ongoing fee for the new relationship, and there a slightly higher fee that includes proactive advice and planning is usually far better value than the cheapest quote on the table. Here's [the real cost of switching](/advice/cost-of-switching-accountants).",
+      },
+      { type: "h2", text: "If you run a limited company" },
+      {
+        type: "p",
+        text: "There's a little more to hand over — Companies House filing authority, corporation tax, directors' payroll, confirmation statements — but the process is the same, and your new accountant manages the extra steps. Here's what's different when [switching accountants for a limited company](/advice/switching-accountants-limited-company).",
+      },
+      { type: "h2", text: "How to choose the right new firm" },
+      {
+        type: "p",
+        text: "This is the part worth slowing down for. Before you commit, get clear answers to:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Who, specifically, will look after my account — and how do I reach them?",
+          "How quickly do you typically reply to a question?",
+          "What's included in the fee, and what's billed as an extra?",
+          "Will you contact me before deadlines with things to consider, or only at them?",
+          "Do you have experience with businesses like mine — my sector, my size?",
+          "How do you like to work — cloud software, meetings, email?",
+        ],
+      },
+      {
+        type: "p",
+        text: "For the full list, see [the questions to ask before you hire an accountant](/advice/questions-to-ask-before-hiring-an-accountant).",
+      },
+      { type: "h2", text: "The switching checklist" },
+      {
+        type: "p",
+        text: "Work through this in order and you can't go wrong. We've turned it into a free, branded one-page checklist you can print or save as a PDF — [download the switching checklist](/switching-checklist).",
+      },
+      {
+        type: "ul",
+        items: [
+          "Write down what's not working now, so you know what \"better\" looks like",
+          "Shortlist firms that fit your sector, size and working style",
+          "Ask each the questions above; compare scope, not just price",
+          "Choose your new firm — before resigning from the old one",
+          "Complete their ID checks and sign the letter of engagement",
+          "Let them request professional clearance from your old firm",
+          "Confirm your records have been handed over",
+          "Authorise the new firm with HMRC (and Companies House, if a limited company)",
+          "Diarise your next filing dates with the new firm",
+          "Cancel any direct debit or standing order to the old firm",
+        ],
+      },
+      { type: "h2", text: "The easiest way to switch" },
+      {
+        type: "p",
+        text: "The hardest part of switching is simply choosing who to switch to. That's the bit Switch Books removes. We're a free service that matches business owners with the right local accounting firm — tell us what's frustrating you and what you need, and we'll connect you with a firm that fits, who'll then handle the switch for you. There's no cost and no obligation.",
+      },
+    ],
+    related: [
+      { label: "How to switch accountants, step by step", href: "/advice/how-to-switch-accountants-step-by-step" },
+      { label: "Signs it's time to switch", href: "/advice/signs-its-time-to-switch-accountants" },
+      { label: "What switching actually costs", href: "/advice/cost-of-switching-accountants" },
+      { label: "Download the free switching checklist", href: "/switching-checklist" },
+      { label: "Get matched with a local firm", href: "/consultation" },
+    ],
+  },
+  {
     slug: "payroll-services-small-business",
     title: "Payroll services for small business: what to look for",
     category: "Choosing an accountant",
@@ -693,6 +829,24 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+// Reciprocal cluster linking: the pillar guide links DOWN to every switching
+// article from its body; here we ensure every switching article links back UP to
+// the pillar (as the first "Related reading" item). Authority then flows both
+// ways, which is what makes a pillar page rank. Done in one place so we don't
+// hand-edit each article's `related` list.
+const PILLAR_SLUG = "complete-guide-to-switching-accountants";
+const PILLAR_LINK = {
+  label: "The complete guide to switching accountants",
+  href: `/advice/${PILLAR_SLUG}`,
+};
+for (const post of blogPosts) {
+  if (post.category !== "Switching" || post.slug === PILLAR_SLUG) continue;
+  post.related = post.related ?? [];
+  if (!post.related.some((r) => r.href === PILLAR_LINK.href)) {
+    post.related.unshift({ ...PILLAR_LINK });
+  }
+}
 
 export function findPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);

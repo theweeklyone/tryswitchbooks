@@ -65,7 +65,8 @@ export function Header() {
   if (
     pathname?.startsWith("/consultation") ||
     pathname?.startsWith("/dashboard") ||
-    pathname === "/coming-soon"
+    pathname === "/coming-soon" ||
+    pathname === "/switching-checklist"
   ) {
     return null;
   }
