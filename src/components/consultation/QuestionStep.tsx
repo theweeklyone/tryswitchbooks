@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import type { CompanyEntry, NameValue, QuizAnswer, QuizQuestion } from "@/lib/types/consultation";
 import { OptionCard } from "./OptionCard";
 import { TextInputStep } from "./TextInputStep";
@@ -13,6 +14,34 @@ function asName(v: QuizAnswer): NameValue {
   return v && typeof v === "object" && !Array.isArray(v) && "first" in v
     ? (v as NameValue)
     : { first: "", last: "" };
+}
+
+// Microcopy may contain inline markdown links, e.g. [label](https://…), which
+// open in a new tab. Used for the "Companies House register" link.
+const MICRO_LINK = /\[([^\]]+)\]\(([^)]+)\)/g;
+function renderMicrocopy(text: string): ReactNode {
+  const nodes: ReactNode[] = [];
+  let last = 0;
+  let key = 0;
+  for (const m of text.matchAll(MICRO_LINK)) {
+    const index = m.index ?? 0;
+    if (index > last) nodes.push(text.slice(last, index));
+    const [full, label, href] = m;
+    nodes.push(
+      <a
+        key={key++}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium not-italic underline decoration-champagne/60 underline-offset-2 hover:text-cocoa-300"
+      >
+        {label}
+      </a>,
+    );
+    last = index + full.length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes.length ? nodes : text;
 }
 
 // Generic step renderer. Picks the right input control for the question type.
@@ -187,7 +216,7 @@ export function QuestionStep({
 
       {question.microcopy ? (
         <p className="mt-4 text-xs italic leading-relaxed text-cocoa-50/70">
-          {question.microcopy}
+          {renderMicrocopy(question.microcopy)}
         </p>
       ) : null}
     </div>

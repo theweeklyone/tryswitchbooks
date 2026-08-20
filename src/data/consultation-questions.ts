@@ -318,7 +318,7 @@ export const questions: QuizQuestion[] = [
     subtitle:
       "Add the company you're a director of. If you're a director of more than one, add them all.",
     microcopy:
-      "You'll find your company number on the Companies House register. It's 8 characters, e.g. 12345678, or SC123456 for a Scottish company.",
+      "You'll find your company number on the [Companies House register](https://find-and-update.company-information.service.gov.uk/). It's 8 characters, e.g. 12345678, or SC123456 for a Scottish company.",
     showIf: { id: "businessType", equals: "limited" },
     required: true,
   },
