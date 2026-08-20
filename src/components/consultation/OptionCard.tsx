@@ -22,7 +22,7 @@ export function OptionCard({
       onClick={onClick}
       aria-pressed={selected}
       className={clsx(
-        "group relative flex w-full items-center justify-between gap-3 rounded-xl border bg-cream-50 px-4 py-3.5 text-left transition-all duration-200",
+        "group relative flex h-full min-h-[3.5rem] w-full items-center justify-between gap-3 rounded-xl border bg-cream-50 px-4 py-3.5 text-left transition-all duration-200",
         selected
           ? "border-cocoa-300 bg-blush-50/40 shadow-[0_4px_20px_-14px_rgba(21,17,15,0.2)]"
           : "border-sand-100 hover:border-cocoa-300/60",

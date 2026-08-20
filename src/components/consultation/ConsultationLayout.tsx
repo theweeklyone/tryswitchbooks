@@ -17,7 +17,7 @@ export function ConsultationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="flex min-h-[100dvh] flex-col bg-cream-50">
       <header className="sticky top-0 z-30 border-b border-sand-100/70 bg-cream-50/95 backdrop-blur">
         <div className="container-luxe flex h-16 items-center justify-between gap-6">
           <Link href="/" aria-label="Switch Books home" className="block">
@@ -31,13 +31,20 @@ export function ConsultationLayout({
           </Link>
         </div>
         {showProgress ? (
-          <div className="container-luxe pb-3">
+          <div className="container-luxe pb-2.5">
             <ProgressBar current={step} total={total} />
+            <p className="mt-2 text-center text-[10px] uppercase tracking-widest text-cocoa-50/60">
+              Free · No sign-up · Your answers stay private until you submit
+            </p>
           </div>
         ) : null}
       </header>
 
-      <main className="px-5 pb-32 pt-6 sm:px-8 sm:pt-10 lg:px-12">
+      {/* flex-1 + items-center vertically centres each question in the space
+          between the header and the fixed bottom bar, so short questions look
+          balanced rather than top-heavy. Long questions grow and the page
+          scrolls as normal. */}
+      <main className="flex flex-1 items-center px-5 pb-28 pt-8 sm:px-8 lg:px-12">
         <div className="mx-auto w-full max-w-2xl">{children}</div>
       </main>
     </div>

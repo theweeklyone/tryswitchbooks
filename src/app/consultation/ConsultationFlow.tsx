@@ -334,7 +334,7 @@ export function ConsultationFlow({
       {/* Fixed bottom bar: the nav stays put in the same place on every step,
           so the Back/Next buttons never jump around as questions change length. */}
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-sand-100/70 bg-cream-50/95 backdrop-blur">
-        <div className="mx-auto max-w-2xl px-5 py-3 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-2xl px-5 py-4 sm:px-8 lg:px-12">
           <QuizNavigation
             onBack={goBack}
             onNext={goNext}
@@ -343,9 +343,6 @@ export function ConsultationFlow({
             isLast={step === total - 1}
             submitting={submitting}
           />
-          <p className="mt-2 text-center text-[11px] uppercase tracking-widest text-cocoa-50/60">
-            No sign-up needed. Your answers stay private until you submit.
-          </p>
         </div>
       </div>
     </ConsultationLayout>
