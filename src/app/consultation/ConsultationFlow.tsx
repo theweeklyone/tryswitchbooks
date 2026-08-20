@@ -6,6 +6,7 @@ import type {
   CompanyEntry,
   ConsultationRecommendation,
   ConsultationSubmission,
+  LocationValue,
   NameValue,
   QuizAnswer,
   QuizAnswers,
@@ -61,6 +62,11 @@ const asName = (v: QuizAnswer): NameValue =>
     ? (v as NameValue)
     : { first: "", last: "" };
 
+const asLocation = (v: QuizAnswer): LocationValue =>
+  v && typeof v === "object" && !Array.isArray(v) && "town" in v
+    ? (v as LocationValue)
+    : { town: "", county: "" };
+
 function validate(q: QuizQuestion | undefined, answers: QuizAnswers): string | null {
   if (!q) return null;
   const value = answers[q.id];
@@ -69,6 +75,14 @@ function validate(q: QuizQuestion | undefined, answers: QuizAnswers): string | n
     const n = asName(value);
     if (q.required !== false && (!n.first.trim() || !n.last.trim())) {
       return "Please add your first and last name";
+    }
+    return null;
+  }
+
+  if (q.type === "location") {
+    const l = asLocation(value);
+    if (q.required !== false && (!l.town.trim() || !l.county.trim())) {
+      return "Please add your town and county";
     }
     return null;
   }
@@ -236,6 +250,7 @@ export function ConsultationFlow({
       .filter((c) => c.name !== "");
 
     const name = asName(answers.name);
+    const location = asLocation(answers.location);
 
     const submission: ConsultationSubmission = {
       firstName: titleCase(name.first.trim()),
@@ -244,8 +259,8 @@ export function ConsultationFlow({
       email: String(answers.email ?? "").trim(),
       phone: String(answers.phone ?? "").trim(),
       dateOfBirth: String(answers.dateOfBirth ?? "").trim(),
-      town: titleCase(String(answers.town ?? "").trim()),
-      county: titleCase(String(answers.county ?? "").trim()),
+      town: titleCase(location.town.trim()),
+      county: titleCase(location.county.trim()),
       industry,
       companies,
       businessType: String(answers.businessType ?? ""),

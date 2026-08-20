@@ -8,6 +8,7 @@ export type QuestionType =
   | "date"
   | "currency"
   | "name"
+  | "location"
   | "single"
   | "multi"
   | "textarea"
@@ -23,6 +24,7 @@ export type QuestionId =
   | "email"
   | "phone"
   | "dateOfBirth"
+  | "location"
   | "town"
   | "county"
   | "industry"
@@ -60,6 +62,12 @@ export type NameValue = {
   last: string;
 };
 
+/** Town + county captured together in one step. */
+export type LocationValue = {
+  town: string;
+  county: string;
+};
+
 export type QuizQuestion = {
   id: QuestionId;
   type: QuestionType;
@@ -80,7 +88,13 @@ export type QuizQuestion = {
  * - multi → string[]
  * - companies → CompanyEntry[]
  */
-export type QuizAnswer = string | string[] | CompanyEntry[] | NameValue | undefined;
+export type QuizAnswer =
+  | string
+  | string[]
+  | CompanyEntry[]
+  | NameValue
+  | LocationValue
+  | undefined;
 export type QuizAnswers = Partial<Record<QuestionId, QuizAnswer>>;
 
 export type ConsultationSubmission = {

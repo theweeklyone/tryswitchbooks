@@ -323,18 +323,10 @@ export const questions: QuizQuestion[] = [
     required: true,
   },
   {
-    id: "town",
-    type: "text",
-    title: "Which town are you based in?",
-    subtitle: "So we can match you with a firm that's genuinely local.",
-    placeholder: "e.g. Worthing",
-    required: true,
-  },
-  {
-    id: "county",
-    type: "text",
-    title: "And which county?",
-    placeholder: "e.g. West Sussex",
+    id: "location",
+    type: "location",
+    title: "Where are you based?",
+    subtitle: "It helps us find the right fit. A local firm can be handy, but it's not essential.",
     required: true,
   },
   {

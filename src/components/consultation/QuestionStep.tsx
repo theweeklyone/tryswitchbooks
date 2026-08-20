@@ -1,12 +1,19 @@
 "use client";
 
 import type { ReactNode } from "react";
-import type { CompanyEntry, NameValue, QuizAnswer, QuizQuestion } from "@/lib/types/consultation";
+import type {
+  CompanyEntry,
+  LocationValue,
+  NameValue,
+  QuizAnswer,
+  QuizQuestion,
+} from "@/lib/types/consultation";
 import { OptionCard } from "./OptionCard";
 import { TextInputStep } from "./TextInputStep";
 import { TextAreaStep } from "./TextAreaStep";
 import { CompaniesStep } from "./CompaniesStep";
 import { NameStep } from "./NameStep";
+import { LocationStep } from "./LocationStep";
 import { IndustrySelectStep } from "./IndustrySelectStep";
 import { UploadPlaceholderStep } from "./UploadPlaceholderStep";
 
@@ -14,6 +21,12 @@ function asName(v: QuizAnswer): NameValue {
   return v && typeof v === "object" && !Array.isArray(v) && "first" in v
     ? (v as NameValue)
     : { first: "", last: "" };
+}
+
+function asLocation(v: QuizAnswer): LocationValue {
+  return v && typeof v === "object" && !Array.isArray(v) && "town" in v
+    ? (v as LocationValue)
+    : { town: "", county: "" };
 }
 
 // Microcopy may contain inline markdown links, e.g. [label](https://…), which
@@ -113,6 +126,10 @@ export function QuestionStep({
 
         {question.type === "name" && (
           <NameStep value={asName(value)} onChange={(v) => onChange(v)} error={error} />
+        )}
+
+        {question.type === "location" && (
+          <LocationStep value={asLocation(value)} onChange={(v) => onChange(v)} error={error} />
         )}
 
         {question.type === "currency" && (
