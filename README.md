@@ -64,7 +64,7 @@ and fill in Supabase + Resend keys. Run `supabase/leads-accounting.sql` and
 | Placeholder | Where |
 | --- | --- |
 | Phone number (`01000 000000`) | `src/data/site.ts` |
-| Email (`enquiries@tryswitchbooks.co.uk`) | `src/data/site.ts` |
+| Email (`info@tryswitchbooks.co.uk`) | `src/data/site.ts` |
 | Domain (`tryswitchbooks.co.uk`) | `src/data/site.ts`, JSON-LD, sitemap, robots |
 | Lead alert inbox | `LEAD_NOTIFY_TO` in `.env.local` |
 | Admin email (dashboard) | `supabase/auth-setup.sql` |

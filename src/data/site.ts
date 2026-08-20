@@ -24,8 +24,8 @@ export const site = {
     // No public phone number: contact is email-only to keep the owner anonymous.
     // If a forwarding / VoIP number is added later, reintroduce phoneDisplay/phoneHref
     // here and it will flow back to the footer, contact page and JSON-LD.
-    emailDisplay: "enquiries@tryswitchbooks.co.uk",
-    emailHref: "mailto:enquiries@tryswitchbooks.co.uk",
+    emailDisplay: "info@tryswitchbooks.co.uk",
+    emailHref: "mailto:info@tryswitchbooks.co.uk",
   },
   hours: [
     { day: "Monday", hours: "09:00 – 17:30" },
