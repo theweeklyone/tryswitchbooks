@@ -31,10 +31,10 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
   },
 
   "do-you-need-an-accountant-for-self-assessment": {
-    // INTERIM: a Sussex high-street/independent-shops scene (unused elsewhere),
-    // standing in for a dedicated tax/paperwork photo. Swap when one is available.
-    src: "/images/brighton-shops.jpg",
-    alt: "Independent shops on a Sussex high street, the small businesses that file self assessment tax returns",
+    // INTERIM: a landscape 1600x900 crop of the tax-reports photo (OG-safe ratio).
+    // Swap for a dedicated self-assessment photo when one is available.
+    src: "/images/self-assessment.jpg",
+    alt: "A small business owner reviewing figures while preparing a self assessment tax return",
   },
 
   "payroll-services-small-business": {

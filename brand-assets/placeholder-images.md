@@ -34,7 +34,7 @@ All 7 combos use `business-reports.jpg`. Two options:
 |---|---|---|
 | /advice/payroll-services-small-business | business-reports.jpg (interim) | A payroll / payslips / small-business-owner photo, landscape | `payroll-services.jpg` |
 | /advice/complete-guide-to-switching-accountants | switching-guide.jpg (a copy of advisory-meeting.jpg, not shown live elsewhere, so unique in practice) | A distinct "new-firm handshake / fresh-start" photo, landscape | `switching-guide.jpg` |
-| /advice/do-you-need-an-accountant-for-self-assessment | brighton-shops.jpg (a Sussex high-street scene, unused elsewhere, interim) | A tax / self-assessment / paperwork photo, landscape | `self-assessment.jpg` |
+| /advice/do-you-need-an-accountant-for-self-assessment | self-assessment.jpg (a landscape crop of business-reports.jpg, interim) | A dedicated tax / self-assessment / paperwork photo, landscape | `self-assessment.jpg` |
 
 ## Notes
 - The original 4 sector pages (small-business, hospitality, restaurant, retail) already have their **own** photos — done.

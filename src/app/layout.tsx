@@ -43,12 +43,15 @@ export const metadata: Metadata = {
   },
   description: site.description,
   openGraph: og("/"),
+  // NOTE: deliberately no title/description here. Next fills twitter:title and
+  // twitter:description from each page's own title/description (and twitter:image
+  // from its openGraph image), so every page gets a share card with its OWN hook,
+  // not this generic one. Setting them here would override every page with the
+  // homepage's text, which is exactly what broke the article previews.
   twitter: {
     card: "summary_large_image",
     site: site.social.xHandle,
     creator: site.social.xHandle,
-    title: `${site.name} · ${site.tagline}`,
-    description: site.description,
   },
   // Google Search Console verification. Renders
   // <meta name="google-site-verification" content="..."> in <head>.
