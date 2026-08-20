@@ -260,7 +260,7 @@ export const questions: QuizQuestion[] = [
     id: "budget",
     type: "single",
     title: "What monthly budget feels right for the right support?",
-    subtitle: "We'll never push you above this, and we'll be honest about what's realistic.",
+    subtitle: "There's no pressure to go higher, and we'll be honest about what's realistic.",
     microcopy:
       "Please be fair and honest here. If the budget doesn't reflect the support you need, we won't be able to find a firm that can deliver it. The relationship has to work for both sides.",
     options: [
