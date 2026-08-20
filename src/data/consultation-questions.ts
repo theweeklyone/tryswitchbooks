@@ -341,7 +341,7 @@ export const questions: QuizQuestion[] = [
     id: "email",
     type: "email",
     title: "Where shall we send your match?",
-    subtitle: "Your email. We'll use it to send your result and follow up. Never shared.",
+    subtitle: "Enter your email address. We'll use it to send your result and follow up.",
     placeholder: "you@yourbusiness.co.uk",
     required: true,
   },

@@ -30,7 +30,7 @@ import { submitConsultation } from "./actions";
 
 const STORAGE_KEY = "switchbooks-review-draft-v1";
 
-const isValidEmail = (s: string) => /.+@.+\..+/.test(s);
+const isValidEmail = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim());
 const isValidPhone = (s: string) => s.replace(/\D/g, "").length >= 10;
 
 function isVisible(q: QuizQuestion, answers: QuizAnswers): boolean {
