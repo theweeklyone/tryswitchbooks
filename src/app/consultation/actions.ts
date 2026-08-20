@@ -122,6 +122,7 @@ export async function submitConsultation(input: {
   // failure — the lead always saves; the extra detail lands once the migration
   // is applied. (It's still in the notification email regardless.)
   const newFields = {
+    last_name: submission.lastName || null,
     date_of_birth: submission.dateOfBirth || null,
     town: submission.town || null,
     county: submission.county || null,
@@ -130,7 +131,6 @@ export async function submitConsultation(input: {
   };
   const coreRow = {
     first_name: submission.firstName,
-    last_name: submission.lastName || null,
     business_name: submission.businessName,
     email: submission.email,
     mobile: submission.phone,
