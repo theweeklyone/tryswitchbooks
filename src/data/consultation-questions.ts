@@ -349,7 +349,7 @@ export const questions: QuizQuestion[] = [
     id: "phone",
     type: "tel",
     title: "And the best number to reach you on?",
-    subtitle: "Only used to arrange a quick, no-pressure chat.",
+    subtitle: "We'll only use it to arrange a quick, no-pressure call.",
     placeholder: "07000 000000",
     required: true,
   },

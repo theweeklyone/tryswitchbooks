@@ -31,7 +31,12 @@ import { submitConsultation } from "./actions";
 const STORAGE_KEY = "switchbooks-review-draft-v1";
 
 const isValidEmail = (s: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.trim());
-const isValidPhone = (s: string) => s.replace(/\D/g, "").length >= 10;
+const isValidPhone = (s: string) => {
+  const t = s.trim();
+  const digits = t.replace(/\D/g, "");
+  // Phone characters only (digits, spaces, +, -, brackets) and a sane digit count.
+  return /^[+\d\s()-]+$/.test(t) && digits.length >= 10 && digits.length <= 15;
+};
 
 function isVisible(q: QuizQuestion, answers: QuizAnswers): boolean {
   if (!q.showIf) return true;
@@ -140,7 +145,7 @@ function validate(q: QuizQuestion | undefined, answers: QuizAnswers): string | n
     return "That does not look like a valid email";
   }
   if (q.type === "tel" && !isEmpty && !isValidPhone(String(value))) {
-    return "Please use a number with at least 10 digits";
+    return "Please enter a valid phone number";
   }
   return null;
 }
