@@ -36,11 +36,13 @@ const LABELS: Record<string, string> = {
   private: "Prefer not to say",
   // services / needs
   bookkeeping: "Bookkeeping",
-  "year-end-accounts": "Year-end accounts",
+  "year-end-accounts": "Year end accounts",
   "tax-and-vat": "Business tax & VAT",
-  "personal-tax": "Personal tax & self-assessment",
-  payroll: "Payroll & pensions",
-  advisory: "Advisory & planning",
+  "tax-advice": "Tax advice",
+  "vat-support": "VAT support",
+  "personal-tax": "Personal tax",
+  payroll: "Payroll",
+  advisory: "Future planning",
   // situation / satisfaction / timeline
   accountant: "Has an accountant",
   diy: "DIY",

@@ -23,6 +23,12 @@ const PRESEED_SERVICES = new Set([
   "advisory",
 ]);
 
+// A service slug can differ from the quiz `servicesWanted` value it should
+// pre-tick. Tax & VAT is split into two quiz options, so map it to "Tax advice".
+const SLUG_TO_NEED: Record<string, string> = {
+  "tax-and-vat": "tax-advice",
+};
+
 export default function ConsultationPage({
   searchParams,
 }: {
@@ -33,7 +39,7 @@ export default function ConsultationPage({
 
   return (
     <ConsultationFlow
-      preselectService={service ? slug : undefined}
+      preselectService={service ? SLUG_TO_NEED[slug] ?? slug : undefined}
       preselectServiceLabel={service?.name}
     />
   );

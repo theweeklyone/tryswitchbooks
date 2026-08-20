@@ -11,7 +11,9 @@ import type {
 const NEED_TO_SLUG: Record<string, string> = {
   bookkeeping: "bookkeeping",
   "year-end-accounts": "year-end-accounts",
-  "tax-and-vat": "tax-and-vat",
+  "tax-and-vat": "tax-and-vat", // kept for service-page deep links
+  "tax-advice": "tax-and-vat",
+  "vat-support": "tax-and-vat",
   payroll: "payroll",
   advisory: "advisory",
 };
