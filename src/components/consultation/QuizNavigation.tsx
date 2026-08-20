@@ -20,7 +20,7 @@ export function QuizNavigation({
   submitting?: boolean;
 }) {
   return (
-    <div className="mt-6 flex items-center justify-between gap-3">
+    <div className="flex items-center justify-between gap-3">
       <button
         type="button"
         onClick={onBack}
