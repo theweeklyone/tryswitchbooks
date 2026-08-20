@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 // written to be accurate and ICO-friendly, but is not a substitute for formal
 // legal advice if you want it checked.
 
-const LAST_UPDATED = "29 June 2026";
+const LAST_UPDATED = "20 August 2026";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -56,9 +56,18 @@ export default function PrivacyPolicyPage() {
             <p>
               <strong className="text-cocoa-300">Information you give us.</strong>{" "}
               When you contact us or complete our free business review, you may provide your
-              name, business name, email address, phone number, details about your business
-              and current accounting arrangements, what you&rsquo;re looking for, your
-              budget, and anything else you choose to tell us in a message.
+              first and last name, email address and phone number; the town and county
+              you&rsquo;re based in; your date of birth (optional); your business name and
+              industry; details about your current accounting arrangements, what you&rsquo;re
+              looking for and your budget; and, if you are a director of one or more limited
+              companies, each company&rsquo;s name and registration number. You can also tell
+              us anything else you like in a message.
+            </p>
+            <p>
+              Some of these details, such as your date of birth and company information, are
+              collected to help the accounting firm we introduce you to complete their client
+              onboarding and identity (anti-money-laundering) checks more quickly. Your date of
+              birth is optional, and you can complete the review without it.
             </p>
             <p>
               <strong className="text-cocoa-300">
@@ -82,6 +91,7 @@ export default function PrivacyPolicyPage() {
                 "Respond to your enquiries and messages",
                 "Understand your needs so we can match you with a suitable local accounting firm",
                 "Introduce you to one or more accounting firms and share your details with them so they can help you (see below)",
+                "Help the firm we introduce you to complete their onboarding and identity (anti-money-laundering) checks",
                 "Improve our website and understand how it is used",
                 "Meet our legal and regulatory obligations",
               ].map((item) => (
@@ -106,8 +116,9 @@ export default function PrivacyPolicyPage() {
             <p>
               Our service works by introducing you to a suitable local accounting firm. With
               your agreement, we share the relevant details from your review (such as your
-              contact details, business information and what you need) with the firm or firms
-              we introduce you to, so they can contact you and discuss helping your business.
+              name, contact details, location, business and company information, date of birth
+              where you have provided it, and what you need) with the firm or firms we
+              introduce you to, so they can contact you and discuss helping your business.
               Once introduced, that firm becomes responsible for the information you share
               with them directly under their own privacy policy. If you would prefer us not
               to make an introduction, just let us know.
