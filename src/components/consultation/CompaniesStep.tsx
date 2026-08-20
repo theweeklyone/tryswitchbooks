@@ -54,14 +54,14 @@ export function CompaniesStep({
                 </button>
               ) : null}
             </div>
-            <div className="mt-4 grid gap-3">
+            <div className="mt-4 grid gap-3 sm:grid-cols-[2fr_1fr]">
               <input
                 type="text"
                 value={c.name}
                 onChange={(e) => update(i, { name: e.target.value })}
                 placeholder="Company name"
                 autoComplete="organization"
-                className="w-full rounded-xl border border-sand-100 bg-white px-4 py-3.5 font-serif text-xl text-cocoa-300 outline-none transition-colors placeholder:text-cocoa-50/40 focus:border-cocoa-300 sm:text-2xl"
+                className="w-full rounded-xl border border-sand-100 bg-white px-4 py-3.5 font-serif text-lg text-cocoa-300 outline-none transition-colors placeholder:text-cocoa-50/40 focus:border-cocoa-300 sm:text-xl"
               />
               <input
                 type="text"
@@ -69,9 +69,9 @@ export function CompaniesStep({
                 onChange={(e) =>
                   update(i, { number: e.target.value.replace(/[^0-9A-Za-z]/g, "").slice(0, 8) })
                 }
-                placeholder="Company number (8 digits)"
+                placeholder="Company number"
                 inputMode="numeric"
-                className="w-full rounded-xl border border-sand-100 bg-white px-4 py-3.5 font-serif text-xl text-cocoa-300 outline-none transition-colors placeholder:text-cocoa-50/40 focus:border-cocoa-300 sm:text-2xl"
+                className="w-full rounded-xl border border-sand-100 bg-white px-4 py-3.5 font-serif text-lg text-cocoa-300 outline-none transition-colors placeholder:text-cocoa-50/40 focus:border-cocoa-300 sm:text-xl"
               />
             </div>
           </div>
