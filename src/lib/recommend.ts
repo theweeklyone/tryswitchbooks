@@ -75,8 +75,8 @@ export function recommend(sub: ConsultationSubmission): ConsultationRecommendati
 
   const leaving = sub.satisfaction === "leaving" || sub.satisfaction === "frustrated";
   const summary = leaving
-    ? `From what you've told us, ${sub.businessName || "your business"} deserves more than it's getting. We'll prioritise matching you with a local firm that's strong on ${primaryService.name.toLowerCase()} and proactive all year round.`
-    : `Based on your answers, we'll match you with a local firm that's a great fit for ${sub.businessName || "your business"}, starting with ${primaryService.name.toLowerCase()}, with room to grow into fuller support as you need it.`;
+    ? `From what you've told us, ${sub.businessName || "your business"} deserves more than it's getting. We'll prioritise matching you with a firm that's strong on ${primaryService.name.toLowerCase()} and proactive all year round.`
+    : `Based on your answers, we'll match you with a firm that's a great fit for ${sub.businessName || "your business"}, starting with ${primaryService.name.toLowerCase()}, with room to grow into fuller support as you need it.`;
 
   return {
     primary: {

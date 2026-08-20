@@ -16,6 +16,17 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+// Readable labels for the areas they asked for help with (servicesWanted).
+const NEED_LABELS: Record<string, string> = {
+  bookkeeping: "Bookkeeping",
+  "year-end-accounts": "Year-end accounts",
+  "tax-advice": "Tax advice",
+  "vat-support": "VAT support",
+  "personal-tax": "Personal tax",
+  payroll: "Payroll",
+  advisory: "Future planning",
+};
+
 export function RecommendationView({
   submission,
   recommendation,
@@ -25,7 +36,12 @@ export function RecommendationView({
   recommendation: ConsultationRecommendation;
   onStartOver: () => void;
 }) {
-  const { primary, secondary, whatGoodLooksLike, summary } = recommendation;
+  const { primary, whatGoodLooksLike, summary } = recommendation;
+
+  // What they actually asked for (excluding "not sure"), as readable labels.
+  const selectedNeeds = submission.servicesWanted
+    .filter((s) => s !== "unsure")
+    .map((s) => NEED_LABELS[s] ?? s);
 
   return (
     <div className="min-h-screen bg-cream-50">
@@ -50,16 +66,15 @@ export function RecommendationView({
       </header>
 
       <div className="container-luxe py-16 sm:py-24">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-3xl">
           <p className="eyebrow">Thank you, {submission.firstName}</p>
           <h1 className="mt-4 font-serif text-4xl leading-[1.08] text-cocoa-300 sm:text-5xl">
             We're finding your match.
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-cocoa-50">
-            We've got everything we need. We're now finding the right local accounting firm
-            for you. Someone from Switch Books will be in touch shortly to confirm a couple of
-            details and make the introduction. No pressure, no hard sell. We've also
-            emailed a copy of your review to{" "}
+            We've got everything we need, and we're now finding the right accounting firm for
+            you. We'll pass your details on to the right adviser, who'll be in touch in due
+            course. No pressure, no hard sell. We've also emailed a copy of your review to{" "}
             <span className="text-cocoa-300">{submission.email}</span>.
           </p>
         </div>
@@ -69,9 +84,32 @@ export function RecommendationView({
           <div className="card-luxe p-8 sm:p-10">
             <p className="eyebrow">What we'll match you on</p>
             <h2 className="mt-3 font-serif text-2xl text-cocoa-300 sm:text-3xl">
-              {primary.serviceName}
+              A firm that fits {submission.businessName || "your business"}
             </h2>
             <p className="mt-4 leading-relaxed text-cocoa-50">{summary}</p>
+
+            {selectedNeeds.length > 0 ? (
+              <div className="mt-6">
+                <p className="text-xs uppercase tracking-widest text-cocoa-50/70">
+                  You told us you'd like help with
+                </p>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {selectedNeeds.map((need) => (
+                    <li
+                      key={need}
+                      className="rounded-full border border-sand-200 bg-blush-50/60 px-3.5 py-1.5 text-sm text-cocoa-300"
+                    >
+                      {need}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <p className="mt-6 text-sm text-cocoa-50">
+                Not sure where to start? That's fine, we'll help you find the right footing.
+              </p>
+            )}
+
             {primary.serviceSlug ? (
               <Link
                 href={`/services/${primary.serviceSlug}`}
@@ -96,13 +134,6 @@ export function RecommendationView({
               ))}
             </ul>
           </div>
-
-          {secondary ? (
-            <p className="mt-6 text-center text-sm text-cocoa-50">
-              We'd likely also look at{" "}
-              <span className="text-cocoa-300">{secondary.serviceName}</span> for you.
-            </p>
-          ) : null}
 
           {/* Next steps */}
           <div className="mt-10 flex flex-col items-center gap-4">
