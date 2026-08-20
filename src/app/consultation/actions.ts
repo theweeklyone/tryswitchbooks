@@ -31,8 +31,8 @@ const LABELS: Record<string, string> = {
   "250k-500k": "£250k–£500k",
   "500k-1m": "£500k–£1m",
   "1m-5m": "£1m–£5m",
-  "5m-plus": "£5m+",
-  "15m-plus": "£15m+ (above audit threshold)",
+  "5m-plus": "£5m–£15m",
+  "15m-plus": "£15m+",
   private: "Prefer not to say",
   // services / needs
   bookkeeping: "Bookkeeping",
