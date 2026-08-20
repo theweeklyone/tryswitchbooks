@@ -9,6 +9,7 @@ export type QuestionType =
   | "single"
   | "multi"
   | "textarea"
+  | "industry"
   | "companies"
   | "upload";
 
@@ -22,7 +23,6 @@ export type QuestionId =
   | "town"
   | "county"
   | "industry"
-  | "industryOther"
   | "companies"
   | "businessType"
   | "currentSituation"
@@ -41,6 +41,8 @@ export type Option = {
   value: string;
   label: string;
   hint?: string;
+  /** Extra search terms (synonyms, example trades) for the searchable picker. */
+  keywords?: string[];
 };
 
 /** A single company directorship: name + Companies House number. */

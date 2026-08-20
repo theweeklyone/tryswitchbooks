@@ -5,6 +5,7 @@ import { OptionCard } from "./OptionCard";
 import { TextInputStep } from "./TextInputStep";
 import { TextAreaStep } from "./TextAreaStep";
 import { CompaniesStep } from "./CompaniesStep";
+import { IndustrySelectStep } from "./IndustrySelectStep";
 import { UploadPlaceholderStep } from "./UploadPlaceholderStep";
 
 // Generic step renderer. Picks the right input control for the question type.
@@ -62,6 +63,15 @@ export function QuestionStep({
                   ? "tel"
                   : "text"
             }
+            error={error}
+          />
+        )}
+
+        {question.type === "industry" && question.options && (
+          <IndustrySelectStep
+            value={typeof value === "string" ? value : ""}
+            options={question.options}
+            onChange={(v) => onChange(v)}
             error={error}
           />
         )}

@@ -73,6 +73,7 @@ function validate(q: QuizQuestion | undefined, answers: QuizAnswers): string | n
 
   if (q.required !== false && isEmpty) {
     if (q.type === "single" || q.type === "multi") return "Pick an option to continue";
+    if (q.type === "industry") return "Search and pick your industry to continue";
     if (q.type === "text") return "Please add an answer";
     if (q.type === "email") return "Please add your email";
     if (q.type === "tel") return "Please add a phone number";
@@ -206,13 +207,9 @@ export function ConsultationFlow({
     const servicesWanted = asArray(answers.servicesWanted);
     const primaryNeed = servicesWanted.find((s) => s !== "unsure") ?? "unsure";
 
-    // Resolve the industry to a readable label (or the free-text "other" value).
-    const industryRaw = String(answers.industry ?? "");
-    const industryQuestion = questions.find((q) => q.id === "industry");
-    const industry =
-      industryRaw === "other"
-        ? titleCase(String(answers.industryOther ?? "").trim())
-        : industryQuestion?.options?.find((o) => o.value === industryRaw)?.label ?? industryRaw;
+    // The industry picker stores the final value directly (a chosen sector label
+    // or the free text the visitor typed), so no lookup is needed.
+    const industry = String(answers.industry ?? "").trim();
 
     // Only keep director companies with an actual name; trim the rest.
     const companies = asCompanies(answers.companies)
