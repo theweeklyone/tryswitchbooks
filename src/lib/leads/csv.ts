@@ -19,10 +19,21 @@ const COLUMNS: { header: string; pick: (l: ConsultationLead) => unknown }[] = [
   { header: "Created", pick: (l) => l.createdAt },
   { header: "First name", pick: (l) => l.firstName },
   { header: "Last name", pick: (l) => l.lastName ?? "" },
+  { header: "Date of birth", pick: (l) => l.dateOfBirth ?? "" },
   { header: "Business", pick: (l) => l.businessName },
+  { header: "Industry", pick: (l) => l.industry ?? "" },
   { header: "Email", pick: (l) => l.email },
   { header: "Mobile", pick: (l) => l.mobile },
+  { header: "Town", pick: (l) => l.town ?? "" },
+  { header: "County", pick: (l) => l.county ?? "" },
   { header: "Business type", pick: (l) => l.businessType },
+  {
+    header: "Limited companies",
+    pick: (l) =>
+      (l.companies ?? [])
+        .map((c) => (c.number ? `${c.name} (${c.number})` : c.name))
+        .join(" | "),
+  },
   { header: "Current situation", pick: (l) => l.currentSituation },
   { header: "Satisfaction", pick: (l) => l.satisfaction },
   { header: "Current provider", pick: (l) => l.currentProvider },

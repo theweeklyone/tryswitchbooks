@@ -1,9 +1,10 @@
 "use client";
 
-import type { QuizAnswer, QuizQuestion } from "@/lib/types/consultation";
+import type { CompanyEntry, QuizAnswer, QuizQuestion } from "@/lib/types/consultation";
 import { OptionCard } from "./OptionCard";
 import { TextInputStep } from "./TextInputStep";
 import { TextAreaStep } from "./TextAreaStep";
+import { CompaniesStep } from "./CompaniesStep";
 import { UploadPlaceholderStep } from "./UploadPlaceholderStep";
 
 // Generic step renderer. Picks the right input control for the question type.
@@ -36,7 +37,8 @@ export function QuestionStep({
       <div className="mt-10">
         {(question.type === "text" ||
           question.type === "email" ||
-          question.type === "tel") && (
+          question.type === "tel" ||
+          question.type === "date") && (
           <TextInputStep
             type={question.type}
             value={(value as string) || ""}
@@ -47,7 +49,11 @@ export function QuestionStep({
                 ? "email"
                 : question.type === "tel"
                   ? "tel"
-                  : "given-name"
+                  : question.id === "lastName"
+                    ? "family-name"
+                    : question.id === "firstName"
+                      ? "given-name"
+                      : "off"
             }
             inputMode={
               question.type === "email"
@@ -56,6 +62,16 @@ export function QuestionStep({
                   ? "tel"
                   : "text"
             }
+            error={error}
+          />
+        )}
+
+        {question.type === "companies" && (
+          <CompaniesStep
+            value={(Array.isArray(value) ? (value as CompanyEntry[]) : []).filter(
+              (c): c is CompanyEntry => typeof c === "object" && c !== null,
+            )}
+            onChange={(v) => onChange(v)}
             error={error}
           />
         )}
@@ -78,7 +94,9 @@ export function QuestionStep({
         {question.type === "multi" && question.options && (
           <ul className="grid gap-3">
             {question.options.map((opt) => {
-              const selectedArr = Array.isArray(value) ? value : [];
+              const selectedArr = (Array.isArray(value) ? value : []).filter(
+                (v): v is string => typeof v === "string",
+              );
               const isSelected = selectedArr.includes(opt.value);
               const toggle = () => {
                 if (opt.value === "flexible") {
@@ -119,7 +137,9 @@ export function QuestionStep({
 
         {question.type === "upload" && (
           <UploadPlaceholderStep
-            paths={Array.isArray(value) ? value : []}
+            paths={(Array.isArray(value) ? value : []).filter(
+              (v): v is string => typeof v === "string",
+            )}
             onChange={(next) => onChange(next)}
           />
         )}

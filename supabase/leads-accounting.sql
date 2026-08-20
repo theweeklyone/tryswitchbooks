@@ -10,9 +10,15 @@ create table if not exists public.leads (
 
   -- Contact
   first_name text not null,
+  last_name text,
   business_name text,
   email text not null,
   mobile text,
+  date_of_birth date,
+  town text,
+  county text,
+  industry text,
+  companies jsonb default '[]'::jsonb,   -- [{ name, number }] director companies
 
   -- Their situation
   business_type text,
@@ -42,7 +48,9 @@ create table if not exists public.leads (
   estimated_lead_value integer default 0,
   priority text default 'warm',        -- hot | warm | cool
   last_contacted_at timestamptz,
-  next_follow_up_at timestamptz
+  next_follow_up_at timestamptz,
+  internal_notes jsonb default '[]'::jsonb,   -- timeline of dashboard notes
+  booked_value integer                        -- realised value once matched
 );
 
 -- Row Level Security: lock the table down. The quiz uses the service-role key

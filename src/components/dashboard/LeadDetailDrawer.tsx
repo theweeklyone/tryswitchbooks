@@ -207,9 +207,20 @@ function DrawerContent({
               rows={[
                 ["Name", fullName],
                 ["Business", lead.businessName || "-"],
+                ["Industry", lead.industry || "-"],
                 ["Email", lead.email],
                 ["Mobile", lead.mobile],
+                ["Location", [lead.town, lead.county].filter(Boolean).join(", ") || "-"],
+                ["Date of birth", lead.dateOfBirth ? fmtDateOnly(lead.dateOfBirth) : "-"],
                 ["Business type", capitalize(lead.businessType)],
+                [
+                  "Limited companies",
+                  lead.companies?.length
+                    ? lead.companies
+                        .map((c) => (c.number ? `${c.name} (${c.number})` : c.name))
+                        .join("; ")
+                    : "-",
+                ],
                 ["Source", labelSource(lead.source)],
                 ["Submitted", fmt(lead.createdAt)],
               ]}
@@ -487,10 +498,15 @@ function spendLabel(s: string) {
 
 function labelSource(s: string) {
   const map: Record<string, string> = {
-    "review-quiz": "Business review",
+    "review-quiz": "Business Review quiz",
     "contact-form": "Contact form",
     phone: "Phone",
     referral: "Referral",
   };
+  // Service-page entries arrive as "review-quiz:service-bookkeeping" etc.
+  if (s.startsWith("review-quiz:service-")) {
+    const svc = s.replace("review-quiz:service-", "").replace(/-/g, " ");
+    return `Business Review quiz (${svc})`;
+  }
   return map[s] ?? s;
 }

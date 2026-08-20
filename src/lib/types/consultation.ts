@@ -5,16 +5,25 @@ export type QuestionType =
   | "text"
   | "email"
   | "tel"
+  | "date"
   | "single"
   | "multi"
   | "textarea"
+  | "companies"
   | "upload";
 
 export type QuestionId =
   | "firstName"
+  | "lastName"
   | "businessName"
   | "email"
   | "phone"
+  | "dateOfBirth"
+  | "town"
+  | "county"
+  | "industry"
+  | "industryOther"
+  | "companies"
   | "businessType"
   | "currentSituation"
   | "satisfaction"
@@ -34,6 +43,12 @@ export type Option = {
   hint?: string;
 };
 
+/** A single company directorship: name + Companies House number. */
+export type CompanyEntry = {
+  name: string;
+  number: string;
+};
+
 export type QuizQuestion = {
   id: QuestionId;
   type: QuestionType;
@@ -50,18 +65,25 @@ export type QuizQuestion = {
 
 /**
  * Answer values keyed by question id.
- * - text/email/tel/textarea/single → string
+ * - text/email/tel/date/textarea/single → string
  * - multi → string[]
+ * - companies → CompanyEntry[]
  */
-export type QuizAnswer = string | string[] | undefined;
+export type QuizAnswer = string | string[] | CompanyEntry[] | undefined;
 export type QuizAnswers = Partial<Record<QuestionId, QuizAnswer>>;
 
 export type ConsultationSubmission = {
   // Contact
   firstName: string;
+  lastName: string;
   businessName: string;
   email: string;
   phone: string;
+  dateOfBirth: string; // ISO yyyy-mm-dd, optional (may be empty)
+  town: string;
+  county: string;
+  industry: string; // resolved label (or the free-text "other" value)
+  companies: CompanyEntry[]; // directorships, when a limited company
 
   // Their situation
   businessType: string;

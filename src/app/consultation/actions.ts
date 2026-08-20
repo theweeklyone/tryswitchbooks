@@ -116,41 +116,64 @@ export async function submitConsultation(input: {
       ? `One-off annual fee (~${submission.annualFeeValue})`
       : label(submission.currentSpend);
 
+  // The columns added by supabase/2026-08-add-lead-personal-fields.sql. If that
+  // migration hasn't run yet, an insert including them fails wholesale, which
+  // would silently drop the lead. So we split them out and retry without them on
+  // failure — the lead always saves; the extra detail lands once the migration
+  // is applied. (It's still in the notification email regardless.)
+  const newFields = {
+    date_of_birth: submission.dateOfBirth || null,
+    town: submission.town || null,
+    county: submission.county || null,
+    industry: submission.industry || null,
+    companies: submission.companies.length ? submission.companies : null,
+  };
+  const coreRow = {
+    first_name: submission.firstName,
+    last_name: submission.lastName || null,
+    business_name: submission.businessName,
+    email: submission.email,
+    mobile: submission.phone,
+    business_type: submission.businessType,
+    current_situation: submission.currentSituation,
+    satisfaction: submission.satisfaction,
+    // current_spend stores the band, or the annual fee with its value.
+    frustrations: submission.frustrations,
+    current_provider: submission.currentProvider || null,
+    current_spend: currentSpendDisplay,
+    services_wanted: submission.servicesWanted,
+    primary_need: submission.primaryNeed,
+    turnover: submission.turnover,
+    budget_range: submission.budget,
+    timeline: submission.timeline,
+    extra_notes: submission.notes || null,
+    recommended_service: recommendation.primary.serviceName,
+    recommended_service_slug: recommendation.primary.serviceSlug,
+    secondary_recommendation: recommendation.secondary?.serviceName ?? null,
+    source: submission.source,
+    status: "new",
+    estimated_lead_value: estimatedLeadValue,
+    priority,
+  };
+
   // Best-effort persistence. Never blocks the user or the email; logs and
   // continues if Supabase isn't configured yet.
   let leadId = submission.submissionId;
   try {
     const supabase = createSupabaseAdminClient();
-    const { data, error } = await supabase
-      .from("leads")
-      .insert({
-        first_name: submission.firstName,
-        business_name: submission.businessName,
-        email: submission.email,
-        mobile: submission.phone,
-        business_type: submission.businessType,
-        current_situation: submission.currentSituation,
-        satisfaction: submission.satisfaction,
-        // current_spend stores the band, or the annual fee with its value.
-        frustrations: submission.frustrations,
-        current_provider: submission.currentProvider || null,
-        current_spend: currentSpendDisplay,
-        services_wanted: submission.servicesWanted,
-        primary_need: submission.primaryNeed,
-        turnover: submission.turnover,
-        budget_range: submission.budget,
-        timeline: submission.timeline,
-        extra_notes: submission.notes || null,
-        recommended_service: recommendation.primary.serviceName,
-        recommended_service_slug: recommendation.primary.serviceSlug,
-        secondary_recommendation: recommendation.secondary?.serviceName ?? null,
-        source: submission.source,
-        status: "new",
-        estimated_lead_value: estimatedLeadValue,
-        priority,
-      })
-      .select("id")
-      .single();
+    const insertRow = async (row: Record<string, unknown>) =>
+      supabase.from("leads").insert(row).select("id").single();
+
+    let { data, error } = await insertRow({ ...coreRow, ...newFields });
+    if (error) {
+      // Likely the migration for the new columns hasn't run yet. Retry with the
+      // core columns only so the lead is never lost.
+      console.warn(
+        "[submitConsultation] Full insert failed, retrying without new fields:",
+        error.message,
+      );
+      ({ data, error } = await insertRow(coreRow));
+    }
     if (error) {
       console.warn("[submitConsultation] Supabase insert skipped/failed:", error.message);
     } else if (data?.id) {
@@ -160,21 +183,33 @@ export async function submitConsultation(input: {
     console.warn("[submitConsultation] Supabase not available:", err instanceof Error ? err.message : err);
   }
 
+  const fullName = [submission.firstName, submission.lastName].filter(Boolean).join(" ");
+  const locationDisplay = [submission.town, submission.county].filter(Boolean).join(", ");
+  const companiesDisplay = submission.companies.length
+    ? submission.companies
+        .map((c) => (c.number ? `${c.name} (${c.number})` : c.name))
+        .join("; ")
+    : undefined;
+
   // Email the owner the full picture (no-op until RESEND_API_KEY is set; never
   // throws). This is the primary delivery channel.
   try {
     await sendLeadEmail({
-      subject: `New lead: ${submission.businessName || submission.firstName} (${label(priority)} priority)`,
-      title: `${submission.firstName} · ${submission.businessName}`,
+      subject: `New lead: ${submission.businessName || fullName} (${label(priority)} priority)`,
+      title: `${fullName} · ${submission.businessName}`,
       sections: [
         {
           title: "Contact",
           fields: [
-            { label: "Name", value: submission.firstName },
+            { label: "Name", value: fullName },
             { label: "Business", value: submission.businessName },
+            { label: "Industry", value: submission.industry || undefined },
             { label: "Email", value: submission.email },
             { label: "Phone", value: submission.phone },
+            { label: "Location", value: locationDisplay || undefined },
+            { label: "Date of birth", value: submission.dateOfBirth || undefined },
             { label: "Setup", value: label(submission.businessType) },
+            { label: "Limited companies", value: companiesDisplay },
           ],
         },
         {

@@ -1,4 +1,5 @@
 import type { LeadStatus, LeadPriority, LeadSource, LeadNote } from "@/lib/types/lead";
+import type { CompanyEntry } from "@/lib/types/consultation";
 
 // Mirrors the public.leads table (supabase/leads-accounting.sql).
 export type LeadRow = {
@@ -8,6 +9,11 @@ export type LeadRow = {
   last_name: string | null;
   email: string;
   mobile: string;
+  date_of_birth: string | null;
+  town: string | null;
+  county: string | null;
+  industry: string | null;
+  companies: CompanyEntry[] | null;
   business_name: string | null;
   business_type: string | null;
   current_situation: string | null;

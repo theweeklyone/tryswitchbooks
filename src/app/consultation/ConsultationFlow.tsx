@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { questions } from "@/data/consultation-questions";
 import type {
+  CompanyEntry,
   ConsultationRecommendation,
   ConsultationSubmission,
   QuizAnswer,
@@ -39,9 +40,32 @@ function isVisible(q: QuizQuestion, answers: QuizAnswers): boolean {
   return String(ans) === equals;
 }
 
+// Capitalise the first letter of each word, leaving the rest as typed, so
+// "john smith" / "east grinstead" come through tidy without mangling names
+// that already carry internal capitals (e.g. "McDonald").
+function titleCase(s: string): string {
+  return s.replace(/(^|\s)(\S)/g, (_, lead, ch) => lead + ch.toUpperCase());
+}
+
+const asCompanies = (v: QuizAnswer): CompanyEntry[] =>
+  Array.isArray(v)
+    ? (v as unknown[]).filter(
+        (c): c is CompanyEntry =>
+          typeof c === "object" && c !== null && "name" in c,
+      )
+    : [];
+
 function validate(q: QuizQuestion | undefined, answers: QuizAnswers): string | null {
   if (!q) return null;
   const value = answers[q.id];
+
+  if (q.type === "companies") {
+    const list = asCompanies(value);
+    const hasNamed = list.some((c) => c.name.trim() !== "");
+    if (q.required !== false && !hasNamed) return "Add at least your company name";
+    return null;
+  }
+
   const isEmpty =
     value === undefined ||
     value === "" ||
@@ -68,7 +92,11 @@ function newId() {
 }
 
 const asArray = (v: QuizAnswer): string[] =>
-  Array.isArray(v) ? v : v ? [String(v)] : [];
+  Array.isArray(v)
+    ? v.filter((x): x is string => typeof x === "string")
+    : v
+      ? [String(v)]
+      : [];
 
 export function ConsultationFlow({
   preselectService,
@@ -178,11 +206,30 @@ export function ConsultationFlow({
     const servicesWanted = asArray(answers.servicesWanted);
     const primaryNeed = servicesWanted.find((s) => s !== "unsure") ?? "unsure";
 
+    // Resolve the industry to a readable label (or the free-text "other" value).
+    const industryRaw = String(answers.industry ?? "");
+    const industryQuestion = questions.find((q) => q.id === "industry");
+    const industry =
+      industryRaw === "other"
+        ? titleCase(String(answers.industryOther ?? "").trim())
+        : industryQuestion?.options?.find((o) => o.value === industryRaw)?.label ?? industryRaw;
+
+    // Only keep director companies with an actual name; trim the rest.
+    const companies = asCompanies(answers.companies)
+      .map((c) => ({ name: c.name.trim(), number: (c.number ?? "").trim() }))
+      .filter((c) => c.name !== "");
+
     const submission: ConsultationSubmission = {
-      firstName: String(answers.firstName ?? "").trim(),
+      firstName: titleCase(String(answers.firstName ?? "").trim()),
+      lastName: titleCase(String(answers.lastName ?? "").trim()),
       businessName: String(answers.businessName ?? "").trim(),
       email: String(answers.email ?? "").trim(),
       phone: String(answers.phone ?? "").trim(),
+      dateOfBirth: String(answers.dateOfBirth ?? "").trim(),
+      town: titleCase(String(answers.town ?? "").trim()),
+      county: titleCase(String(answers.county ?? "").trim()),
+      industry,
+      companies,
       businessType: String(answers.businessType ?? ""),
       currentSituation: String(answers.currentSituation ?? ""),
       satisfaction: String(answers.satisfaction ?? ""),

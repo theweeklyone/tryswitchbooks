@@ -2,6 +2,8 @@
 // Field names line up with the quiz submission and the Supabase `leads` table
 // (see supabase/leads-accounting.sql).
 
+import type { CompanyEntry } from "@/lib/types/consultation";
+
 export type LeadStatus =
   | "new"
   | "contacted"
@@ -38,6 +40,11 @@ export type ConsultationLead = {
   lastName?: string;
   email: string;
   mobile: string;
+  dateOfBirth?: string; // ISO yyyy-mm-dd, optional
+  town?: string;
+  county?: string;
+  industry?: string;
+  companies: CompanyEntry[]; // limited-company directorships
   businessName: string;
 
   // Their situation (mirrors the review quiz)

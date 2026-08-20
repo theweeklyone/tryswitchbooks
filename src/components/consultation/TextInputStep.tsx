@@ -1,6 +1,6 @@
 import { clsx } from "@/lib/utils";
 
-type Type = "text" | "email" | "tel";
+type Type = "text" | "email" | "tel" | "date";
 
 // Single-line input step. Tall, generous, mobile-friendly.
 
@@ -18,7 +18,7 @@ export function TextInputStep({
   onChange: (v: string) => void;
   placeholder?: string;
   autoComplete?: string;
-  inputMode?: "text" | "email" | "tel";
+  inputMode?: "text" | "email" | "tel" | "numeric";
   error?: string | null;
 }) {
   return (
