@@ -87,7 +87,7 @@ export function QuestionStep({
         )}
 
         {question.type === "single" && question.options && (
-          <ul className="grid gap-2.5 auto-rows-fr sm:grid-cols-2">
+          <ul className="grid gap-2 auto-rows-fr sm:grid-cols-2">
             {question.options.map((opt) => (
               <li key={opt.value}>
                 <OptionCard
@@ -102,7 +102,7 @@ export function QuestionStep({
         )}
 
         {question.type === "multi" && question.options && (
-          <ul className="grid gap-2.5 auto-rows-fr sm:grid-cols-2">
+          <ul className="grid gap-2 auto-rows-fr sm:grid-cols-2">
             {question.options.map((opt) => {
               const selectedArr = (Array.isArray(value) ? value : []).filter(
                 (v): v is string => typeof v === "string",
