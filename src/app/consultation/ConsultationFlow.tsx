@@ -62,6 +62,23 @@ const asName = (v: QuizAnswer): NameValue =>
     ? (v as NameValue)
     : { first: "", last: "" };
 
+// Parse a typed DD/MM/YYYY date of birth into an ISO date (yyyy-mm-dd) plus a
+// validity flag. Rejects impossible dates and years outside 1900..this year.
+function parseDob(s: string): { iso: string; valid: boolean } {
+  const m = s.trim().match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  if (!m) return { iso: "", valid: false };
+  const [, dd, mm, yyyy] = m;
+  const day = Number(dd);
+  const month = Number(mm);
+  const year = Number(yyyy);
+  const thisYear = new Date().getFullYear();
+  if (year < 1900 || year > thisYear) return { iso: "", valid: false };
+  if (month < 1 || month > 12) return { iso: "", valid: false };
+  const daysInMonth = new Date(year, month, 0).getDate();
+  if (day < 1 || day > daysInMonth) return { iso: "", valid: false };
+  return { iso: `${yyyy}-${mm}-${dd}`, valid: true };
+}
+
 const asLocation = (v: QuizAnswer): LocationValue =>
   v && typeof v === "object" && !Array.isArray(v) && "town" in v
     ? (v as LocationValue)
@@ -84,6 +101,13 @@ function validate(q: QuizQuestion | undefined, answers: QuizAnswers): string | n
     if (q.required !== false && (!l.town.trim() || !l.county.trim())) {
       return "Please add your town and county";
     }
+    return null;
+  }
+
+  if (q.type === "date") {
+    // Optional: empty is fine, but if they typed something it must be a full date.
+    const s = String(value ?? "").trim();
+    if (s && !parseDob(s).valid) return "Enter a full date as DD/MM/YYYY";
     return null;
   }
 
@@ -258,7 +282,7 @@ export function ConsultationFlow({
       businessName: String(answers.businessName ?? "").trim(),
       email: String(answers.email ?? "").trim(),
       phone: String(answers.phone ?? "").trim(),
-      dateOfBirth: String(answers.dateOfBirth ?? "").trim(),
+      dateOfBirth: parseDob(String(answers.dateOfBirth ?? "")).iso,
       town: titleCase(location.town.trim()),
       county: titleCase(location.county.trim()),
       industry,

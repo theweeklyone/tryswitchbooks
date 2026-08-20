@@ -14,6 +14,7 @@ import { TextAreaStep } from "./TextAreaStep";
 import { CompaniesStep } from "./CompaniesStep";
 import { NameStep } from "./NameStep";
 import { LocationStep } from "./LocationStep";
+import { DobStep } from "./DobStep";
 import { IndustrySelectStep } from "./IndustrySelectStep";
 import { UploadPlaceholderStep } from "./UploadPlaceholderStep";
 
@@ -95,23 +96,14 @@ export function QuestionStep({
       <div className="mt-6">
         {(question.type === "text" ||
           question.type === "email" ||
-          question.type === "tel" ||
-          question.type === "date") && (
+          question.type === "tel") && (
           <TextInputStep
             type={question.type}
             value={(value as string) || ""}
             onChange={(v) => onChange(v)}
             placeholder={question.placeholder}
             autoComplete={
-              question.type === "email"
-                ? "email"
-                : question.type === "tel"
-                  ? "tel"
-                  : question.id === "lastName"
-                    ? "family-name"
-                    : question.id === "firstName"
-                      ? "given-name"
-                      : "off"
+              question.type === "email" ? "email" : question.type === "tel" ? "tel" : "off"
             }
             inputMode={
               question.type === "email"
@@ -120,6 +112,14 @@ export function QuestionStep({
                   ? "tel"
                   : "text"
             }
+            error={error}
+          />
+        )}
+
+        {question.type === "date" && (
+          <DobStep
+            value={(value as string) || ""}
+            onChange={(v) => onChange(v)}
             error={error}
           />
         )}

@@ -334,7 +334,7 @@ export const questions: QuizQuestion[] = [
     type: "date",
     title: "Your date of birth",
     subtitle:
-      "Optional. It helps the firm we match you with get their onboarding checks done faster.",
+      "It helps the firm we match you with get their onboarding checks done faster.",
     required: false,
   },
   {
