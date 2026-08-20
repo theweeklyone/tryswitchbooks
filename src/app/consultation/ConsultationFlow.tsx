@@ -337,9 +337,8 @@ export function ConsultationFlow({
           isLast={step === total - 1}
           submitting={submitting}
         />
-        <p className="mt-8 text-center text-[11px] uppercase tracking-widest text-cocoa-50/60">
-          No sign-up needed. Just the details you'd like us to contact you on. Your answers
-          stay private until you submit.
+        <p className="mt-5 text-center text-[11px] uppercase tracking-widest text-cocoa-50/60">
+          No sign-up needed. Your answers stay private until you submit.
         </p>
       </div>
     </ConsultationLayout>

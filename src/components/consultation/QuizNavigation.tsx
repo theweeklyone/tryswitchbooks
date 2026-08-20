@@ -20,13 +20,13 @@ export function QuizNavigation({
   submitting?: boolean;
 }) {
   return (
-    <div className="mt-10 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div className="mt-6 flex items-center justify-between gap-3">
       <button
         type="button"
         onClick={onBack}
         disabled={!canGoBack}
         className={clsx(
-          "btn-secondary w-full sm:w-auto",
+          "btn-secondary shrink-0",
           !canGoBack && "pointer-events-none opacity-30",
         )}
       >
@@ -37,7 +37,7 @@ export function QuizNavigation({
         onClick={onNext}
         disabled={!canGoNext || submitting}
         className={clsx(
-          "btn-primary w-full sm:w-auto",
+          "btn-primary flex-1 sm:flex-none",
           (!canGoNext || submitting) && "pointer-events-none opacity-40",
         )}
       >

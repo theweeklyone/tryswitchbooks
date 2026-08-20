@@ -37,7 +37,7 @@ export function ConsultationLayout({
         ) : null}
       </header>
 
-      <main className="px-5 pb-32 pt-10 sm:px-8 sm:pt-16 lg:px-12 lg:pt-20">
+      <main className="px-5 pb-12 pt-6 sm:px-8 sm:pt-10 lg:px-12">
         <div className="mx-auto w-full max-w-2xl">{children}</div>
       </main>
     </div>

@@ -22,23 +22,18 @@ export function OptionCard({
       onClick={onClick}
       aria-pressed={selected}
       className={clsx(
-        "group relative flex w-full items-center justify-between gap-5 rounded-2xl border bg-cream-50 px-5 py-5 text-left transition-all duration-300 sm:px-6 sm:py-6",
+        "group relative flex w-full items-center justify-between gap-3 rounded-xl border bg-cream-50 px-4 py-3.5 text-left transition-all duration-200",
         selected
-          ? "border-cocoa-300 bg-blush-50/40 shadow-[0_4px_24px_-12px_rgba(21,17,15,0.18)]"
-          : "border-sand-100 hover:border-cocoa-300/60 hover:-translate-y-0.5",
+          ? "border-cocoa-300 bg-blush-50/40 shadow-[0_4px_20px_-14px_rgba(21,17,15,0.2)]"
+          : "border-sand-100 hover:border-cocoa-300/60",
       )}
     >
       <span className="flex-1">
-        <span
-          className={clsx(
-            "block font-serif text-xl leading-snug sm:text-2xl",
-            selected ? "text-cocoa-300" : "text-cocoa-300",
-          )}
-        >
+        <span className="block font-serif text-base leading-snug text-cocoa-300 sm:text-lg">
           {label}
         </span>
         {hint ? (
-          <span className="mt-1 block text-xs leading-relaxed text-cocoa-50">{hint}</span>
+          <span className="mt-0.5 block text-xs leading-relaxed text-cocoa-50">{hint}</span>
         ) : null}
       </span>
 
@@ -46,19 +41,17 @@ export function OptionCard({
       <span
         aria-hidden
         className={clsx(
-          "shrink-0 transition-all duration-300",
-          multiSelect ? "h-6 w-6 rounded-md border" : "h-6 w-6 rounded-full border",
-          selected
-            ? "border-cocoa-300 bg-cocoa-300"
-            : "border-sand-200 bg-cream-50",
+          "shrink-0 transition-all duration-200",
+          multiSelect ? "h-5 w-5 rounded-md border" : "h-5 w-5 rounded-full border",
+          selected ? "border-cocoa-300 bg-cocoa-300" : "border-sand-200 bg-cream-50",
         )}
       >
         <span
           className={clsx(
-            "block transition-transform duration-300",
+            "block transition-transform duration-200",
             multiSelect
-              ? "ml-1 mt-0.5 h-3 w-2 rotate-45 border-b-2 border-r-2 border-cream-50"
-              : "mx-auto mt-1 h-3 w-3 rounded-full bg-cream-50",
+              ? "ml-[6px] mt-[2px] h-2.5 w-1.5 rotate-45 border-b-2 border-r-2 border-cream-50"
+              : "mx-auto mt-[5px] h-2 w-2 rounded-full bg-cream-50",
             selected ? "scale-100" : "scale-0",
           )}
         />

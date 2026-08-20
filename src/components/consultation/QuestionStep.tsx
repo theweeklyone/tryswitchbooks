@@ -26,16 +26,16 @@ export function QuestionStep({
   return (
     <div className="animate-fadeUp">
       <p className="eyebrow">{question.required === false ? "Optional" : "Tell us"}</p>
-      <h1 className="mt-3 text-balance font-serif text-3xl leading-[1.08] text-cocoa-300 sm:text-4xl md:text-[2.75rem]">
+      <h1 className="mt-2 text-balance font-serif text-2xl leading-[1.12] text-cocoa-300 sm:text-3xl md:text-4xl">
         {question.title}
       </h1>
       {question.subtitle ? (
-        <p className="mt-4 text-pretty text-base leading-relaxed text-cocoa-50 sm:text-lg">
+        <p className="mt-2.5 text-pretty text-sm leading-relaxed text-cocoa-50 sm:text-base">
           {question.subtitle}
         </p>
       ) : null}
 
-      <div className="mt-10">
+      <div className="mt-6">
         {(question.type === "text" ||
           question.type === "email" ||
           question.type === "tel" ||
@@ -87,7 +87,7 @@ export function QuestionStep({
         )}
 
         {question.type === "single" && question.options && (
-          <ul className="grid gap-3">
+          <ul className="grid gap-2.5 sm:grid-cols-2">
             {question.options.map((opt) => (
               <li key={opt.value}>
                 <OptionCard
@@ -102,7 +102,7 @@ export function QuestionStep({
         )}
 
         {question.type === "multi" && question.options && (
-          <ul className="grid gap-3">
+          <ul className="grid gap-2.5 sm:grid-cols-2">
             {question.options.map((opt) => {
               const selectedArr = (Array.isArray(value) ? value : []).filter(
                 (v): v is string => typeof v === "string",
@@ -156,7 +156,7 @@ export function QuestionStep({
       </div>
 
       {question.microcopy ? (
-        <p className="mt-6 text-xs italic leading-relaxed text-cocoa-50/70">
+        <p className="mt-4 text-xs italic leading-relaxed text-cocoa-50/70">
           {question.microcopy}
         </p>
       ) : null}
