@@ -75,8 +75,13 @@ function validate(q: QuizQuestion | undefined, answers: QuizAnswers): string | n
 
   if (q.type === "companies") {
     const list = asCompanies(value);
-    const hasNamed = list.some((c) => c.name.trim() !== "");
-    if (q.required !== false && !hasNamed) return "Add at least your company name";
+    const named = list.filter((c) => c.name.trim() !== "");
+    if (q.required !== false && named.length === 0) return "Add at least your company name";
+    // Valid UK company number: 8 digits, or a 2-letter prefix + 6 digits
+    // (e.g. SC123456 for Scotland, NI for Northern Ireland, OC/SO for LLPs).
+    const validNumber = /^(\d{8}|[A-Z]{2}\d{6})$/;
+    const bad = named.find((c) => !validNumber.test(c.number.trim().toUpperCase()));
+    if (bad) return "Enter an 8-character company number, e.g. 12345678 or SC123456";
     return null;
   }
 

@@ -67,10 +67,12 @@ export function CompaniesStep({
                 type="text"
                 value={c.number}
                 onChange={(e) =>
-                  update(i, { number: e.target.value.replace(/[^0-9A-Za-z]/g, "").slice(0, 8) })
+                  update(i, {
+                    // 8 chars, digits or a letter prefix (e.g. SC for Scotland).
+                    number: e.target.value.toUpperCase().replace(/[^0-9A-Z]/g, "").slice(0, 8),
+                  })
                 }
                 placeholder="Company number"
-                inputMode="numeric"
                 className="w-full rounded-xl border border-sand-100 bg-white px-4 py-3.5 font-serif text-lg text-cocoa-300 outline-none transition-colors placeholder:text-cocoa-50/40 focus:border-cocoa-300 sm:text-xl"
               />
             </div>
