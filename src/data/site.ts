@@ -48,6 +48,7 @@ export const site = {
     linkedinHandle: "try-switch-books",
     x: "https://x.com/TrySwitchBooks",
     xHandle: "@TrySwitchBooks",
+    productHunt: "https://www.producthunt.com/products/switch-books",
   },
 } as const;
 
