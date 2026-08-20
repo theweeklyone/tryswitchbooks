@@ -12,6 +12,14 @@ import { UploadPlaceholderStep } from "./UploadPlaceholderStep";
 // The wrapping <div key={question.id}> in the parent re-mounts on step change
 // so the animate-fadeUp class plays on every question.
 
+// Format a raw entry as pounds with thousands separators, e.g. "2000" -> "£2,000".
+// Strips everything but digits so pasting "£1,200.50" still tidies to "£1,200".
+function formatCurrency(raw: string): string {
+  const digits = raw.replace(/\D/g, "");
+  if (!digits) return "";
+  return "£" + digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 export function QuestionStep({
   question,
   value,
@@ -63,6 +71,17 @@ export function QuestionStep({
                   ? "tel"
                   : "text"
             }
+            error={error}
+          />
+        )}
+
+        {question.type === "currency" && (
+          <TextInputStep
+            type="text"
+            value={(value as string) || ""}
+            onChange={(v) => onChange(formatCurrency(v))}
+            placeholder={question.placeholder}
+            inputMode="numeric"
             error={error}
           />
         )}

@@ -6,6 +6,7 @@ export type QuestionType =
   | "email"
   | "tel"
   | "date"
+  | "currency"
   | "single"
   | "multi"
   | "textarea"

@@ -215,7 +215,7 @@ export const questions: QuizQuestion[] = [
   },
   {
     id: "annualFeeValue",
-    type: "text",
+    type: "currency",
     title: "Roughly how much is that annual fee?",
     subtitle: "A ballpark figure really helps us pitch the right level of support.",
     placeholder: "e.g. £1,200",
