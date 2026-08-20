@@ -1,12 +1,19 @@
 "use client";
 
-import type { CompanyEntry, QuizAnswer, QuizQuestion } from "@/lib/types/consultation";
+import type { CompanyEntry, NameValue, QuizAnswer, QuizQuestion } from "@/lib/types/consultation";
 import { OptionCard } from "./OptionCard";
 import { TextInputStep } from "./TextInputStep";
 import { TextAreaStep } from "./TextAreaStep";
 import { CompaniesStep } from "./CompaniesStep";
+import { NameStep } from "./NameStep";
 import { IndustrySelectStep } from "./IndustrySelectStep";
 import { UploadPlaceholderStep } from "./UploadPlaceholderStep";
+
+function asName(v: QuizAnswer): NameValue {
+  return v && typeof v === "object" && !Array.isArray(v) && "first" in v
+    ? (v as NameValue)
+    : { first: "", last: "" };
+}
 
 // Generic step renderer. Picks the right input control for the question type.
 // The wrapping <div key={question.id}> in the parent re-mounts on step change
@@ -73,6 +80,10 @@ export function QuestionStep({
             }
             error={error}
           />
+        )}
+
+        {question.type === "name" && (
+          <NameStep value={asName(value)} onChange={(v) => onChange(v)} error={error} />
         )}
 
         {question.type === "currency" && (

@@ -7,6 +7,7 @@ export type QuestionType =
   | "tel"
   | "date"
   | "currency"
+  | "name"
   | "single"
   | "multi"
   | "textarea"
@@ -15,6 +16,7 @@ export type QuestionType =
   | "upload";
 
 export type QuestionId =
+  | "name"
   | "firstName"
   | "lastName"
   | "businessName"
@@ -52,6 +54,12 @@ export type CompanyEntry = {
   number: string;
 };
 
+/** First + last name captured together in one step. */
+export type NameValue = {
+  first: string;
+  last: string;
+};
+
 export type QuizQuestion = {
   id: QuestionId;
   type: QuestionType;
@@ -72,7 +80,7 @@ export type QuizQuestion = {
  * - multi → string[]
  * - companies → CompanyEntry[]
  */
-export type QuizAnswer = string | string[] | CompanyEntry[] | undefined;
+export type QuizAnswer = string | string[] | CompanyEntry[] | NameValue | undefined;
 export type QuizAnswers = Partial<Record<QuestionId, QuizAnswer>>;
 
 export type ConsultationSubmission = {

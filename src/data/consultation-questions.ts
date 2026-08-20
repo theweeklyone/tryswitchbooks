@@ -297,18 +297,10 @@ export const questions: QuizQuestion[] = [
   },
   // --- Contact details, asked last, once they've told us what they need ---
   {
-    id: "firstName",
-    type: "text",
-    title: "Almost done. What's your first name?",
+    id: "name",
+    type: "name",
+    title: "Almost done. What's your name?",
     subtitle: "Just so we can keep it personal when we're in touch.",
-    placeholder: "First name",
-    required: true,
-  },
-  {
-    id: "lastName",
-    type: "text",
-    title: "And your last name?",
-    placeholder: "Last name",
     required: true,
   },
   {

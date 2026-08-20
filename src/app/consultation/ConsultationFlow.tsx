@@ -6,6 +6,7 @@ import type {
   CompanyEntry,
   ConsultationRecommendation,
   ConsultationSubmission,
+  NameValue,
   QuizAnswer,
   QuizAnswers,
   QuizQuestion,
@@ -55,9 +56,22 @@ const asCompanies = (v: QuizAnswer): CompanyEntry[] =>
       )
     : [];
 
+const asName = (v: QuizAnswer): NameValue =>
+  v && typeof v === "object" && !Array.isArray(v) && "first" in v
+    ? (v as NameValue)
+    : { first: "", last: "" };
+
 function validate(q: QuizQuestion | undefined, answers: QuizAnswers): string | null {
   if (!q) return null;
   const value = answers[q.id];
+
+  if (q.type === "name") {
+    const n = asName(value);
+    if (q.required !== false && (!n.first.trim() || !n.last.trim())) {
+      return "Please add your first and last name";
+    }
+    return null;
+  }
 
   if (q.type === "companies") {
     const list = asCompanies(value);
@@ -216,9 +230,11 @@ export function ConsultationFlow({
       .map((c) => ({ name: c.name.trim(), number: (c.number ?? "").trim() }))
       .filter((c) => c.name !== "");
 
+    const name = asName(answers.name);
+
     const submission: ConsultationSubmission = {
-      firstName: titleCase(String(answers.firstName ?? "").trim()),
-      lastName: titleCase(String(answers.lastName ?? "").trim()),
+      firstName: titleCase(name.first.trim()),
+      lastName: titleCase(name.last.trim()),
       businessName: String(answers.businessName ?? "").trim(),
       email: String(answers.email ?? "").trim(),
       phone: String(answers.phone ?? "").trim(),
