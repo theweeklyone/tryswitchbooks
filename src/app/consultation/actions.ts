@@ -2,6 +2,7 @@
 
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { sendLeadEmail } from "@/lib/notify";
+import { getService } from "@/data/services";
 import { site } from "@/data/site";
 import type {
   ConsultationRecommendation,
@@ -73,6 +74,31 @@ const LABELS: Record<string, string> = {
 
 const label = (v: string) => LABELS[v] ?? v;
 const labels = (vals: string[]) => vals.map(label).join(", ");
+
+const SITE_URL = "https://www.tryswitchbooks.co.uk";
+
+// Which service page each "servicesWanted" value points at, for the email banner.
+const SERVICE_SLUG_BY_NEED: Record<string, string> = {
+  bookkeeping: "bookkeeping",
+  "year-end-accounts": "year-end-accounts",
+  "tax-advice": "tax-and-vat",
+  "vat-support": "tax-and-vat",
+  "personal-tax": "tax-and-vat",
+  payroll: "payroll",
+  advisory: "advisory",
+};
+
+// The service pages for the areas the client asked about (deduped), for the
+// confirmation email's "explore" banner.
+function clientServiceLinks(servicesWanted: string[]) {
+  const slugs = [...new Set(servicesWanted.map((n) => SERVICE_SLUG_BY_NEED[n]).filter(Boolean))];
+  return slugs
+    .map((slug) => {
+      const s = getService(slug);
+      return s ? { name: s.name, description: s.short, url: `${SITE_URL}/services/${slug}` } : null;
+    })
+    .filter((x): x is { name: string; description: string; url: string } => x !== null);
+}
 
 // Simple lead scoring for accounting: budget + turnover + intent to switch.
 function scoreLead(sub: ConsultationSubmission): {
@@ -268,8 +294,10 @@ export async function submitConsultation(input: {
         },
       ],
       message:
-        "Thanks for taking the review. We're now finding the right local accounting firm for you, and someone will be in touch shortly to confirm a couple of details and make the introduction. There's no pressure and no obligation. This is about matching you with support that fits.",
+        "Thanks for taking the review. We're now finding the right accounting firm for you. Once we've matched you, an adviser from that firm will be in touch to confirm a couple of details and introduce themselves. There's no pressure and no obligation. This is about matching you with support that fits.",
       messageLabel: "What happens next",
+      services: clientServiceLinks(submission.servicesWanted),
+      servicesTitle: "Read more about what you asked for",
       replyTo: site.contact.emailDisplay,
     });
   } catch (err) {

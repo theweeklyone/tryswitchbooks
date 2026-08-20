@@ -39,6 +39,10 @@ type LeadEmail = {
   message?: string;
   /** Label above the free-text block. */
   messageLabel?: string;
+  /** Optional banner of service links (e.g. the areas the client asked about). */
+  services?: { name: string; description?: string; url: string }[];
+  /** Heading above the services banner. */
+  servicesTitle?: string;
   /** Reply-To so the team can reply straight to the enquirer. */
   replyTo?: string;
 };
@@ -106,6 +110,28 @@ function messageHtml(email: LeadEmail): string {
   );
 }
 
+function servicesHtml(email: LeadEmail): string {
+  if (!email.services?.length) return "";
+  const cards = email.services
+    .map(
+      (s) =>
+        `<tr><td style="padding:14px 16px;border:1px solid ${C.sand};border-radius:12px;background:${C.cream}">` +
+        `<div style="font-family:${SERIF};font-size:17px;color:${C.ink};line-height:1.3">${escapeHtml(s.name)}</div>` +
+        (s.description
+          ? `<div style="font-size:13px;color:${C.muted};margin-top:4px;line-height:1.5">${escapeHtml(s.description)}</div>`
+          : "") +
+        `<a href="${escapeHtml(s.url)}" style="display:inline-block;margin-top:10px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:${C.accent};text-decoration:none;font-weight:bold">Read more &rarr;</a>` +
+        `</td></tr><tr><td style="height:10px;line-height:10px">&nbsp;</td></tr>`,
+    )
+    .join("");
+  return (
+    `<div style="margin-top:24px">` +
+    `<div style="font-family:${SERIF};font-size:13px;text-transform:uppercase;letter-spacing:2px;color:${C.accent};margin-bottom:10px">${escapeHtml(email.servicesTitle ?? "Explore what you asked about")}</div>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${cards}</table>` +
+    `</div>`
+  );
+}
+
 function buildHtml(email: LeadEmail): string {
   const title = email.title ?? email.subject;
   return (
@@ -116,7 +142,7 @@ function buildHtml(email: LeadEmail): string {
     // Header
     `<tr><td style="background:${C.ink};padding:26px 32px;text-align:center">` +
     `<div style="font-family:${SERIF};font-size:24px;letter-spacing:1px;color:${C.cream}">${escapeHtml(site.name)}</div>` +
-    `<div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${C.gold};margin-top:6px">${escapeHtml(site.location.short)}</div>` +
+    `<div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:${C.gold};margin-top:6px">${escapeHtml(site.brandPromise)}</div>` +
     `</td></tr>` +
     // Title
     `<tr><td style="padding:24px 32px 0">` +
@@ -124,7 +150,7 @@ function buildHtml(email: LeadEmail): string {
     `<div style="font-family:${SERIF};font-size:22px;color:${C.ink};margin-top:4px;line-height:1.3">${escapeHtml(title)}</div>` +
     `</td></tr>` +
     // Body
-    `<tr><td style="padding:6px 32px 10px">${bodyHtml(email)}${messageHtml(email)}</td></tr>` +
+    `<tr><td style="padding:6px 32px 10px">${bodyHtml(email)}${messageHtml(email)}${servicesHtml(email)}</td></tr>` +
     // Footer
     `<tr><td style="padding:20px 32px;background:${C.cream2};border-top:1px solid ${C.sand};font-size:11px;line-height:1.6;color:${C.muted};text-align:center">` +
     `Sent from the ${escapeHtml(site.name)} website` +
@@ -144,6 +170,10 @@ function buildText(email: LeadEmail): string {
   }
   if (email.message && email.message.trim()) {
     lines.push("", `${email.messageLabel ?? "Their message"}:`, email.message);
+  }
+  if (email.services?.length) {
+    lines.push("", (email.servicesTitle ?? "Explore what you asked about").toUpperCase());
+    for (const s of email.services) lines.push(`- ${s.name}: ${s.url}`);
   }
   return lines.join("\n").trim();
 }

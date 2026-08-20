@@ -77,6 +77,15 @@ export function RecommendationView({
             course. No pressure, no hard sell. We've also emailed a copy of your review to{" "}
             <span className="text-cocoa-300">{submission.email}</span>.
           </p>
+
+          <div className="mt-6 rounded-2xl border border-sand-100 bg-blush-50/50 p-4 text-sm leading-relaxed text-cocoa-50 sm:p-5">
+            <p>
+              <span className="font-medium text-cocoa-300">Can&rsquo;t see the email?</span> It
+              can sometimes land in your junk or spam folder. If it does, open it and mark it as
+              &ldquo;Not junk&rdquo; (and add <span className="text-cocoa-300">tryswitchbooks.co.uk</span>{" "}
+              to your safe senders or contacts) so our updates always reach your inbox from here on.
+            </p>
+          </div>
         </div>
 
         {/* Summary + primary recommendation */}
