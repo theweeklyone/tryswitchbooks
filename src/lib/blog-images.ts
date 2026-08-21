@@ -51,10 +51,8 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
   },
 
   "payroll-services-small-business": {
-    // INTERIM: no unused payroll-specific photo exists yet. Not used by any other
-    // article (it appears as a page hero elsewhere). Swap for a dedicated upload.
-    src: "/images/business-reports.jpg",
-    alt: "A small business owner reviewing payroll figures and payslips",
+    src: "/images/payroll-services.jpg",
+    alt: "Payroll being run for a small business, payslips and figures on a desk",
   },
 
   // --- Switching cluster ---

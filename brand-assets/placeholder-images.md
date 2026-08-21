@@ -26,7 +26,6 @@ All 7 combos use `business-reports.jpg`. Two options:
 ## Blog articles — interim image
 | Article | Currently uses | Suggested |
 |---|---|---|
-| /advice/payroll-services-small-business | business-reports.jpg (interim) | A payroll / payslips / small-business-owner photo, landscape | `payroll-services.jpg` |
 | /advice/complete-guide-to-switching-accountants | switching-guide.jpg (a copy of advisory-meeting.jpg, not shown live elsewhere, so unique in practice) | A distinct "new-firm handshake / fresh-start" photo, landscape | `switching-guide.jpg` |
 | /advice/do-you-need-an-accountant-for-self-assessment | self-assessment.jpg (a landscape crop of business-reports.jpg, interim) | A dedicated tax / self-assessment / paperwork photo, landscape | `self-assessment.jpg` |
 
