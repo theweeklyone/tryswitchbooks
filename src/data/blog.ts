@@ -175,6 +175,229 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
+    slug: "how-much-does-an-accountant-cost-small-business",
+    title: "How much does an accountant cost for a small business?",
+    category: "Choosing an accountant",
+    excerpt:
+      "What does an accountant cost for a small business? Here's what drives the fee, rough guide prices, and how to get value rather than just a cheap quote.",
+    readingTime: "6 min read",
+    publishedOn: "August 2026",
+    author: "The Switch Books team",
+    imageStyle: "default",
+    body: [
+      {
+        type: "p",
+        text: "One of the first questions any business owner asks is what an accountant actually costs. The honest answer is that it varies, because it depends on what you need, how your business is set up, and how tidy your records are. Here's what drives the price, some rough guide figures, and how to make sure you're getting value rather than just a cheap quote.",
+      },
+      { type: "h2", text: "What drives the cost" },
+      {
+        type: "p",
+        text: "Accountancy fees aren't one size fits all. The main things that move the price are:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Your structure: a sole trader's tax return costs far less than a limited company's full accounts and corporation tax",
+          "Your turnover and the volume of transactions: more invoices and expenses means more work",
+          "Whether you're VAT registered, and how often you file",
+          "Payroll: how many people you pay, and how often",
+          "How tidy your bookkeeping is: clean records are quicker, and cheaper, to work with than a shoebox of receipts",
+          "The level of support: pure compliance costs less than proactive advice and planning",
+        ],
+      },
+      { type: "h2", text: "Rough guide prices" },
+      {
+        type: "p",
+        text: "Every firm prices differently, so treat these as ballparks rather than quotes. As a rough guide, a sole trader's self-assessment tax return is often a modest one-off fee each year; a small limited company's year-end accounts and corporation tax are commonly charged as a monthly retainer or an annual fee that rises with turnover and complexity; and bookkeeping, VAT and payroll are usually priced on top, based on volume.",
+      },
+      {
+        type: "p",
+        text: "The number that matters isn't the headline price. A slightly higher fee that includes advice, planning and someone who actually answers the phone is usually far better value than the cheapest quote with everything billed as an extra.",
+      },
+      { type: "h2", text: "Monthly retainer or a one-off fee?" },
+      {
+        type: "p",
+        text: "Many firms now offer a fixed monthly fee that spreads the cost and bundles your accounts, tax and often bookkeeping into one predictable payment. Others charge a one-off fee at year-end. Monthly is easier to budget for and usually comes with year-round support; a one-off fee can suit very simple affairs. Either way, ask exactly what's included so you can compare like for like.",
+      },
+      { type: "h2", text: "What should be included" },
+      {
+        type: "p",
+        text: "Before you compare prices, get clear on scope. For a limited company, a typical fee should cover your year-end accounts, corporation tax return, directors' self-assessment, a confirmation statement, and software and support through the year. [Bookkeeping](/services/bookkeeping), [payroll](/services/payroll) and [VAT](/services/tax-and-vat) are common add-ons, so ask what's in and what's extra, and the fee you're quoted is the fee you pay.",
+      },
+      { type: "h2", text: "How to get value, not just a low price" },
+      {
+        type: "p",
+        text: "Cheap accountancy can end up expensive if it means missed deadlines, penalties or tax you didn't need to pay. Value comes from a firm that's proactive, responsive and a good fit for your sector and size. Our guide to [the questions to ask before you hire](/advice/questions-to-ask-before-hiring-an-accountant) covers exactly what to check, and [what good business advice looks like](/advice/what-good-business-advice-actually-looks-like) explains the difference a proactive firm makes.",
+      },
+      {
+        type: "p",
+        text: "Switch Books is a free service that matches you with a local accounting firm that fits your needs and your budget. Tell us your setup and what you pay now, and we'll connect you with a firm that's genuinely good value.",
+      },
+    ],
+    related: [
+      { label: "Questions to ask before you hire an accountant", href: "/advice/questions-to-ask-before-hiring-an-accountant" },
+      { label: "What good business advice actually looks like", href: "/advice/what-good-business-advice-actually-looks-like" },
+      { label: "Get matched with a local firm", href: "/consultation" },
+    ],
+  },
+  {
+    slug: "do-you-need-an-accountant-for-a-limited-company",
+    title: "Do you need an accountant for a limited company?",
+    category: "Choosing an accountant",
+    excerpt:
+      "Is an accountant a legal requirement for a limited company? Here's what you must do, what an accountant handles, and when it's genuinely worth it.",
+    readingTime: "6 min read",
+    publishedOn: "August 2026",
+    author: "The Switch Books team",
+    imageStyle: "blush",
+    body: [
+      {
+        type: "p",
+        text: "If you run a limited company, you might be wondering whether you actually need an accountant or whether you can handle it yourself. Legally, you don't have to appoint one. But a limited company carries real obligations, and the penalties for getting them wrong land on you as a director. Here's what's involved, what an accountant takes off your plate, and when it's genuinely worth it.",
+      },
+      { type: "h2", text: "Is an accountant a legal requirement?" },
+      {
+        type: "p",
+        text: "No. There's no law that says a limited company must have an accountant. As a director, though, you are legally responsible for filing accurate accounts and returns on time, and for keeping proper records. If you're confident you can meet those duties yourself, you can. Most directors decide the time, risk and missed savings aren't worth it.",
+      },
+      { type: "h2", text: "What a limited company has to do" },
+      {
+        type: "p",
+        text: "Even a small company has more to handle than a sole trader. Each year you'll typically need to:",
+      },
+      {
+        type: "ul",
+        items: [
+          "File annual accounts with Companies House",
+          "File a corporation tax return and pay any tax due",
+          "Submit a confirmation statement",
+          "Run payroll and report to HMRC if you take a salary or employ anyone",
+          "Register for and file VAT if you're over the threshold",
+          "Complete your own self-assessment as a director",
+        ],
+      },
+      {
+        type: "p",
+        text: "Miss a deadline and the penalties start automatically, so the admin adds up quickly.",
+      },
+      { type: "h2", text: "What an accountant handles for you" },
+      {
+        type: "p",
+        text: "A good accountant takes the compliance off your plate and, just as importantly, helps you keep more of what you earn. Typically they'll handle your [year-end accounts](/services/year-end-accounts), [corporation tax and VAT](/services/tax-and-vat), [payroll](/services/payroll), and your directors' self-assessment, and advise on things like the most efficient salary and dividend split.",
+      },
+      { type: "h2", text: "When you might manage without one" },
+      {
+        type: "p",
+        text: "If your company is dormant, or genuinely tiny with a single director, no employees and very simple affairs, you may be able to file yourself using the HMRC and Companies House tools. Be honest about your time and confidence, though: the rules change, and mistakes are costly.",
+      },
+      { type: "h2", text: "When it's worth getting one" },
+      {
+        type: "ul",
+        items: [
+          "You're trading actively, with income, expenses and maybe staff",
+          "You're VAT registered, or close to the threshold",
+          "You want to take money out of the company tax-efficiently",
+          "You've had a penalty, or an HMRC letter you didn't fully understand",
+          "You simply don't have the time, or the stress isn't worth it",
+        ],
+      },
+      {
+        type: "p",
+        text: "For most trading companies, a good accountant pays for themselves in time saved and tax done right. Already have one and just moving? Here's what's different when [switching accountants for a limited company](/advice/switching-accountants-limited-company). If you're a sole trader instead, see [do you need an accountant for self assessment](/advice/do-you-need-an-accountant-for-self-assessment).",
+      },
+      {
+        type: "p",
+        text: "Switch Books is a free service that matches limited company directors with the right local accounting firm. Tell us about your company and we'll connect you with a firm that fits, at no cost and no obligation.",
+      },
+    ],
+    related: [
+      { label: "Switching accountants for a limited company", href: "/advice/switching-accountants-limited-company" },
+      { label: "Do you need an accountant for self assessment?", href: "/advice/do-you-need-an-accountant-for-self-assessment" },
+      { label: "Get matched with a local firm", href: "/consultation" },
+    ],
+  },
+  {
+    slug: "accountant-vs-bookkeeper-whats-the-difference",
+    title: "Accountant vs bookkeeper: what's the difference?",
+    category: "Bookkeeping & software",
+    excerpt:
+      "Accountant or bookkeeper, which do you need? Here's what each does, how they work together, and how to tell which your business needs now.",
+    readingTime: "5 min read",
+    publishedOn: "August 2026",
+    author: "The Switch Books team",
+    imageStyle: "mocha",
+    body: [
+      {
+        type: "p",
+        text: "Accountant or bookkeeper? Plenty of business owners aren't sure of the difference, or whether they need one, the other, or both. They do different jobs, and the right answer depends on where your business is. Here's how they compare and how to tell what you need now.",
+      },
+      { type: "h2", text: "What a bookkeeper does" },
+      {
+        type: "p",
+        text: "A bookkeeper looks after the day-to-day. They keep your financial records accurate and up to date so you always know where you stand. Typically that means:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Recording sales, purchases and expenses",
+          "Reconciling your bank and chasing what's owed",
+          "Keeping your accounting software tidy",
+          "Preparing and filing VAT returns",
+          "Running payroll, in some cases",
+        ],
+      },
+      {
+        type: "p",
+        text: "Good bookkeeping is the foundation. Without it, everything downstream, including your tax bill, is a guess. Here's [why getting your numbers right matters](/advice/bookkeeping-basics-getting-your-numbers-right).",
+      },
+      { type: "h2", text: "What an accountant does" },
+      {
+        type: "p",
+        text: "An accountant works at a higher level. They take those records and turn them into compliance, tax and advice:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Year-end accounts and filing",
+          "Corporation tax, self-assessment and VAT",
+          "Tax planning and efficiency",
+          "Advice on cash flow, growth and structure",
+        ],
+      },
+      {
+        type: "p",
+        text: "In short, a bookkeeper keeps score; an accountant helps you win the game.",
+      },
+      { type: "h2", text: "How they work together" },
+      {
+        type: "p",
+        text: "The two roles complement each other. Clean bookkeeping makes the accountant's job faster, cheaper and more accurate, and lets them focus on advice rather than tidying up. Many accountancy firms offer both under one roof, which keeps everything joined up.",
+      },
+      { type: "h2", text: "Which do you need?" },
+      {
+        type: "ul",
+        items: [
+          "Just starting or very small: tidy bookkeeping, even done well yourself, may be enough for now",
+          "Growing, VAT registered or taking on staff: you'll benefit from both",
+          "A limited company: you'll almost certainly want an accountant, with bookkeeping either in-house or handled by the same firm",
+        ],
+      },
+      {
+        type: "p",
+        text: "For many small businesses the simplest answer is one firm that does both, so nothing falls between the cracks.",
+      },
+      {
+        type: "p",
+        text: "Switch Books is a free service that matches you with a local firm that covers what you need, whether that's [bookkeeping](/services/bookkeeping), full accountancy, or both. Tell us where you're at and we'll find the right fit.",
+      },
+    ],
+    related: [
+      { label: "Bookkeeping basics: getting your numbers right", href: "/advice/bookkeeping-basics-getting-your-numbers-right" },
+      { label: "Questions to ask before you hire an accountant", href: "/advice/questions-to-ask-before-hiring-an-accountant" },
+      { label: "Get matched with a local firm", href: "/consultation" },
+    ],
+  },
+  {
     slug: "do-you-need-an-accountant-for-self-assessment",
     title: "Do you need an accountant for self assessment?",
     category: "Tax & planning",

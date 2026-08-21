@@ -35,6 +35,9 @@ All 7 combos use `business-reports.jpg`. Two options:
 | /advice/payroll-services-small-business | business-reports.jpg (interim) | A payroll / payslips / small-business-owner photo, landscape | `payroll-services.jpg` |
 | /advice/complete-guide-to-switching-accountants | switching-guide.jpg (a copy of advisory-meeting.jpg, not shown live elsewhere, so unique in practice) | A distinct "new-firm handshake / fresh-start" photo, landscape | `switching-guide.jpg` |
 | /advice/do-you-need-an-accountant-for-self-assessment | self-assessment.jpg (a landscape crop of business-reports.jpg, interim) | A dedicated tax / self-assessment / paperwork photo, landscape | `self-assessment.jpg` |
+| /advice/how-much-does-an-accountant-cost-small-business | accountant-cost.jpg (crop of business-reports-2.jpg, interim) | Fees / invoice / calculator / money-and-figures photo, landscape | `accountant-cost.jpg` |
+| /advice/do-you-need-an-accountant-for-a-limited-company | limited-company-accountant.jpg (crop of business-advisor-2.jpg, interim) | A company director meeting an accountant, professional, landscape | `limited-company-accountant.jpg` |
+| /advice/accountant-vs-bookkeeper-whats-the-difference | accountant-vs-bookkeeper.jpg (crop of business-reports-4.jpg, interim) | Bookkeeping records / desk / software screen, landscape | `accountant-vs-bookkeeper.jpg` |
 
 ## Notes
 - The original 4 sector pages (small-business, hospitality, restaurant, retail) already have their **own** photos — done.

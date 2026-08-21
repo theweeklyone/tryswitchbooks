@@ -30,6 +30,22 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
     alt: "A proactive advisory conversation about a growing business",
   },
 
+  "how-much-does-an-accountant-cost-small-business": {
+    // INTERIM: landscape crop of business-reports-2.jpg. Swap for a dedicated photo.
+    src: "/images/accountant-cost.jpg",
+    alt: "A small business owner reviewing accountancy fees and figures at a desk",
+  },
+  "do-you-need-an-accountant-for-a-limited-company": {
+    // INTERIM: landscape crop of business-advisor-2.jpg. Swap for a dedicated photo.
+    src: "/images/limited-company-accountant.jpg",
+    alt: "A limited company director talking through their accounts with an accountant",
+  },
+  "accountant-vs-bookkeeper-whats-the-difference": {
+    // INTERIM: landscape crop of business-reports-4.jpg. Swap for a dedicated photo.
+    src: "/images/accountant-vs-bookkeeper.jpg",
+    alt: "Bookkeeping records and reports on a desk, the day-to-day an accountant builds on",
+  },
+
   "do-you-need-an-accountant-for-self-assessment": {
     // INTERIM: a landscape 1600x900 crop of the tax-reports photo (OG-safe ratio).
     // Swap for a dedicated self-assessment photo when one is available.
