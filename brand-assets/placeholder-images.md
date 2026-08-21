@@ -8,12 +8,6 @@ optimise + wire them in.
 
 _Last updated: 2026-08-19_
 
-## Niche sector pages — need their own photo
-| Page | Currently uses | Suggested photo | Save as |
-|---|---|---|---|
-| /property-accountants | business-advisor.jpg (shared) | Landlord / property / houses / keys, warm & professional | `property-accountants.jpg` |
-| /management-accountants | business-advisor.jpg (shared) | Someone reviewing charts/dashboards/KPIs on a laptop | `management-accountants.jpg` |
-
 ## Service × town pages — share one photo across all 7
 All 7 combos use `business-reports.jpg`. Two options:
 - **Minimum:** one photo per *service* — a bookkeeping shot (covers the 6 bookkeeping pages) + a payroll shot (covers the Worthing payroll page).

@@ -260,6 +260,8 @@ export const sectors: Sector[] = [
   {
     slug: "property-accountants",
     name: "Property",
+    image: "/images/property-accountants.jpg",
+    imageAlt: "A residential property, the kind of asset a property accountant helps manage",
     metaTitle: "Property Accountants in Sussex | Switch Books",
     metaDescription:
       "Landlord, developer or property investor? Switch Books matches you, free, with a local accountant who knows property tax and portfolios. Free review.",
@@ -314,6 +316,8 @@ export const sectors: Sector[] = [
   {
     slug: "management-accountants",
     name: "Management",
+    image: "/images/management-accountants.jpg",
+    imageAlt: "Charts and KPIs on a screen, the management information a firm produces",
     metaTitle: "Management Accountants in Sussex | Switch Books",
     metaDescription:
       "Want management accounts, KPIs and forecasts to run your business by the numbers? Switch Books matches you, free, with a firm that delivers them. Free review.",
