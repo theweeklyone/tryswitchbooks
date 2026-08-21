@@ -31,19 +31,16 @@ export const blogImages: Record<string, { src?: string; alt?: string }> = {
   },
 
   "how-much-does-an-accountant-cost-small-business": {
-    // INTERIM: landscape crop of business-reports-2.jpg. Swap for a dedicated photo.
     src: "/images/accountant-cost.jpg",
-    alt: "A small business owner reviewing accountancy fees and figures at a desk",
+    alt: "A calculator and pen on a notepad, working out accountancy costs",
   },
   "do-you-need-an-accountant-for-a-limited-company": {
-    // INTERIM: landscape crop of business-advisor-2.jpg. Swap for a dedicated photo.
     src: "/images/limited-company-accountant.jpg",
-    alt: "A limited company director talking through their accounts with an accountant",
+    alt: "A limited company director in a professional meeting with an accountant",
   },
   "accountant-vs-bookkeeper-whats-the-difference": {
-    // INTERIM: landscape crop of business-reports-4.jpg. Swap for a dedicated photo.
     src: "/images/accountant-vs-bookkeeper.jpg",
-    alt: "Bookkeeping records and reports on a desk, the day-to-day an accountant builds on",
+    alt: "Bookkeeping records and paperwork on a desk",
   },
 
   "do-you-need-an-accountant-for-self-assessment": {
